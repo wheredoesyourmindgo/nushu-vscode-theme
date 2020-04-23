@@ -1,4 +1,3 @@
-# GitHub Paper Coffee
 
 <p align="center">
    <img width="400" src="https://raw.githubusercontent.com/wheredoesyourmindgo/github-paper-coffee-vscode-theme/master/images/logo.png" />
@@ -6,7 +5,7 @@
 
 <p align="center" style="padding:16px 0;">🐙🐱🎨📜☕</p>
 
-A fork of the VSCode Github Theme featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
+A fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme) featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
 
 ## Attribution
 
@@ -16,36 +15,3 @@ The font used in this README's title (logo) is [Kiperman](https://www.harbortype
 
 [GitHub Theme](https://github.com/primer/github-vscode-theme) VSCode theme & [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) Atom theme.
 
-## README from Upstream Repo
-
-Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme) featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
-
-### Install
-
-<div align="center" style="padding-top:16px;padding-bottom:32px;">
-
-### Override this theme
-
-</div>
-
-### Contribute
-
-The project name references [Remembering Nüshu, the 19th-Century Chinese Script Only Women Could Write](https://www.atlasobscura.com/articles/nushu-chinese-script-women).
-
-The font used in this README's title (logo) is [Kiperman](https://www.harbortype.com/fonts/kiperman/) from Harbor Type.
-
-Icon template provided via Freepik <a href="https://www.freepik.com/free-vector/illustration-document-icon_2945058.htm#page=1&query=pen%20paper%20icon&position=0">Business vector created by rawpixel.com - www.freepik.com</a>
-
-### Publish (internal)
-
-> Note: Publishing a new version of this theme is only meant for maintainers.
-
-**Prerequisite**: Please follow this [guide](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) to install and login to `vsce`. Ask an existing maintainer how to get the "Personal Access Token".
-
-1. Merge any PR that is ready to be published into `master`.
-2. Update [CHANGELOG.md](https://github.com/primer/github-vscode-theme/blob/master/CHANGELOG.md) + commit the changes.
-3. Run `vsce publish [version]`. Follow the [SemVer](https://semver.org) convention and replace `[version]` with one of the following  options:
-    - `patch` for bug fixes
-    - `minor` for improvements
-    - `major` for breaking or bigger changes
-4. Push the commits and make a [new realease](https://github.com/primer/github-vscode-theme/releases/new).
