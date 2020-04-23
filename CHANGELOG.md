@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3
+
+- README.md updated
+
 ## 0.3.2
 
 - Icon added
