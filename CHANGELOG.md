@@ -2,6 +2,10 @@
 
 ## 0.3.3
 
+- README.md and package.json updated
+
+## 0.3.3
+
 - README.md updated
 
 ## 0.3.2
