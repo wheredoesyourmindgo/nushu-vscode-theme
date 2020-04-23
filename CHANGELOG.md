@@ -2,6 +2,7 @@
 
 ## 0.2.3
 
+- Custom font styles added for Bold and Italic font variations.
 - Custom Terminal colors added using Primer palette selections.
 - #f6f8fa --> #EFEBE0 (5% darker than PPC background color)
 - #fafbfc --> #F3F0E8 (2.5% darker than PPC background color)
