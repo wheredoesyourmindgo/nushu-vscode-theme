@@ -5,7 +5,7 @@
 
 <p align="center" style="padding:16px 0;font-size:32px;">🐙🐱📜☕</p>
 
-A fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme) featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
+GitHub Paper Coffee is a fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme) featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
 
 ## Attribution
 
