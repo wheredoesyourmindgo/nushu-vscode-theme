@@ -2,9 +2,10 @@
 
 ## 0.2.3
 
-- #d73a49 --> #735C0F (Syntax doesn't need to be dangerous).
-- Custom font styles added for Bold and Italic font variations.
-- Custom Terminal colors added using Primer palette selections.
+- #f9826c --> #B08800 (Use yellow/brown hightlight over rose)
+- #d73a49 --> #735C0F (Syntax doesn't need to be dangerous)
+- Custom font styles added for Bold and Italic font variations
+- Custom Terminal colors added using Primer palette selections
 - #f6f8fa --> #EFEBE0 (5% darker than PPC background color)
 - #fafbfc --> #F3F0E8 (2.5% darker than PPC background color)
 - #fff --> #F8F6F1 (Pen Paper Coffee background color)
