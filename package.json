@@ -1,7 +1,7 @@
 {
   "name": "github-paper-coffee-vscode-theme",
   "displayName": "GitHub Paper Coffee",
-  "description": "GitHub Paper Coffee theme for VS Code",
+  "description": "🐙🐱📜☕",
   "version": "0.3.3",
   "scripts": {
     "release:major": "vsce publish major && git push",
