@@ -8,6 +8,7 @@
     "release:minor": "vsce publish minor && git push",
     "release:patch": "vsce publish patch && git push"
   },
+  "icon":  "images/icon.png",
   "preview": true,
   "publisher": "wheredoesyourmindgo",
   "galleryBanner": {
