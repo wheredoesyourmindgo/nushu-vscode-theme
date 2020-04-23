@@ -3,7 +3,7 @@
    <img width="400" src="https://raw.githubusercontent.com/wheredoesyourmindgo/github-paper-coffee-vscode-theme/master/images/logo.png" />
 </p>
 
-<p align="center" style="padding:16px 0;">🐙🐱🎨📜☕</p>
+<p align="center" style="padding:16px 0;font-size:32px;">🐙🐱📜☕</p>
 
 A fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme) featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
 
@@ -14,4 +14,3 @@ The font used in this README's title (logo) is [Kiperman](https://www.harbortype
 <a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by rawpixel.com - www.freepik.com</a>
 
 [GitHub Theme](https://github.com/primer/github-vscode-theme) VSCode theme & [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) Atom theme.
-
