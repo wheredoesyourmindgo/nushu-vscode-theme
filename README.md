@@ -1,17 +1,23 @@
-# GitHub VS Code theme
+# GitHub Paper Coffee
+
+<div style="text-align:center;padding-bottom:16px;"> 🐙🐱🎨📜☕ </div>
+
+A fork of the VSCode Github Theme featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
+
+## README from Upstream Repo
 
 ![GitHub VS Code theme](https://user-images.githubusercontent.com/378023/78366757-ef48fb00-75fb-11ea-8d00-a8e61dbb9115.png)
 
-## Install
+### Install
 
 1. Go to [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 2. Click on the "Install" button
 
-## Override this theme
+### Override this theme
 
 To quickly test something, you can also override this (or any other) theme in your personal config file. Please follow the guide in the [color theme](https://code.visualstudio.com/api/extension-guides/color-theme) documentation.
 
-## Contribute
+### Contribute
 
 1. Clone and open this [repo](https://github.com/primer/github-vscode-theme) in VS Code
 2. Press `F5` to open a new window with your extension loaded
@@ -26,7 +32,7 @@ Note:
 - If possible use colors from [Primer's color system](https://primer.style/css/support/color-system).
 - Changes to the theme files are automatically applied to the Extension Development Host window, so no reloading should be necessary.
 
-## Publish (internal)
+### Publish (internal)
 
 > Note: Publishing a new version of this theme is only meant for maintainers.
 
