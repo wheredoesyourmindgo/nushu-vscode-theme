@@ -20,7 +20,7 @@
 
     "checkbox.border": "#d1d5da",
 
-    "dropdown.background": "#fafbfc",
+    "dropdown.background": "#F3F0E8",
     "dropdown.listBackground": "#F8F6F1",
     "dropdown.border": "#e1e4e8",
     "dropdown.foreground": "#24292e",
@@ -103,7 +103,7 @@
 
     "editor.foreground": "#24292e",
     "editor.background": "#F8F6F1",
-    "editor.foldBackground": "#fafbfc",
+    "editor.foldBackground": "#F3F0E8",
     "editor.lineHighlightBackground": "#EFEBE0",
     "editorLineNumber.foreground": "#1b1f234d",
     "editorLineNumber.activeForeground": "#24292e",
@@ -315,7 +315,7 @@
       "scope": "carriage-return",
       "settings": {
         "fontStyle": "italic underline",
-        "background": "#735c0f",
+        "background": "#d73a49",
         "foreground": "#F3F0E8",
         "content": "^M"
       }
