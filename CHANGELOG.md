@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- First release
+
 ## 0.2.3
 
 - #f9826c --> #B08800 (Use yellow/brown hightlight over rose)
