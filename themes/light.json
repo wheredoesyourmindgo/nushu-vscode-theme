@@ -626,7 +626,64 @@
       }
     },
     {
-      "name": "MORE-ITALIC",
+      "name": "BOLD",
+      "scope": [
+        "keyword",
+        "keyword.control",
+        "keyword.operator",
+        "keyword.other.template",
+        "keyword.other.substitution",
+        "storage.type.function.arrow",
+        "constant.other.color",
+        "punctuation.accessor",
+        "entity.name.section",
+        "markup.bold",
+        "markup.bold string",
+        "markdown.heading",
+        "markup.inline.raw punctuation.definition.raw",
+        "markup.heading",
+        "storage.type.function.pug",
+        "storage.type.function.python",
+        "storage.type.annotation",
+        "punctuation.bracket.angle",
+        "keyword.other.new",
+        "punctuation.separator.question-mark.cs",
+        "storage.type.generic.wildcard",
+        "source.go keyword.operator",
+        "punctuation.separator.namespace",
+        "constant.other.symbol.ruby punctuation.definition.constant.ruby",
+        "variable.parameter",
+        "support.function.builtin.rust",
+        "storage.type.function.coffee",
+        "entity.name.variable.parameter",
+        "punctuation.separator.hash.cs",
+        "constant.other.symbol.ruby punctuation.definition.constant.ruby",
+        "constant.other.symbol.hashkey.ruby punctuation.definition.constant.ruby",
+        "meta.function.parameters variable.other",
+        "entity.name.type.annotation.kotlin",
+        "storage.type.objc",
+        "parameter.variable.function",
+        "markup punctuation.definition",
+        "punctuation.section.directive",
+        "punctuation.definition.preprocessor",
+        "source.ruby punctuation.definition.variable",
+        "punctuation.separator.method",
+        "support.function.textbf",
+        "source.graphql support.type.builtin",
+        "source.ocaml variable.interpolation string",
+        "entity.name.function.definition.special.constructor",
+        "entity.name.function.definition.special.member.destructor.",
+        "meta.function.parameters variable punctuation.definition.variable.php",
+        "source.wsd keyword.other.activity",
+        "keyword.control.class.ruby",
+        "keyword.control.def.ruby"
+      ],
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "BOLD-ITALIC",
       "scope": [
         "markup.bold markup.italic",
         "markup.italic markup.bold",
@@ -646,7 +703,7 @@
         "comment.block.documentation variable.other"
       ],
       "settings": {
-        "fontStyle": "italic"
+        "fontStyle": "bold italic"
       }
     },
     {
