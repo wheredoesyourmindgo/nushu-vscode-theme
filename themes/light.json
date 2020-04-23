@@ -227,7 +227,7 @@
     {
       "scope": "keyword",
       "settings": {
-        "foreground": "#735c0f"
+        "foreground": "#B08800"
       }
     },
     {
@@ -236,7 +236,7 @@
         "storage.type"
       ],
       "settings": {
-        "foreground": "#735c0f"
+        "foreground": "#B08800"
       }
     },
     {
@@ -315,7 +315,7 @@
       "scope": "carriage-return",
       "settings": {
         "fontStyle": "italic underline",
-        "background": "#d73a49",
+        "background": "#B08800",
         "foreground": "#F3F0E8",
         "content": "^M"
       }
