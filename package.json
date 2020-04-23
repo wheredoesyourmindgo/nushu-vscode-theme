@@ -12,10 +12,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/wheredoesyourmindgo/github-vscode-theme"
+		"url": "https://github.com/wheredoesyourmindgo/github-paper-coffee-theme"
 	},
 	"bugs": {
-		"url": "https://github.com/wheredoesyourmindgo/github-vscode-theme/issues"
+		"url": "https://github.com/wheredoesyourmindgo/github-paper-coffee-theme/issues"
 	},
 	"engines": {
 		"vscode": "^1.43.0"
