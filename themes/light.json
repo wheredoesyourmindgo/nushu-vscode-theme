@@ -8,7 +8,7 @@
 
     "textLink.foreground": "#0366d6",
     "textLink.activeForeground": "#005cc5",
-    "textBlockQuote.background": "#fafbfc",
+    "textBlockQuote.background": "#F3F0E8",
     "textBlockQuote.border": "#e1e4e8",
     "textCodeBlock.background": "#EFEBE0",
     "textPreformat.foreground": "#586069",
@@ -20,12 +20,12 @@
 
     "checkbox.border": "#d1d5da",
 
-    "dropdown.background": "#fafbfc",
+    "dropdown.background": "#F3F0E8",
     "dropdown.listBackground": "#F8F6F1",
     "dropdown.border": "#e1e4e8",
     "dropdown.foreground": "#24292e",
 
-    "input.background": "#fafbfc",
+    "input.background": "#F3F0E8",
     "input.border": "#e1e4e8",
     "input.foreground": "#24292e",
     "input.placeholderForeground": "#959da5",
@@ -66,11 +66,11 @@
 
     "tree.indentGuidesStroke": "#e1e4e8",
 
-    "notificationCenterHeader.background": "#fafbfc",
+    "notificationCenterHeader.background": "#F3F0E8",
 
     "pickerGroup.border": "#e1e4e8",
     "pickerGroup.foreground": "#24292e",
-    "quickInput.background": "#fafbfc",
+    "quickInput.background": "#F3F0E8",
     "quickInput.foreground": "#24292e",
 
     "statusBar.foreground": "#586069",
@@ -98,11 +98,11 @@
     "breadcrumb.foreground": "#6a737d",
     "breadcrumb.focusForeground": "#24292e",
     "breadcrumb.activeSelectionForeground": "#586069",
-    "breadcrumbPicker.background": "#fafbfc",
+    "breadcrumbPicker.background": "#F3F0E8",
 
     "editor.foreground": "#24292e",
     "editor.background": "#F8F6F1",
-    "editor.foldBackground": "#fafbfc",
+    "editor.foldBackground": "#F3F0E8",
     "editor.lineHighlightBackground": "#EFEBE0",
     "editorLineNumber.foreground": "#1b1f234d",
     "editorLineNumber.activeForeground": "#24292e",
@@ -298,7 +298,7 @@
       "settings": {
         "fontStyle": "italic underline",
         "background": "#d73a49",
-        "foreground": "#fafbfc",
+        "foreground": "#F3F0E8",
         "content": "^M"
       }
     },
