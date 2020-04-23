@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.3.3
+## 0.3.5
 
-- README.md and package.json updated
+- Fix package version
 
 ## 0.3.3
 
