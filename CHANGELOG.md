@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+
+- Icon added
+
 ## 0.3.1
 
 - Don't use bold fonts
