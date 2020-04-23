@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- Don't use bold fonts
+
 ## 0.3.0
 
 - First release
