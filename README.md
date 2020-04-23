@@ -1,6 +1,6 @@
 # GitHub Paper Coffee
 
-<div style="display:flex;padding:16px 0;justify-content:center;align-items:center"><div style="flex:auto;text-align:center">🐙🐱🎨📜☕</div></div>
+<p align="center" style="padding:16px 0;">🐙🐱🎨📜☕</p>
 
 A fork of the VSCode Github Theme featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
 
