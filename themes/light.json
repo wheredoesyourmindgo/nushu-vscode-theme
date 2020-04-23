@@ -94,7 +94,7 @@
     "tab.unfocusedActiveBorderTop": "#e1e4e8",
     "tab.activeBorder": "#F8F6F1",
     "tab.unfocusedActiveBorder": "#F8F6F1",
-    "tab.activeBorderTop": "#f9826c",
+    "tab.activeBorderTop": "#B08800",
 
     "breadcrumb.foreground": "#6a737d",
     "breadcrumb.focusForeground": "#24292e",
@@ -146,7 +146,7 @@
     "terminal.ansiBlack": "#959da5",
     "terminal.ansiRed": "#9e1c23",
     "terminal.ansiGreen": "#165c26",
-    "terminal.ansiYellow": "#b08800",
+    "terminal.ansiYellow": "#B08800",
     "terminal.ansiBlue": "#3a1d6e",
     "terminal.ansiMagenta": "#99306f",
     "terminal.ansiCyan": "#032f62",
