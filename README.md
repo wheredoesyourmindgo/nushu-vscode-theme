@@ -1,7 +1,7 @@
 # GitHub Paper Coffee
 
 <p align="center">
-   <img width="170" src="https://raw.githubusercontent.com/wheredoesyourmindgo/github-paper-coffee-vscode-theme/master/images/logo.png" />
+   <img width="400" src="https://raw.githubusercontent.com/wheredoesyourmindgo/github-paper-coffee-vscode-theme/master/images/logo.png" />
 </p>
 
 <p align="center" style="padding:16px 0;">🐙🐱🎨📜☕</p>
