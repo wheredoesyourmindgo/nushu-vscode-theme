@@ -20,7 +20,7 @@
 
     "checkbox.border": "#d1d5da",
 
-    "dropdown.background": "#F3F0E8",
+    "dropdown.background": "#fafbfc",
     "dropdown.listBackground": "#F8F6F1",
     "dropdown.border": "#e1e4e8",
     "dropdown.foreground": "#24292e",
@@ -75,14 +75,8 @@
     "quickInput.foreground": "#24292e",
 
     "statusBar.foreground": "#586069",
-    "statusBar.debuggingForeground":  "#586069",
-    "statusBar.noFolderForeground":  "#586069",
     "statusBar.background": "#F8F6F1",
-    "statusBar.debuggingBackground": "#F8F6F1",
-    "statusBar.noFolderBackground": "#F8F6F1",
-    "statusBar.border": "#E1E4E8",
-    "statusBar.debuggingBorder": "#E1E4E8",
-    "statusBar.noFolderBorder": "#E1E4E8",
+    "statusBar.border": "#e1e4e8",
 
     "editorGroupHeader.tabsBackground": "#EFEBE0",
     "editorGroupHeader.tabsBorder": "#e1e4e8",
@@ -100,7 +94,7 @@
     "tab.unfocusedActiveBorderTop": "#e1e4e8",
     "tab.activeBorder": "#F8F6F1",
     "tab.unfocusedActiveBorder": "#F8F6F1",
-    "tab.activeBorderTop": "#B08800",
+    "tab.activeBorderTop": "#f9826c",
 
     "breadcrumb.foreground": "#6a737d",
     "breadcrumb.focusForeground": "#24292e",
@@ -109,7 +103,7 @@
 
     "editor.foreground": "#24292e",
     "editor.background": "#F8F6F1",
-    "editor.foldBackground": "#F3F0E8",
+    "editor.foldBackground": "#fafbfc",
     "editor.lineHighlightBackground": "#EFEBE0",
     "editorLineNumber.foreground": "#1b1f234d",
     "editorLineNumber.activeForeground": "#24292e",
