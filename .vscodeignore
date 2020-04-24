@@ -3,3 +3,4 @@
 images/**
 .vscode-test/**
 .gitignore
+.markdownlintrc
