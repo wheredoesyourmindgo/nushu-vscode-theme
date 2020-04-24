@@ -4,6 +4,8 @@
 
 Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme) featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
 
+<img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/preview.png" alt="Theme Preview Image" width="500" />
+
 ## Attribution
 
 The project name references [Remembering Nüshu, the 19th-Century Chinese Script Only Women Could Write](https://www.atlasobscura.com/articles/nushu-chinese-script-women).
