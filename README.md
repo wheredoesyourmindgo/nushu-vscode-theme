@@ -8,7 +8,7 @@ Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-v
 
 <div align="center" style="padding-top:16px;padding-bottom:32px;">
 
-<img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/preview-collage@2x.png" alt="Theme Preview Image" style="object-fit:cover;height:450px;width:auto;" />
+<img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/preview-collage@2x.png" alt="Theme Preview Image" width="700" />
 
 </div>
 
