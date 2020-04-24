@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.5
+
+- Updated badge background and foreground from bluish to yellow/brownish.
+  - #005cc5 --> #735C0F
+  - #dbedff --> #FFFBDD
+
 ## 0.4.4
 
 - Defined palette for statusBar.debuggingForeground and statusBar.noFolderForeground to prevent purple status bar from displaying.
