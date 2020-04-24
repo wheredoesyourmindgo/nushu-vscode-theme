@@ -1,7 +1,7 @@
 {
-  "name": "github-paper-coffee-vscode-theme",
-  "displayName": "GitHub Paper Coffee",
-  "description": "🐙🐱📜☕",
+  "name": "nushu-vscode-theme",
+  "displayName": "Nüshu",
+  "description": "A VSCode theme that will continue to fade with time",
   "version": "0.3.5",
   "scripts": {
     "release:major": "vsce publish major && git push",
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wheredoesyourmindgo/github-paper-coffee-theme"
+    "url": "https://github.com/wheredoesyourmindgo/nushu-theme"
   },
   "bugs": {
-    "url": "https://github.com/wheredoesyourmindgo/github-paper-coffee-theme/issues"
+    "url": "https://github.com/wheredoesyourmindgo/nushu-theme/issues"
   },
   "engines": {
     "vscode": "^1.43.0"
@@ -33,12 +33,13 @@
     "github",
     "light",
     "primer",
-    "paper"
+    "paper",
+    "women"
   ],
   "contributes": {
     "themes": [
       {
-        "label": "GitHub Paper Coffee",
+        "label": "Nüshu",
         "uiTheme": "vs",
         "path": "./themes/light.json"
       }
