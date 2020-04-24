@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3
+
+- Preview added to README.md
+
 ## 0.4.2
 
 - #e36209 --> #044289 (Use blue foreground over orange)
