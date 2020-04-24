@@ -223,7 +223,7 @@
     {
       "scope": "entity.name.tag",
       "settings": {
-        "foreground": "#22863a"
+        "foreground": "#D15704"
       }
     },
     {
@@ -276,7 +276,7 @@
     {
       "scope": "variable",
       "settings": {
-        "foreground": "#e36209"
+        "foreground": "#044289"
       }
     },
     {
@@ -364,7 +364,7 @@
       "scope": "string.regexp constant.character.escape",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#22863a"
+        "foreground": "#D15704"
       }
     },
     {
@@ -404,7 +404,7 @@
     {
       "scope": "markup.quote",
       "settings": {
-        "foreground": "#22863a"
+        "foreground": "#D15704"
       }
     },
     {
