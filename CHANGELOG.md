@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.4
+
+- Defined palette for statusBar.debuggingForeground and statusBar.noFolderForeground to prevent purple status bar from displaying.
+- Selection background colors updated from blue-ish to yellow/brown-ish
+  - #e8eaed --> #E7E1D0 (10% darker than PPC background color)
+  - #0366d6 --> #DBAB09 (yellow 700)
+- Updated terminal white & black colors
+
 ## 0.4.3
 
 - Preview added to README.md
