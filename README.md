@@ -3,13 +3,11 @@
    <img width="400" src="https://raw.githubusercontent.com/wheredoesyourmindgo/nushu-vscode-theme/master/images/logo.png" />
 </p>
 
-<p align="center" style="padding:16px 0;font-size:32px;">🐙🐱📜☕</p>
-
 Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme) featuring the [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) off-white background.
 
 ## Attribution
 
-The project name came from the [Remembering Nüshu, the 19th-Century Chinese Script Only Women Could Write](https://www.atlasobscura.com/articles/nushu-chinese-script-women)
+The project name references [Remembering Nüshu, the 19th-Century Chinese Script Only Women Could Write](https://www.atlasobscura.com/articles/nushu-chinese-script-women).
 
 The font used in this README's title (logo) is [Kiperman](https://www.harbortype.com/fonts/kiperman/) from Harbor Type.
 
