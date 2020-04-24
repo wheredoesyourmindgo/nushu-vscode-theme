@@ -30,8 +30,8 @@
     "input.foreground": "#24292e",
     "input.placeholderForeground": "#959da5",
 
-    "badge.foreground": "#005cc5",
-    "badge.background": "#dbedff",
+    "badge.foreground": "#735C0F",
+    "badge.background": "#FFFBDD",
 
     "progressBar.background": "#2188ff",
 
