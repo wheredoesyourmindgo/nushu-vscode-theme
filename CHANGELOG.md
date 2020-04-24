@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2
+
+- #e36209 --> #044289 (Use blue foreground over orange)
+- #22863a --> #d15704 (Use orange foreground over green)
+- Icon updated
+
 ## 0.4.1
 
 - README.md updated
@@ -30,7 +36,7 @@
 
 ## 0.2.3
 
-- #f9826c --> #B08800 (Use yellow/brown hightlight over rose)
+- #f9826c --> #B08800 (Use yellow/brown foreground over rose)
 - #d73a49 --> #735C0F (Syntax doesn't need to be dangerous)
 - Custom font styles added for Bold and Italic font variations
 - Custom Terminal colors added using Primer palette selections
