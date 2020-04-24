@@ -1,3 +1,5 @@
 .vscode/**
+!images/icon.png
+images/**
 .vscode-test/**
 .gitignore
