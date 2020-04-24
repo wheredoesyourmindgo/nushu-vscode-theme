@@ -2,7 +2,7 @@
   "name": "nushu-vscode-theme",
   "displayName": "Nüshu",
   "description": "A VSCode theme that will continue to fade with time",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "scripts": {
     "release:major": "vsce publish major && git push",
     "release:minor": "vsce publish minor && git push",
