@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1
+
+- README.md updated
+
 ## 0.4.0
 
 - Project renamed
