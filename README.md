@@ -6,17 +6,6 @@ Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-v
 
 ## Preview
 
-<style>
-   #responsive {
-      flex-direction: row;
-   }
-   @media (max-width: 300px) {
-      #responsive {
-         flex-direction: column;
-      }
-   }
-</style>
-
 <div id="responsive" style="display:flex;justify-content:space-between;padding-top:16px;padding-bottom:32px;max-height:350px;overflow:hidden;">
 
 <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/sample-js.png" alt="Theme Preview Image" height="350px" style="object-fit:cover;height:350px;width:auto;" />
