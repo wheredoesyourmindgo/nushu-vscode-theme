@@ -6,11 +6,9 @@ Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-v
 
 ## Preview
 
-<div id="responsive" style="display:flex;justify-content:space-between;padding-top:16px;padding-bottom:32px;max-height:350px;overflow:hidden;">
+<div align="center" style="padding-top:16px;padding-bottom:32px;">
 
-<img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/sample-js.png" alt="Theme Preview Image" height="350px" style="object-fit:cover;height:350px;width:auto;" />
-
-<img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/preview.png" alt="Theme Preview Image" height="350px" style="object-fit:cover;padding-left:16px;height:350px;width:auto;" />
+<img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/preview-collage@2x.png" alt="Theme Preview Image" style="object-fit:cover;height:450px;width:auto;" />
 
 </div>
 
