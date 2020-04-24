@@ -34,7 +34,9 @@
     "light",
     "primer",
     "paper",
-    "women"
+    "women",
+    "pen paper coffee",
+    "parchment"
   ],
   "contributes": {
     "themes": [
