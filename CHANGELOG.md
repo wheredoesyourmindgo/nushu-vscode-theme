@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+- Project renamed
+
 ## 0.3.5
 
 - Fix package version
