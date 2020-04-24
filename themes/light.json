@@ -60,10 +60,9 @@
     "list.hoverForeground": "#24292e",
     "list.inactiveSelectionForeground": "#24292e",
     "list.activeSelectionForeground": "#24292e",
-    "list.hoverBackground": "#EBF0F4E6",
-    "list.inactiveSelectionBackground": "#E7E1D0F2",
-    "list.activeSelectionBackground": "#E2E5E9f2",
-    "list.focusBackground": "#EBF0F4E6",
+    "list.hoverBackground": "#ebf0f4",
+    "list.inactiveSelectionBackground": "#E7E1D0",
+    "list.activeSelectionBackground": "#e2e5e9",
 
     "tree.indentGuidesStroke": "#e1e4e8",
 
@@ -75,8 +74,14 @@
     "quickInput.foreground": "#24292e",
 
     "statusBar.foreground": "#586069",
+    "statusBar.debuggingForeground":  "#586069",
+    "statusBar.noFolderForeground":  "#586069",
     "statusBar.background": "#F8F6F1",
-    "statusBar.border": "#e1e4e8",
+    "statusBar.debuggingBackground": "#F8F6F1",
+    "statusBar.noFolderBackground": "#F8F6F1",
+    "statusBar.border": "#E1E4E8",
+    "statusBar.debuggingBorder": "#E1E4E8",
+    "statusBar.noFolderBorder": "#E1E4E8",
 
     "editorGroupHeader.tabsBackground": "#EFEBE0",
     "editorGroupHeader.tabsBorder": "#e1e4e8",
