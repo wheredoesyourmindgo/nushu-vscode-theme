@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wheredoesyourmindgo/nushu-theme"
+    "url": "https://github.com/wheredoesyourmindgo/nushu-vscode-theme"
   },
   "bugs": {
-    "url": "https://github.com/wheredoesyourmindgo/nushu-theme/issues"
+    "url": "https://github.com/wheredoesyourmindgo/nushu-vscode-theme/issues"
   },
   "engines": {
     "vscode": "^1.43.0"
