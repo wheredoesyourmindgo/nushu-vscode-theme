@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.6
+
+- New preview image added to README.md
+
 ## 0.4.5
 
 - Updated badge background and foreground from bluish to yellow/brownish.
