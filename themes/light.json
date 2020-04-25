@@ -384,6 +384,15 @@
       }
     },
     {
+      "scope": [
+        "entity.other.attribute-name.id", 
+        "entity.other.attribute-name.id punctuation.definition.entity" 
+      ],
+      "settings": {
+        "foreground": "#24292E"
+      }
+    },
+    {
       "scope": "string.regexp constant.character.escape",
       "settings": {
         "fontStyle": "bold",
