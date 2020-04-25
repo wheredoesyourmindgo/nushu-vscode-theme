@@ -1,18 +1,22 @@
 # Changelog
 
+## 0.4.7
+
+- Add opacity to list and badge backgrounds
+
 ## 0.4.6
 
 - New preview image added to README.md
 
 ## 0.4.5
 
-- Updated badge background and foreground from bluish to yellow/brownish.
+- Updated badge background and foreground from bluish to yellow/brownish
   - #005cc5 --> #735C0F
   - #dbedff --> #FFFBDD
 
 ## 0.4.4
 
-- Defined palette for statusBar.debuggingForeground and statusBar.noFolderForeground to prevent purple status bar from displaying.
+- Defined palette for statusBar.debuggingForeground and statusBar.noFolderForeground to prevent purple status bar from displaying
 - Selection background colors updated from blue-ish to yellow/brown-ish
   - #e8eaed --> #E7E1D0 (10% darker than PPC background color)
   - #0366d6 --> #DBAB09 (yellow 700)
