@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.10
+
+- Use different colors for built-in support functions and variable.other.normal scope (target variables in Shell scripts)
+
 ## 0.4.9
 
 - Use a separate color for css id selectors

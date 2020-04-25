@@ -203,7 +203,8 @@
         "constant",
         "entity.name.constant",
         "variable.other.constant",
-        "variable.language"
+        "variable.language",
+        "variable.other.normal"
       ],
       "settings": {
         "foreground": "#005cc5"
@@ -220,7 +221,8 @@
     {
       "scope": [
         "entity",
-        "entity.name"
+        "entity.name",
+        "support.function.builtin"
       ],
       "settings": {
         "foreground": "#6f42c1"
