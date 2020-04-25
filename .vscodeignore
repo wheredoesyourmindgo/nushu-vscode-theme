@@ -1,3 +1,7 @@
 .vscode/**
+!images/icon.png
+images/**
+extra/**
 .vscode-test/**
 .gitignore
+.markdownlintrc
