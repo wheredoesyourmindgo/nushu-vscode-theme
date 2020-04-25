@@ -31,7 +31,7 @@
     "input.placeholderForeground": "#959da5",
 
     "badge.foreground": "#735C0F",
-    "badge.background": "#FFFBDD",
+    "badge.background": "#FFFBDDF2",
 
     "progressBar.background": "#2188ff",
 
@@ -60,9 +60,10 @@
     "list.hoverForeground": "#24292e",
     "list.inactiveSelectionForeground": "#24292e",
     "list.activeSelectionForeground": "#24292e",
-    "list.hoverBackground": "#ebf0f4",
-    "list.inactiveSelectionBackground": "#E7E1D0",
-    "list.activeSelectionBackground": "#e2e5e9",
+    "list.hoverBackground": "#EBF0F4E6",
+    "list.inactiveSelectionBackground": "#E7E1D0F2",
+    "list.activeSelectionBackground": "#E2E5E9f2",
+    "list.focusBackground": "#EBF0F4E6",
 
     "tree.indentGuidesStroke": "#e1e4e8",
 
