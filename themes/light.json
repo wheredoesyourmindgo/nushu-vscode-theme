@@ -373,6 +373,17 @@
       }
     },
     {
+      "scope": [
+        "entity.other.attribute-name.pseudo-class",
+        "entity.other.attribute-name.pseudo-element",
+        "entity.other.attribute-name.pseudo-class.css punctuation.definition.entity.css",
+        "entity.other.attribute-name.pseudo-element.css punctuation.definition.entity.css"
+      ],
+      "settings": {
+        "foreground": "#735C0F"
+      }
+    },
+    {
       "scope": "string.regexp constant.character.escape",
       "settings": {
         "fontStyle": "bold",
@@ -729,7 +740,11 @@
         "source.nim keyword.other.common.function",
         "source.nim keyword.other",
         "source.scala keyword.declaration",
-        "source.scala entity.name.class.declaration"
+        "source.scala entity.name.class.declaration",
+        "entity.other.attribute-name.pseudo-class",
+        "entity.other.attribute-name.pseudo-element",
+        "entity.other.attribute-name.pseudo-class.css punctuation.definition.entity.css",
+        "entity.other.attribute-name.pseudo-element.css punctuation.definition.entity.css"
       ],
       "settings": {
         "fontStyle": ""
