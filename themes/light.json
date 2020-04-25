@@ -211,6 +211,14 @@
     },
     {
       "scope": [
+        "constant.language"
+      ],
+      "settings": {
+        "foreground": "#D15704"
+      }
+    },
+    {
+      "scope": [
         "entity",
         "entity.name"
       ],

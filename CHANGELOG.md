@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.8
+
+- Use a separate color for constant.language scope
+
 ## 0.4.7
 
 - Add opacity to list and badge backgrounds
