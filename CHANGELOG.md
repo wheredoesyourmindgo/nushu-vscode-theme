@@ -2,6 +2,7 @@
 
 ## 0.4.10
 
+- Changes targeting YAML scopes.
 - Use different colors for built-in support functions and variable.other.normal scope (target variables in Shell scripts)
 
 ## 0.4.9

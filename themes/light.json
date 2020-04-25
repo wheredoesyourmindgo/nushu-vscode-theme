@@ -276,7 +276,10 @@
       }
     },
     {
-      "scope": "support",
+      "scope": [
+        "support",
+        "source.yaml entity.name.tag"
+      ],
       "settings": {
         "foreground": "#005cc5"
       }
