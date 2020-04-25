@@ -2,6 +2,7 @@
 
 ## 0.4.8
 
+- Use a separate color for css id selectors
 - Use a separate color for pseudo class/element scopes
 - Use a separate color for constant.language scope
 
