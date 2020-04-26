@@ -1,7 +1,7 @@
 {
   "name": "Nüshu",
   "colors": {
-    "focusBorder": "#2188ff",
+    "focusBorder": "#735c0f59",
     "foreground": "#444d56",
     "descriptionForeground": "#6a737d",
     "errorForeground": "#cb2431",
@@ -25,13 +25,13 @@
     "dropdown.border": "#e1e4e8",
     "dropdown.foreground": "#24292e",
 
-    "input.background": "#F3F0E8",
+    "input.background": "#F8F6F1",
     "input.border": "#e1e4e8",
     "input.foreground": "#24292e",
     "input.placeholderForeground": "#959da5",
 
-    "badge.foreground": "#735C0F",
-    "badge.background": "#FFFBDDF2",
+    "badge.foreground": "#2188ff",
+    "badge.background": "#F8F6F1",
 
     "progressBar.background": "#2188ff",
 
@@ -63,7 +63,7 @@
     "list.hoverBackground": "#EBF0F4E6",
     "list.inactiveSelectionBackground": "#E7E1D0F2",
     "list.activeSelectionBackground": "#E2E5E9F2",
-    "list.focusBackground": "#EBF0F4E6",
+    "list.focusBackground": "#DBEDFFF2",
 
     "tree.indentGuidesStroke": "#e1e4e8",
 
@@ -221,8 +221,7 @@
     {
       "scope": [
         "entity",
-        "entity.name",
-        "support.function.builtin"
+        "entity.name"
       ],
       "settings": {
         "foreground": "#6f42c1"
@@ -391,7 +390,7 @@
     {
       "scope": [
         "entity.other.attribute-name.id", 
-        "entity.other.attribute-name.id punctuation.definition.entity" 
+        "entity.other.attribute-name.id punctuation.definition.entity"
       ],
       "settings": {
         "foreground": "#24292E"

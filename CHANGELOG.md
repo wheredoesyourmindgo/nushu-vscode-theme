@@ -2,8 +2,12 @@
 
 ## 0.4.10
 
+- Use a blue badge and background for consistency
+- Decrease contrast of focus borders
+- Increase contrast of input background
+- Increase contrast of list.focusBackground
 - Changes targeting YAML scopes.
-- Use different colors for built-in support functions and variable.other.normal scope (target variables in Shell scripts)
+- Use different color for variable.other.normal scope (target variables in Shell scripts)
 
 ## 0.4.9
 
