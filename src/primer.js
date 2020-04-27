@@ -1,6 +1,12 @@
 const { colors } = require("@primer/primitives");
+const nushuColors = require('./nushu-palette.json')
 
 function getColors(style) {
+  // Patch colors with Nushu variants.
+  colors.black = nushuColors.black
+  colors.white = nushuColors.white
+  colors.nushuGray = nushuColors.gray
+
   if (style === "dark") {
     /* The array of light to dark colors are reversed to auto-generate dark theme */
     const darkColors = {};
