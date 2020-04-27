@@ -172,11 +172,23 @@ function getTheme({ style, name }) {
           "entity.name.constant",
           "variable.other.constant",
           "variable.language",
+          // Added.
+          "variable.other.normal"
         ],
         settings: {
           foreground: primer.blue[6],
         },
       },
+      /* Added */
+      {
+        "scope": [
+          "constant.language"
+        ],
+        "settings": {
+          "foreground": primer.orange[7]
+        }
+      },
+      /* */
       {
         scope: ["entity", "entity.name"],
         settings: {
@@ -192,19 +204,22 @@ function getTheme({ style, name }) {
       {
         scope: "entity.name.tag",
         settings: {
-          foreground: primer.green[6],
+          // foreground: primer.green[6],
+          foreground: primer.orange[7],
         },
       },
       {
         scope: "keyword",
         settings: {
-          foreground: primer.red[5],
+          // foreground: primer.red[5],
+          foreground: primer.yellow[9],
         },
       },
       {
         scope: ["storage", "storage.type"],
         settings: {
-          foreground: primer.red[5],
+          // foreground: primer.red[5],
+          foreground: primer.yellow[9],
         },
       },
       {
@@ -233,6 +248,16 @@ function getTheme({ style, name }) {
           foreground: primer.blue[6],
         },
       },
+      /* Added */
+      {
+        "scope": [
+          "source.yaml entity.name.tag"
+        ],
+        "settings": {
+          foreground: primer.blue[6],
+        }
+      },
+      /* */
       {
         scope: "meta.property-name",
         settings: {
@@ -242,7 +267,8 @@ function getTheme({ style, name }) {
       {
         scope: "variable",
         settings: {
-          foreground: primer.orange[6],
+          // foreground: primer.orange[6],
+          foreground: primer.blue[7],
         },
       },
       {
@@ -283,8 +309,10 @@ function getTheme({ style, name }) {
         scope: "carriage-return",
         settings: {
           fontStyle: "italic underline",
-          background: primer.red[5],
-          foreground: primer.gray[0],
+          // background: primer.red[5],
+          background: primer.yellow[9],
+          // foreground: primer.gray[0],
+          foreground: primer.nushuGray[0],
           content: "^M",
         },
       },
@@ -443,7 +471,8 @@ function getTheme({ style, name }) {
       {
         scope: ["markup.ignored", "markup.untracked"],
         settings: {
-          foreground: primer.gray[1],
+          // foreground: primer.gray[1],
+          foreground: primer.nushuGray[1],
           background: primer.blue[6],
         },
       },
