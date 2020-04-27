@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.11
+
+- Merge upstream/master
+
 ## 0.4.10
 
 - Use a blue badge and background for consistency
@@ -90,7 +94,7 @@
 
 ## 0.2.2
 
-- Fix invalid scope
+- Fix invalid scope [#2](https://github.com/primer/github-vscode-theme/pull/2)
 
 ## 0.2.1
 

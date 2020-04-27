@@ -6,7 +6,9 @@
   "scripts": {
     "release:major": "vsce publish major && git push",
     "release:minor": "vsce publish minor && git push",
-    "release:patch": "vsce publish patch && git push"
+    "release:patch": "vsce publish patch && git push",
+		"start": "nodemon --watch src src/index.js",
+		"build": "node src/index.js"
   },
   "icon": "images/icon.png",
   "preview": true,
@@ -44,11 +46,21 @@
         "label": "Nüshu",
         "uiTheme": "vs",
         "path": "./themes/light.json"
+      },
+      {
+        "label": "Nüshu disappear",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark.json"
       }
     ]
   },
   "license": "MIT",
   "__metadata": {
     "publisherDisplayName": "wheredoesyourmindgo"
-  }
+  },
+  "devDependencies": {
+		"@primer/primitives": "^2.0.1",
+		"color": "^3.1.2",
+		"nodemon": "^2.0.3"
+	}
 }
