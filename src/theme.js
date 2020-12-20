@@ -186,7 +186,7 @@ function getTheme({ style, name }) {
       "terminal.ansiBrightMagenta":primer.pink[7],
       "terminal.ansiBrightCyan": primer.blue[7],
       "terminal.ansiBrightWhite": primer.gray[2],
-      "terminal.background": "#f6f3ed",
+      "terminal.background": pick({ light: "#f6f3ed", dark: primer.gray[0] }),
       "terminal.foreground": primer.gray[6],
 
       "gitDecoration.addedResourceForeground": primer.green[5],
