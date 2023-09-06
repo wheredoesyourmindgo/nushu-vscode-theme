@@ -1,215 +1,347 @@
-const { getVariant } = require("./process");
-const { getColors } = require("./primer");
+const chroma = require("chroma-js");
+const { getColors } = require("./colors");
 
-function getTheme({ style, name }) {
-  // Usage: `auto('pink')`
-  const auto = (hex) => getVariant(hex, style);
+// Choosing colors from primer/primitives
+// There are multiple ways to define what color is used:
 
-  // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
-  const pick = (options) => options[style];
+// 1. Global variable
+//    e.g. "textLink.foreground": color.fg.default,
+// 2. Color scale
+//    e.g. "textLink.foreground": scale.blue[5],
+// 3. Per theme. Useful when a certain theme needs an exception
+//    e.g. "textLink.foreground": themes({ light: scale.blue[5], light_high_contrast: scale.blue[5], light_colorblind: scale.blue[5], dark: scale.blue[2], dark_high_contrast: scale.blue[3], dark_colorblind: scale.blue[2], dark_dimmed: scale.blue[3] }),
 
-  const primer = getColors(style);
+function getTheme({ theme, name }) {
+
+  const themes = (options) => options[theme]; // Usage: themes({ light: "lightblue", light_high_contrast: "lightblue", light_colorblind: "lightblue", dark: "darkblue", dark_high_contrast: "darkblue", dark_colorblind: "darkblue", dark_dimmed: "royalblue" })
+  const rawColors = getColors(theme)
+  const color = changeColorToHexAlphas(rawColors)
+  const scale = color.scale; // Usage: scale.blue[6]
+
+  const onlyDark = (color) => {
+    return themes({ dark: color, dark_high_contrast: color, dark_colorblind: color, dark_dimmed: color })
+  }
+
+  const onlyHighContrast = (color) => {
+    return themes({ light_high_contrast: color, dark_high_contrast: color })
+  }
+
+  const onlyDarkHighContrast = (color) => {
+    return themes({ dark_high_contrast: color })
+  }
+
+  const lightDark = (light, dark) => {
+    return themes({ light: light, light_high_contrast: light, light_colorblind: light, dark: dark, dark_high_contrast: dark, dark_colorblind: dark, dark_dimmed: dark })
+  }
+
+  const alpha = (color, alpha) => {
+    return chroma(color).alpha(alpha).hex()
+  }
+
   return {
     name: name,
     colors: {
-      foreground: primer.gray[7],
-      // focusBorder: pick({ light: primer.blue[4], dark: primer.blue[3] }),
-      focusBorder: pick({ light: primer.yellow[9] + '59', dark: primer.blue[3] }),
-      foreground: pick({ light: primer.gray[7], dark: primer.gray[6] }),
-      descriptionForeground: primer.gray[5],
-      errorForeground: primer.red[6],
-      "textLink.foreground": pick({ light: primer.blue[5], dark: primer.blue[6] }),
-      "textLink.activeForeground": pick({ light: primer.blue[6], dark: primer.blue[7] }),
-      // "textBlockQuote.background": primer.gray[0],
-      "textBlockQuote.background": primer.nushuGray[0],
-      "textBlockQuote.border": primer.gray[2],
-      // "textCodeBlock.background": primer.gray[1],
-      "textCodeBlock.background": primer.nushuGray[1],
-      "textPreformat.foreground": primer.gray[6],
-      "textSeparator.foreground": primer.gray[3],
-      "button.background": pick({ light: "#159739", dark: primer.green[2] }),
-      "button.foreground": pick({ light: primer.white, dark: primer.green[8] }),
-      "button.hoverBackground": pick({ light: "#138934", dark: primer.green[3] }),
-      "checkbox.border": pick({ light: primer.gray[3], dark: primer.white }),
-      "checkbox.background": pick({ light: primer.gray[0], dark: primer.gray[2] }),
-      // "dropdown.background": pick({ light: primer.gray[0], dark: primer.gray[1] }),
-      "dropdown.background": pick({ light: primer.nushuGray[0], dark: primer.gray[1] }),
-      "dropdown.listBackground": pick({ light: primer.white, dark: primer.gray[0] }),
-      "dropdown.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "dropdown.foreground": primer.gray[9],
-      // "input.background": pick({ light: primer.gray[0], dark: primer.gray[1] }),
-      "input.background": pick({ light: primer.white, dark: primer.gray[1] }),
-      "input.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "input.foreground": primer.gray[9],
-      "input.placeholderForeground": pick({ light: primer.gray[4], dark: primer.gray[5] }),
-      // "badge.foreground": pick({ light: primer.blue[6], dark: primer.blue[7] }),
-      "badge.foreground": pick({ light: primer.blue[4], dark: primer.blue[7] }),
-      // "badge.background": pick({ light: primer.blue[1], dark: primer.blue[2] }),
-      "badge.background": pick({ light: primer.white, dark: primer.blue[2] }),
-      "progressBar.background": primer.blue[4],
+      focusBorder          : color.accent.emphasis,
+      foreground           : color.fg.default,
+      descriptionForeground: color.fg.muted,
+      errorForeground      : color.danger.fg,
 
-      "titleBar.activeForeground": primer.gray[9],
-      "titleBar.activeBackground": pick({ light: primer.white, dark: primer.gray[0] }),
-      "titleBar.inactiveForeground": primer.gray[5],
-      // "titleBar.inactiveBackground": primer.nushuGray[1],
-      "titleBar.inactiveBackground": pick({ light: primer.nushuGray[1], dark: "#1f2428" }),
-      "titleBar.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "activityBar.foreground": primer.gray[9],
-      "activityBar.inactiveForeground": primer.gray[4],
-      "activityBar.background": pick({ light: primer.white, dark: primer.gray[0] }),
-      "activityBarBadge.foreground": pick({ light: primer.white, dark: primer.black }),
-      "activityBarBadge.background": pick({ light: primer.blue[4], dark: primer.blue[4] }),
-      "activityBarBadge.foreground": primer.white,
-      "activityBarBadge.background": primer.blue[4],
-      // "activityBar.activeBorder": "#f9826c",
-      "activityBar.activeBorder": primer.yellow[8],
-      "activityBar.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "sideBar.foreground": primer.gray[7],
-      // "sideBar.background": pick({ light: primer.gray[1], dark: "#1f2428" }),
-      "sideBar.background": pick({ light: primer.nushuGray[1], dark: "#1f2428" }),
-      "sideBar.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "sideBarTitle.foreground": primer.gray[9],
-      "sideBarSectionHeader.foreground": primer.gray[9],
-      // "sideBarSectionHeader.background": pick({ light: primer.gray[1], dark: "#1f2428" }),
-      "sideBarSectionHeader.background": pick({ light: primer.nushuGray[1], dark: "#1f2428" }),
-      "sideBarSectionHeader.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "list.hoverForeground": primer.gray[9],
-      "list.inactiveSelectionForeground": primer.gray[9],
-      "list.activeSelectionForeground": primer.gray[9],
-      // "list.hoverBackground": pick({ light: "#ebf0f4", dark: primer.gray[0] }),
-      "list.hoverBackground": pick({ light: "#ebf0f4" + 'E6', dark: primer.gray[0] }),
-      // "list.inactiveSelectionBackground": pick({ light: "#e8eaed", dark: "#282e34" }),
-      "list.inactiveSelectionBackground": pick({ light: primer.nushuGray[2] + 'F2', dark: "#282e34" }),
-      // "list.activeSelectionBackground": pick({ light: "#e2e5e9", dark: "#39414a" }),
-      "list.activeSelectionBackground": pick({ light: "#e2e5e9" + 'F2', dark: "#39414a" }),
-      "list.inactiveFocusBackground": pick({ light: primer.blue[1], dark: "#1d2d3e" }),
-      // "list.focusBackground": pick({ light: "#cce5ff", dark: primer.blue[2] }),
-      "list.focusBackground": pick({ light: primer.blue[1] + 'F2', dark: primer.blue[2] }),
-      "tree.indentGuidesStroke": pick({ light: primer.gray[2], dark: primer.gray[1] }),
-      // "notificationCenterHeader.background": primer.gray[0],
-      "notificationCenterHeader.background": primer.nushuGray[0],
-      "pickerGroup.border": primer.gray[2],
-      "pickerGroup.foreground": primer.gray[9],
-      // "quickInput.background": primer.gray[0],
-      "quickInput.background": primer.nushuGray[0],
-      "quickInput.foreground": primer.gray[9],
+      "textLink.foreground"      : color.accent.fg,
+      "textLink.activeForeground": color.accent.fg,
+      "textBlockQuote.background": color.canvas.inset,
+      "textBlockQuote.border"    : color.border.default,
+      "textCodeBlock.background" : color.neutral.muted,
+      "textPreformat.foreground" : color.fg.muted,
+      "textSeparator.foreground" : color.border.muted,
 
-      "statusBar.foreground": primer.gray[6],
-      // "statusBar.debuggingForeground": primer.white,
-      "statusBar.debuggingForeground": primer.gray[6],
-      "statusBar.noFolderForeground": primer.gray[6],
-      "statusBar.background": pick({ light: primer.white, dark: primer.gray[0] }),
-      // "statusBar.debuggingBackground": auto("#f9826c"),
-      "statusBar.debuggingBackground": primer.white,
-      "statusBar.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "statusBar.noFolderBackground": pick({ light: primer.white, dark: primer.gray[0] }),
-      "statusBar.debuggingBorder": primer.gray[2],
-      "statusBar.noFolderBorder": primer.gray[2],
-      // "editorGroupHeader.tabsBackground": pick({ light: primer.gray[1], dark: "#1f2428" }),
-      "editorGroupHeader.tabsBackground": pick({ light: primer.nushuGray[1], dark: "#1f2428" }),
-      "editorGroupHeader.tabsBorder": pick({ light: primer.gray[2], dark: primer.white }),
-      "editorGroup.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "tab.activeForeground": primer.gray[9],
-      "tab.inactiveForeground": primer.gray[5],
-      // "tab.inactiveBackground": pick({ light: primer.gray[1], dark: "#1f2428" }),
-      "tab.inactiveBackground": pick({ light: primer.nushuGray[1], dark: "#1f2428" }),
-      "tab.activeBackground": pick({ light: primer.white, dark: primer.gray[0] }),
-      "tab.hoverBackground": pick({ light: primer.white, dark: primer.gray[0] }),
-      "tab.border": pick({ light: primer.gray[2], dark: primer.white }),
-      "tab.unfocusedActiveBorderTop": pick({ light: primer.gray[2], dark: primer.white }),
-      "tab.unfocusedHoverBackground": pick({ light: primer.white, dark: primer.gray[0] }),
-      "tab.activeBorder": pick({ light: primer.white, dark: primer.gray[0] }),
-      "tab.unfocusedActiveBorder": pick({ light: primer.white, dark: primer.gray[0] }),
-      // "tab.activeBorderTop": "#f9826c",
-      "tab.activeBorderTop": primer.yellow[8],
-      "breadcrumb.foreground": primer.gray[5],
-      "breadcrumb.focusForeground": primer.gray[9],
-      "breadcrumb.activeSelectionForeground": primer.gray[6],
-      // "breadcrumbPicker.background": pick({ light: primer.gray[0], dark: "#2b3036" }),
-      "breadcrumbPicker.background": pick({ light: primer.nushuGray[0], dark: "#2b3036" }),
-      "editor.foreground": primer.gray[9],
-      "editor.background": pick({ light: primer.white, dark: primer.gray[0] }),
-      // "editor.foldBackground": pick({ light: primer.gray[0], dark: "#282e33" }),
-      "editor.foldBackground": pick({ light: primer.nushuGray[0], dark: "#282e33" }),
-      // "editor.lineHighlightBackground": pick({ light: primer.gray[1], dark: "#2b3036" }),
-      "editor.lineHighlightBackground": pick({ light: primer.nushuGray[1], dark: "#2b3036" }),
-      "editorLineNumber.foreground": pick({ light: "#1b1f234d", dark: primer.gray[2] }),
-      "editorLineNumber.activeForeground": primer.gray[9],
-      "editorIndentGuide.background": pick({ light: "#eff2f6", dark: primer.gray[1] }),
-      "editorIndentGuide.activeBackground": pick({ light: "#d7dbe0", dark: primer.gray[2] }),
-      "editorWhitespace.foreground": pick({ light: primer.gray[4], dark: primer.gray[4] }),
-      "editorCursor.foreground": primer.blue[7],
-      // "editor.inactiveSelectionBackground": pick({ light: "#0366d611", dark: "#79b8ff11" }),
-      "editor.inactiveSelectionBackground": pick({ light: primer.yellow[7] + '11', dark: "#79b8ff11" }),
-      // "editor.selectionBackground": pick({ light: "#0366d625", dark: "#2188ff33" }),
-      "editor.selectionBackground": pick({ light: primer.yellow[7] + '25', dark: "#2188ff33" }),
-      // "editor.wordHighlightBackground": pick({ light: "#0366d622", dark: "#2188ff22" }),
-      "editor.wordHighlightBackground": pick({ light:  primer.yellow[7] + '22', dark: "#2188ff22" }),
-      // "editor.findMatchBackground": pick({ light: primer.yellow[4], dark: "#ffd33d44" }),
-      "editor.findMatchBackground": pick({ light: primer.yellow[4], dark: "#ffd33d44" }),
-      "editor.findMatchHighlightBackground": pick({ light: "#ffdf5d66", dark: "#ffd33d22" }),
-      "editorBracketMatch.background": pick({ light: primer.blue[2], dark: primer.blue[3] }),
-      "editorBracketMatch.border": pick({ light: primer.blue[2], dark: primer.blue[3] }),
-      "editorGutter.modifiedBackground": pick({ light: primer.blue[4], dark: primer.blue[5] }),
-      "editorGutter.addedBackground": pick({ light: primer.green[5], dark: primer.green[4] }),
-      "editorGutter.deletedBackground": primer.red[5],
+      "icon.foreground"           : color.fg.muted,
+      "keybindingLabel.foreground": color.fg.default,
 
-      "diffEditor.insertedTextBackground": pick({ light: "#34d05822", dark: "#28a74511" }),
-      "diffEditor.removedTextBackground": pick({ light: "#d73a4922", dark: "#d73a4918" }),
+      "button.background"     : color.btn.primary.bg,
+      "button.foreground"     : color.btn.primary.text,
+      "button.hoverBackground": color.btn.primary.hoverBg,
 
-      "scrollbar.shadow": pick({ light: "#6a737d33", dark: "#0008" }),
-      "scrollbarSlider.background": pick({ light: "#959da533", dark: "#6a737d33" }),
-      "scrollbarSlider.hoverBackground": pick({ light: "#959da544", dark: "#6a737d44" }),
-      "scrollbarSlider.activeBackground": pick({ light: "#959da588", dark: "#6a737d88" }),
-      "editorOverviewRuler.border": primer.white,
-      // "panel.background": primer.gray[1],
-      "panel.background": pick({ light: primer.nushuGray[1], dark: "#1f2428" }),
-      "panel.border": pick({ light: primer.gray[2], dark: primer.white }),
-      // "panelTitle.activeBorder": "#f9826c",
-      "panelTitle.activeBorder": primer.yellow[8],
-      "panelTitle.activeForeground": primer.gray[9],
-      "panelTitle.inactiveForeground": primer.gray[5],
-      "panelInput.border": pick({ light: primer.gray[2], dark: primer.gray[1] }),
-      "terminal.ansiBlack": primer.gray[3],
-      "terminal.ansiRed": primer.red[8],
-      "terminal.ansiGreen": primer.green[8],
-      "terminal.ansiYellow": primer.yellow[8],
-      "terminal.ansiBlue":  primer.purple[8],
-      "terminal.ansiMagenta": primer.pink[8],
-      "terminal.ansiCyan": primer.blue[8],
-      "terminal.ansiWhite": primer.gray[7],
-      "terminal.ansiBrightBlack": primer.gray[5],
-      "terminal.ansiBrightRed": primer.red[7],
-      "terminal.ansiBrightGreen":  primer.green[7],
-      "terminal.ansiBrightYellow": primer.yellow[7],
-      "terminal.ansiBrightBlue": primer.purple[7],
-      "terminal.ansiBrightMagenta":primer.pink[7],
-      "terminal.ansiBrightCyan": primer.blue[7],
-      "terminal.ansiBrightWhite": primer.gray[2],
-      "terminal.background": "#f6f3ed",
-      "terminal.foreground": primer.gray[6],
+      "button.secondaryBackground"     : color.btn.activeBg,
+      "button.secondaryForeground"     : color.btn.text,
+      "button.secondaryHoverBackground": color.btn.hoverBg,
 
-      "gitDecoration.addedResourceForeground": primer.green[5],
-      "gitDecoration.modifiedResourceForeground": primer.blue[6],
-      "gitDecoration.deletedResourceForeground": primer.red[5],
-      "gitDecoration.untrackedResourceForeground": primer.green[5],
-      "gitDecoration.ignoredResourceForeground": primer.gray[4],
-      "gitDecoration.conflictingResourceForeground": primer.orange[6],
-      "gitDecoration.submoduleResourceForeground": primer.gray[4],
-      "debugToolBar.background": pick({ light: primer.white, dark: "#2b3036" }),
-      "editor.stackFrameHighlightBackground": primer.yellow[1],
-      "editor.focusedStackFrameHighlightBackground": primer.yellow[2],
-      "settings.headerForeground": primer.gray[9],
-      "settings.modifiedItemIndicator": primer.blue[4],
-      // "welcomePage.buttonBackground": primer.gray[1],
-      "welcomePage.buttonBackground": primer.nushuGray[1],
-      "welcomePage.buttonHoverBackground": primer.gray[2],
+      "checkbox.background": color.canvas.subtle,
+      "checkbox.border"    : color.border.default,
+
+      "dropdown.background"    : color.canvas.overlay,
+      "dropdown.border"        : color.border.default,
+      "dropdown.foreground"    : color.fg.default,
+      "dropdown.listBackground": color.canvas.overlay,
+
+      "input.background"           : color.canvas.default,
+      "input.border"               : color.border.default,
+      "input.foreground"           : color.fg.default,
+      "input.placeholderForeground": color.fg.subtle,
+
+      "badge.foreground": color.fg.onEmphasis,
+      "badge.background": color.accent.emphasis,
+
+      "progressBar.background": color.accent.emphasis,
+
+      "titleBar.activeForeground"  : color.fg.muted,
+      "titleBar.activeBackground"  : color.canvas.default,
+      "titleBar.inactiveForeground": color.fg.muted,
+      "titleBar.inactiveBackground": color.canvas.inset,
+      "titleBar.border"            : color.border.default,
+
+      "activityBar.foreground"        : color.fg.default,
+      "activityBar.inactiveForeground": color.fg.muted,
+      "activityBar.background"        : color.canvas.default,
+      "activityBarBadge.foreground"   : color.fg.onEmphasis,
+      "activityBarBadge.background"   : color.accent.emphasis,
+      "activityBar.activeBorder"      : color.primer.border.active,
+      "activityBar.border"            : color.border.default,
+
+      "sideBar.foreground"             : color.fg.default,
+      "sideBar.background"             : color.canvas.inset,
+      "sideBar.border"                 : color.border.default,
+      "sideBarTitle.foreground"        : color.fg.default,
+      "sideBarSectionHeader.foreground": color.fg.default,
+      "sideBarSectionHeader.background": color.canvas.inset,
+      "sideBarSectionHeader.border"    : color.border.default,
+
+      "list.hoverForeground"            : color.fg.default,
+      "list.inactiveSelectionForeground": color.fg.default,
+      "list.activeSelectionForeground"  : color.fg.default,
+      "list.hoverBackground"            : color.neutral.subtle,
+      "list.inactiveSelectionBackground": color.neutral.muted,
+      "list.activeSelectionBackground"  : color.neutral.muted,
+      "list.focusForeground"            : color.fg.default,
+      "list.focusBackground"            : color.accent.subtle,
+      "list.inactiveFocusBackground"    : color.accent.subtle,
+      "list.highlightForeground"        : color.accent.fg,
+
+      "tree.indentGuidesStroke": color.border.muted,
+
+      "notificationCenterHeader.foreground": color.fg.muted,
+      "notificationCenterHeader.background": color.canvas.subtle,
+      "notifications.foreground"           : color.fg.default,
+      "notifications.background"           : color.canvas.overlay,
+      "notifications.border"               : color.border.default,
+      "notificationsErrorIcon.foreground"  : color.danger.fg,
+      "notificationsWarningIcon.foreground": color.attention.fg,
+      "notificationsInfoIcon.foreground"   : color.accent.fg,
+
+      "pickerGroup.border"    : color.border.default,
+      "pickerGroup.foreground": color.fg.muted,
+      "quickInput.background" : color.canvas.overlay,
+      "quickInput.foreground" : color.fg.default,
+
+      "statusBar.foreground"             : color.fg.muted,
+      "statusBar.background"             : color.canvas.default,
+      "statusBar.border"                 : color.border.default,
+      "statusBar.focusBorder"            : alpha(color.accent.emphasis, 0.5),
+      "statusBar.noFolderBackground"     : color.canvas.default,
+      "statusBar.debuggingForeground"    : color.fg.onEmphasis,
+      "statusBar.debuggingBackground"    : color.danger.emphasis,
+      "statusBarItem.prominentBackground": color.neutral.muted,
+      "statusBarItem.remoteForeground"   : color.fg.default,
+      "statusBarItem.remoteBackground"   : lightDark(color.scale.gray[1], color.scale.gray[6]),
+      "statusBarItem.hoverBackground"    : alpha(color.fg.default, 0.08),
+      "statusBarItem.activeBackground"   : alpha(color.fg.default, 0.12),
+      "statusBarItem.focusBorder"        : color.accent.emphasis,
+
+      "editorGroupHeader.tabsBackground": color.canvas.inset,
+      "editorGroupHeader.tabsBorder"    : color.border.default,
+      "editorGroup.border"              : color.border.default,
+
+      "tab.activeForeground"        : color.fg.default,
+      "tab.inactiveForeground"      : color.fg.muted,
+      "tab.inactiveBackground"      : color.canvas.inset,
+      "tab.activeBackground"        : color.canvas.default,
+      "tab.hoverBackground"         : color.canvas.default,
+      "tab.unfocusedHoverBackground": color.neutral.subtle,
+      "tab.border"                  : color.border.default,
+      "tab.unfocusedActiveBorderTop": color.border.default,
+      "tab.activeBorder"            : color.canvas.default,
+      "tab.unfocusedActiveBorder"   : color.canvas.default,
+      "tab.activeBorderTop"         : color.primer.border.active,
+
+      "breadcrumb.foreground"               : color.fg.muted,
+      "breadcrumb.focusForeground"          : color.fg.default,
+      "breadcrumb.activeSelectionForeground": color.fg.muted,
+      "breadcrumbPicker.background"         : color.canvas.overlay,
+
+      "editor.foreground"                 : color.fg.default,
+      "editor.background"                 : color.canvas.default,
+      "editorWidget.background"           : color.canvas.overlay,
+      "editor.foldBackground"             : alpha(color.neutral.emphasis, 0.1),
+      "editor.lineHighlightBackground"    : color.codemirror.activelineBg,
+      "editor.lineHighlightBorder"        : onlyDarkHighContrast(color.accent.fg),
+      "editorLineNumber.foreground"       : lightDark(scale.gray[4], scale.gray[4]),
+      "editorLineNumber.activeForeground" : color.fg.default,
+      "editorIndentGuide.background"      : alpha(color.fg.default, 0.12),
+      "editorIndentGuide.activeBackground": alpha(color.fg.default, 0.24),
+      "editorWhitespace.foreground"       : lightDark( scale.gray[3], scale.gray[5]),
+      "editorCursor.foreground"           : color.accent.fg,
+
+      "editor.findMatchBackground"            : color.attention.emphasis,
+      "editor.findMatchHighlightBackground"   : alpha(scale.yellow[1], 0.5),
+      "editor.linkedEditingBackground"        : alpha(color.accent.fg, 0.07),
+      "editor.inactiveSelectionBackground"    : alpha(color.accent.fg, 0.07),
+      "editor.selectionBackground"            : alpha(color.accent.fg, 0.2),
+      "editor.selectionHighlightBackground"   : alpha(scale.green[3], 0.25),
+      "editor.wordHighlightBackground"        : alpha(color.neutral.subtle, 0.5),
+      "editor.wordHighlightBorder"            : alpha(color.neutral.muted, 0.6),
+      "editor.wordHighlightStrongBackground"  : alpha(color.neutral.muted, 0.3),
+      "editor.wordHighlightStrongBorder"      : alpha(color.neutral.muted, 0.6),
+      "editorBracketMatch.background"         : alpha(scale.green[3], 0.25),
+      "editorBracketMatch.border"             : alpha(scale.green[3], 0.6),
+      // text selection for High Contrast themes
+      "editor.selectionForeground"            : onlyHighContrast(color.fg.onEmphasis),
+      "editor.selectionBackground"            : onlyHighContrast(color.neutral.emphasisPlus),
+      "editor.inactiveSelectionBackground"    : onlyHighContrast(color.neutral.emphasis),
+
+      "editorInlayHint.background": alpha(scale.gray[3], 0.2),
+      "editorInlayHint.foreground": color.fg.muted,
+      "editorInlayHint.typeBackground": alpha(scale.gray[3], 0.2),
+      "editorInlayHint.typeForeground": color.fg.muted,
+      "editorInlayHint.paramBackground": alpha(scale.gray[3], 0.2),
+      "editorInlayHint.paramForeground": color.fg.muted,
+
+      "editorGutter.modifiedBackground": color.attention.muted,
+      "editorGutter.addedBackground"   : color.success.muted,
+      "editorGutter.deletedBackground" : color.danger.muted,
+
+      "diffEditor.insertedLineBackground": lightDark(alpha(scale.green[1], 0.3), alpha(scale.green[5], 0.15)),
+      "diffEditor.insertedTextBackground": lightDark(alpha(scale.green[2], 0.5), alpha(scale.green[3], 0.3)),
+      "diffEditor.removedLineBackground" : lightDark(alpha(scale.red[1], 0.3), alpha(scale.red[5], 0.15)),
+      "diffEditor.removedTextBackground" : lightDark(alpha(scale.red[3], 0.4), alpha(scale.red[3], 0.3)),
+
+      "scrollbar.shadow"                  : alpha(scale.gray[5], 0.2),
+      "scrollbarSlider.background"        : lightDark(alpha(scale.gray[4], 0.2), alpha(scale.gray[3], 0.2)),
+      "scrollbarSlider.hoverBackground"   : lightDark(alpha(scale.gray[4], 0.24), alpha(scale.gray[3], 0.24)),
+      "scrollbarSlider.activeBackground"  : lightDark(alpha(scale.gray[4], 0.28), alpha(scale.gray[3], 0.28)),
+      "editorOverviewRuler.border"        : lightDark(scale.white, scale.black),
+
+      "minimapSlider.background"          : lightDark(alpha(scale.gray[4], 0.2), alpha(scale.gray[3], 0.2)),
+      "minimapSlider.hoverBackground"     : lightDark(alpha(scale.gray[4], 0.24), alpha(scale.gray[3], 0.24)),
+      "minimapSlider.activeBackground"    : lightDark(alpha(scale.gray[4], 0.28), alpha(scale.gray[3], 0.28)),
+
+      "panel.background"               : color.canvas.inset,
+      "panel.border"                   : color.border.default,
+      "panelTitle.activeBorder"        : color.primer.border.active,
+      "panelTitle.activeForeground"    : color.fg.default,
+      "panelTitle.inactiveForeground"  : color.fg.muted,
+      "panelInput.border"              : color.border.default,
+
+      "debugIcon.breakpointForeground": color.danger.fg,
+
+      "debugConsole.infoForeground": lightDark( scale.gray[6], scale.gray[3]),
+      "debugConsole.warningForeground": lightDark( scale.yellow[6], scale.yellow[3]),
+      "debugConsole.errorForeground": lightDark( scale.red[5], scale.red[2]),
+      "debugConsole.sourceForeground": lightDark( scale.yellow[5], scale.yellow[2]),
+      "debugConsoleInputIcon.foreground": lightDark( scale.purple[6], scale.purple[3]),
+
+      "debugTokenExpression.name": lightDark(scale.blue[6], scale.blue[2]),
+      "debugTokenExpression.value": lightDark(scale.blue[8], scale.blue[1]),
+      "debugTokenExpression.string": lightDark(scale.blue[8], scale.blue[1]),
+      "debugTokenExpression.boolean": lightDark( scale.green[6], scale.green[2]),
+      "debugTokenExpression.number": lightDark( scale.green[6], scale.green[2]),
+      "debugTokenExpression.error": lightDark( scale.red[6], scale.red[2]),
+
+      "symbolIcon.arrayForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.booleanForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.classForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.colorForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.constructorForeground": lightDark( scale.purple[8], scale.purple[2]),
+      "symbolIcon.enumeratorForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.enumeratorMemberForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.eventForeground": lightDark( scale.gray[6], scale.gray[4]),
+      "symbolIcon.fieldForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.fileForeground": lightDark( scale.yellow[6], scale.yellow[3]),
+      "symbolIcon.folderForeground": lightDark( scale.yellow[6], scale.yellow[3]),
+      "symbolIcon.functionForeground": lightDark( scale.purple[6], scale.purple[3]),
+      "symbolIcon.interfaceForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.keyForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.keywordForeground": lightDark( scale.red[6], scale.red[3]),
+      "symbolIcon.methodForeground": lightDark( scale.purple[6], scale.purple[3]),
+      "symbolIcon.moduleForeground": lightDark( scale.red[6], scale.red[3]),
+      "symbolIcon.namespaceForeground": lightDark( scale.red[6], scale.red[3]),
+      "symbolIcon.nullForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.numberForeground": lightDark( scale.green[6], scale.green[3]),
+      "symbolIcon.objectForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.operatorForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.packageForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.propertyForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.referenceForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.snippetForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.stringForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.structForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.textForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.typeParameterForeground": lightDark( scale.blue[8], scale.blue[2]),
+      "symbolIcon.unitForeground": lightDark( scale.blue[6], scale.blue[3]),
+      "symbolIcon.variableForeground": lightDark( scale.orange[6], scale.orange[3]),
+      "symbolIcon.constantForeground": lightDark( scale.green[6], scale.green),
+
+      "terminal.foreground": color.fg.default,
+      'terminal.ansiBlack': color.ansi.black,
+      'terminal.ansiRed': color.ansi.red,
+      'terminal.ansiGreen': color.ansi.green,
+      'terminal.ansiYellow': color.ansi.yellow,
+      'terminal.ansiBlue': color.ansi.blue,
+      'terminal.ansiMagenta': color.ansi.magenta,
+      'terminal.ansiCyan': color.ansi.cyan,
+      'terminal.ansiWhite': color.ansi.white,
+      'terminal.ansiBrightBlack': color.ansi.blackBright,
+      'terminal.ansiBrightRed': color.ansi.redBright,
+      'terminal.ansiBrightGreen': color.ansi.greenBright,
+      'terminal.ansiBrightYellow': color.ansi.yellowBright,
+      'terminal.ansiBrightBlue': color.ansi.blueBright,
+      'terminal.ansiBrightMagenta': color.ansi.magentaBright,
+      'terminal.ansiBrightCyan': color.ansi.cyanBright,
+      'terminal.ansiBrightWhite': color.ansi.whiteBright,
+
+      "editorBracketHighlight.foreground1": lightDark(scale.blue[5], scale.blue[2]),
+      "editorBracketHighlight.foreground2": lightDark(scale.green[5], scale.green[2]),
+      "editorBracketHighlight.foreground3": lightDark(scale.yellow[5], scale.yellow[2]),
+      "editorBracketHighlight.foreground4": lightDark(scale.red[5], scale.red[2]),
+      "editorBracketHighlight.foreground5": lightDark(scale.pink[5], scale.pink[2]),
+      "editorBracketHighlight.foreground6": lightDark(scale.purple[5], scale.purple[2]),
+      "editorBracketHighlight.unexpectedBracket.foreground": color.fg.muted, // gray
+
+      "gitDecoration.addedResourceForeground"      : color.success.fg,
+      "gitDecoration.modifiedResourceForeground"   : color.attention.fg,
+      "gitDecoration.deletedResourceForeground"    : color.danger.fg,
+      "gitDecoration.untrackedResourceForeground"  : color.success.fg,
+      "gitDecoration.ignoredResourceForeground"    : color.fg.subtle,
+      "gitDecoration.conflictingResourceForeground": color.severe.fg,
+      "gitDecoration.submoduleResourceForeground"  : color.fg.muted,
+
+      "debugToolBar.background"                    : color.canvas.overlay,
+      "editor.stackFrameHighlightBackground"       : color.attention.muted,
+      "editor.focusedStackFrameHighlightBackground": color.success.muted,
+
+      "peekViewEditor.matchHighlightBackground": onlyDark(color.attention.muted),
+      "peekViewResult.matchHighlightBackground": onlyDark(color.attention.muted),
+      "peekViewEditor.background"              : onlyDark(color.neutral.subtle),
+      "peekViewResult.background"              : onlyDark(scale.gray[9]),
+
+      "settings.headerForeground"        : color.fg.default,
+      "settings.modifiedItemIndicator"   : color.attention.muted,
+      "welcomePage.buttonBackground"     : color.btn.bg,
+      "welcomePage.buttonHoverBackground": color.btn.hoverBg,
     },
+    semanticHighlighting: true,
     tokenColors: [
       {
         scope: ["comment", "punctuation.definition.comment", "string.comment"],
         settings: {
-          foreground: pick({ light: primer.gray[5], dark: primer.gray[4] }),
+          foreground: lightDark(scale.gray[5], scale.gray[3])
+        },
+      },
+      {
+        scope: [
+          "constant.other.placeholder",
+          "constant.character"
+        ],
+        settings: {
+          foreground: lightDark(scale.red[5], scale.red[3])
         },
       },
       {
@@ -217,57 +349,63 @@ function getTheme({ style, name }) {
           "constant",
           "entity.name.constant",
           "variable.other.constant",
+          "variable.other.enummember",
           "variable.language",
-          // Added.
-          "variable.other.normal"
+          "entity",
         ],
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
-      /* Added */
       {
-        "scope": [
-          "constant.language"
+        scope: [
+          "entity.name",
+          "meta.export.default",
+          "meta.definition.variable"
         ],
+        settings: {
+          foreground: lightDark(scale.orange[6], scale.orange[2])
+        },
+      },
+      {
+        scope: [
+          "variable.parameter.function",
+          "meta.jsx.children",
+          "meta.block",
+          "meta.tag.attributes",
+          "entity.name.constant",
+          "meta.object.member",
+          "meta.embedded.expression"
+        ],
+        settings: {
+          foreground: color.fg.default,
+        },
+      },
+      {
+        "scope": "entity.name.function",
         "settings": {
-          "foreground": primer.orange[7]
+          foreground: lightDark(scale.purple[5], scale.purple[2])
         }
       },
-      /* */
       {
-        scope: ["entity", "entity.name"],
+        "scope": [
+          "entity.name.tag",
+          "support.class.component"
+        ],
         settings: {
-          foreground: pick({ light: primer.purple[5], dark: primer.purple[6] }),
-        },
-      },
-      {
-        scope: "variable.parameter.function",
-        settings: {
-          foreground: primer.gray[9],
-        },
-      },
-      {
-        scope: "entity.name.tag",
-        settings: {
-          // foreground: primer.green[6],
-          foreground: primer.orange[7],
+          foreground: lightDark(scale.green[6], scale.green[1])
         },
       },
       {
         scope: "keyword",
         settings: {
-          // foreground: primer.red[5],
-          foreground: primer.yellow[9],
-          foreground: pick({ light: primer.yellow[9], dark: primer.red[6] }),
+          foreground: lightDark(scale.red[5], scale.red[3])
         },
       },
       {
         scope: ["storage", "storage.type"],
         settings: {
-          // foreground: primer.red[5],
-          foreground: primer.yellow[9],
-          foreground: pick({ light: primer.yellow[9], dark: primer.red[6] }),
+          foreground: lightDark(scale.red[5], scale.red[3])
         },
       },
       {
@@ -277,115 +415,95 @@ function getTheme({ style, name }) {
           "storage.type.java",
         ],
         settings: {
-          foreground: primer.gray[9],
+          foreground: color.fg.default,
         },
       },
       {
         scope: [
           "string",
-          "punctuation.definition.string",
           "string punctuation.section.embedded source",
         ],
         settings: {
-          foreground: primer.blue[8],
+          foreground: lightDark(scale.blue[8], scale.blue[1])
         },
       },
       {
         scope: "support",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
-      /* Added */
-      {
-        "scope": [
-          "source.yaml entity.name.tag"
-        ],
-        "settings": {
-          foreground: primer.blue[6],
-        }
-      },
-      /* */
       {
         scope: "meta.property-name",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
         scope: "variable",
         settings: {
-          // foreground: primer.orange[6],
-          foreground: primer.blue[7],
+          foreground: lightDark(scale.orange[6], scale.orange[2])
         },
       },
       {
         scope: "variable.other",
         settings: {
-          foreground: primer.gray[9],
+          foreground: color.fg.default,
         },
       },
       {
         scope: "invalid.broken",
         settings: {
           fontStyle: "italic",
-          foreground: primer.red[7],
+          foreground: lightDark(scale.red[7], scale.red[2])
         },
       },
       {
         scope: "invalid.deprecated",
         settings: {
           fontStyle: "italic",
-          foreground: primer.red[7],
+          foreground: lightDark(scale.red[7], scale.red[2])
         },
       },
       {
         scope: "invalid.illegal",
         settings: {
           fontStyle: "italic",
-          foreground: primer.red[7],
+          foreground: lightDark(scale.red[7], scale.red[2])
         },
       },
       {
         scope: "invalid.unimplemented",
         settings: {
           fontStyle: "italic",
-          foreground: primer.red[7],
+          foreground: lightDark(scale.red[7], scale.red[2])
         },
       },
       {
         scope: "carriage-return",
         settings: {
           fontStyle: "italic underline",
-          // background: primer.red[5],
-          background: pick({ light: primer.yellow[9], dark: primer.red[6] }),
-          // foreground: primer.gray[0],
-          foreground: primer.nushuGray[0],
+          background: lightDark(scale.red[5], scale.red[3]),
+          foreground: lightDark(scale.gray[0], scale.gray[0]),
           content: "^M",
         },
       },
       {
         scope: "message.error",
         settings: {
-          foreground: primer.red[7],
-        },
-      },
-      {
-        scope: "string source",
-        settings: {
-          foreground: primer.gray[9],
+          foreground: lightDark(scale.red[7], scale.red[2])
         },
       },
       {
         scope: "string variable",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
         scope: ["source.regexp", "string.regexp"],
         settings: {
-          foreground: primer.blue[8],
+          foreground: lightDark(scale.blue[8], scale.blue[1])
         },
       },
       {
@@ -396,95 +514,89 @@ function getTheme({ style, name }) {
           "string.regexp string.regexp.arbitrary-repitition",
         ],
         settings: {
-          foreground: primer.blue[8],
+          foreground: lightDark(scale.blue[8], scale.blue[1])
         },
       },
-      /* Added */
-      {
-        "scope": [
-          "entity.other.attribute-name.pseudo-class",
-          "entity.other.attribute-name.pseudo-element",
-          "entity.other.attribute-name.pseudo-class.css punctuation.definition.entity.css",
-          "entity.other.attribute-name.pseudo-element.css punctuation.definition.entity.css"
-        ],
-        "settings": {
-          "foreground": primer.yellow[9]
-        }
-      },
-      {
-        "scope": [
-          "entity.other.attribute-name.id", 
-          "entity.other.attribute-name.id punctuation.definition.entity"
-        ],
-        "settings": {
-          "foreground": primer.gray[9]
-        }
-      },
-      /* Added */
       {
         scope: "string.regexp constant.character.escape",
         settings: {
           fontStyle: "bold",
-          // foreground: primer.green[6],
-          foreground: primer.orange[7],
+          foreground: lightDark(scale.green[6], scale.green[1])
         },
       },
       {
         scope: "support.constant",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
         scope: "support.variable",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
+        },
+      },
+      {
+        scope: "support.type.property-name.json",
+        settings: {
+          foreground: lightDark(scale.green[6], scale.green[1])
         },
       },
       {
         scope: "meta.module-reference",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
-        scope: "markup.list",
+        scope: "punctuation.definition.list.begin.markdown",
         settings: {
-          foreground: primer.yellow[9],
+          foreground: lightDark(scale.orange[6], scale.orange[2])
         },
       },
       {
         scope: ["markup.heading", "markup.heading entity.name"],
         settings: {
           fontStyle: "bold",
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
         scope: "markup.quote",
         settings: {
-          // foreground: primer.green[6],
-          foreground: primer.orange[7],
+          foreground: lightDark(scale.green[6], scale.green[1])
         },
       },
       {
         scope: "markup.italic",
         settings: {
           fontStyle: "italic",
-          foreground: primer.gray[9],
+          foreground: color.fg.default,
         },
       },
       {
         scope: "markup.bold",
         settings: {
           fontStyle: "bold",
-          foreground: primer.gray[9],
+          foreground: color.fg.default,
         },
       },
       {
-        scope: "markup.raw",
+        scope: ["markup.underline"],
         settings: {
-          foreground: primer.blue[6],
+          fontStyle: "underline",
+        },
+      },
+      {
+        scope: ["markup.strikethrough"],
+        settings: {
+          fontStyle: "strikethrough",
+        },
+      },
+      {
+        scope: "markup.inline.raw",
+        settings: {
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
@@ -494,8 +606,14 @@ function getTheme({ style, name }) {
           "punctuation.definition.deleted",
         ],
         settings: {
-          background: primer.red[0],
-          foreground: primer.red[7],
+          background: lightDark(scale.red[0], scale.red[9]),
+          foreground: lightDark(scale.red[7], scale.red[2])
+        },
+      },
+      {
+        scope: ["punctuation.section.embedded"],
+        settings: {
+          foreground: lightDark(scale.red[5], scale.red[3])
         },
       },
       {
@@ -505,49 +623,48 @@ function getTheme({ style, name }) {
           "punctuation.definition.inserted",
         ],
         settings: {
-          background: primer.green[0],
-          foreground: primer.green[6],
+          background: lightDark(scale.green[0], scale.green[9]),
+          foreground: lightDark(scale.green[6], scale.green[1])
         },
       },
       {
         scope: ["markup.changed", "punctuation.definition.changed"],
         settings: {
-          background: primer.orange[1],
-          foreground: primer.orange[6],
+          background: lightDark(scale.orange[1], scale.orange[8]),
+          foreground: lightDark(scale.orange[6], scale.orange[2])
         },
       },
       {
         scope: ["markup.ignored", "markup.untracked"],
         settings: {
-          // foreground: primer.gray[1],
-          foreground: primer.nushuGray[1],
-          background: primer.blue[6],
+          foreground: lightDark(scale.gray[1], scale.gray[8]),
+          background: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
         scope: "meta.diff.range",
         settings: {
-          foreground: pick({ light: primer.purple[5], dark: primer.purple[6] }),
+          foreground: lightDark(scale.purple[5], scale.purple[2]),
           fontStyle: "bold",
         },
       },
       {
         scope: "meta.diff.header",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
         scope: "meta.separator",
         settings: {
           fontStyle: "bold",
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
         scope: "meta.output",
         settings: {
-          foreground: primer.blue[6],
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
@@ -560,227 +677,43 @@ function getTheme({ style, name }) {
           "brackethighlighter.quote",
         ],
         settings: {
-          foreground: primer.gray[6],
+          foreground: lightDark(scale.gray[6], scale.gray[3])
         },
       },
       {
         scope: "brackethighlighter.unmatched",
         settings: {
-          foreground: primer.red[7],
+          foreground: lightDark(scale.red[7], scale.red[2])
         },
       },
       {
         scope: ["constant.other.reference.link", "string.other.link"],
         settings: {
-          foreground: primer.blue[8],
-          fontStyle: "underline",
-        },
-      },
-      {
-        name: "ITALIC",
-        scope: [
-          "comment",
-          "storage.modifier",
-          "punctuation.definition.comment",
-          "entity.other",
-          "variable.language",
-          "support.type.vendored",
-          "support.constant.vendored",
-          "markup.quote",
-          "markup.italic",
-          "tag.decorator.js entity.name.tag.js",
-          "tag.decorator.js punctuation.definition.tag.js",
-          "keyword.control.clojure",
-          "source.clojure meta.symbol.dynamic",
-          "keyword.other.this.cs",
-          "keyword.other.base.cs",
-          "variable.other.member.c",
-          "support.type.core.rust",
-          "variable.other.object.property",
-          "variable.other.property",
-          "source.r meta.function.r keyword.control.r",
-          "comment.line.roxygen.r keyword",
-          "comment.line.roxygen.r variable.parameter.r",
-          "keyword.control.inheritance.coffee",
-          "comment.block.documentation.phpdoc.php keyword",
-          "keyword.other.array.phpdoc.php",
-          "storage.type.modifier",
-          "comment.block.javadoc.java keyword",
-          "comment.block.javadoc.java variable.parameter.java",
-          "keyword.operator.documentation.powershell",
-          "variable.other.table.property.lua",
-          "storage.type.scala",
-          "variable.parameter.function.language.special",
-          "comment.block.documentation.scala keyword",
-          "comment.block.documentation.scala variable.parameter",
-          "support.function.builtin.go",
-          "constant.other.symbol.hashkey.ruby",
-          "constant.other.symbol.hashkey.ruby punctuation.definition.constant.ruby",
-          "constant.other.symbol.ruby",
-          "source.vala storage.type.generic",
-          "constant.other.table-name",
-          "constant.other.placeholder",
-          "variable.other.field",
-          "keyword.function.go",
-          "entity.alias.import.go",
-          "source.swift keyword.other.declaration-specifier",
-          "support.variable.swift",
-          "keyword.other.capture-specifier",
-          "text.tex support.function.emph",
-          "constant.other.math",
-          "support.function.textit",
-          "entity.name.footnote",
-          "entity.name.function.directive.graphql",
-          "source.graphql support.type.enum",
-          "source.ocaml entity.name.filename",
-          "source.reason entity.name.filename",
-          "abstract.definition.fsharp keyword",
-          "abstract.definition.fsharp entity",
-          "function.anonymous keyword",
-          "entity.name.record.field.accessor.elm",
-          "support.type.primitive",
-          "support.type.builtin",
-          "keyword.type.cs",
-          "storage.type.built-in",
-          "storage.type.primitive",
-          "source.python support.type.python",
-          "storage.type.core.rust",
-          "source.swift support.type",
-          "source.go storage.type",
-          "storage.type.php",
-          "storage.type.function.kotlin",
-          "entity.name.type.kotlin",
-          "support.type.julia",
-          "variable.other.member",
-          "keyword.other.import",
-          "keyword.package",
-          "keyword.import",
-          "source.wsd keyword.control.diagram",
-          "keyword.language.gherkin.feature.step",
-          "source.hlsl storage.type.basic",
-          "source.apex keyword.type",
-          "sharing.modifier",
-          "source.nim storage.type.concrete",
-          "meta.preprocessor.pragma.nim",
-          "storage.type.integral",
-          "entity.name.scope-resolution.function.call",
-          "support.class.builtin",
-          "comment.block.documentation storage.type.class",
-          "source.tf meta.keyword.string",
-          "source.tf meta.keyword.number",
-          "source.scala entity.name.class",
-          "meta.import keyword.control",
-          "keyword.control.export",
-          "meta.tag.attributes entity.other.attribute-name",
-          "text.html entity.other.attribute-name",
-          "meta.attribute-selector entity.other.attribute-name",
-        ],
-        settings: {
-          fontStyle: "italic",
-        },
-      },
-      {
-        name: "MORE-ITALIC",
-        scope: [
-          "markup.bold markup.italic",
-          "markup.italic markup.bold",
-          "markup.quote markup.bold",
-          "markup.bold markup.italic string",
-          "markup.italic markup.bold string",
-          "markup.quote markup.bold string",
-          "text.html punctuation.section.embedded",
-          "variable.other.c",
-          "storage.modifier.lifetime.rust",
-          "entity.name.lifetime.rust",
-          "source.rust meta.attribute.rust",
-          "meta.attribute.id entity.other.attribute-name",
-          "keyword.other.fn.rust",
-          "source.ocaml punctuation.definition.tag emphasis",
-          "source.tf entity.name",
-          "comment.block.documentation variable.other",
-        ],
-        settings: {
-          fontStyle: "italic",
-        },
-      },
-      {
-        name: "NORMAL",
-        scope: [
-          "keyword.begin.tag.ejs",
-          "source.python meta.function.decorator.python support.type.python",
-          "source.cs keyword.other",
-          "keyword.other.var.cs",
-          "source.go keyword",
-          "storage.modifier.static.rust",
-          "variable.parameter.r",
-          "variable.parameter.handlebars",
-          "storage.modifier.import",
-          "storage.modifier.package",
-          "meta.class.identifier storage.modifier",
-          "keyword.operator.other.powershell",
-          "source.lua storage.type.function",
-          "source.css variable.parameter",
-          "string.interpolated variable.parameter",
-          "source.apacheconf keyword",
-          "keyword.other.julia",
-          "storage.modifier.using.vala",
-          "source.objc keyword.other.property.attribute",
-          "source.sql keyword.other",
-          "keyword.other.using.vala",
-          "keyword.operator.function.infix",
-          "keyword.control.directive",
-          "keyword.other.rust",
-          "keyword.other.declaration-specifier.swift",
-          "entity.name.function.swift",
-          "keyword.control.function-end.lua",
-          "keyword.control.class",
-          "keyword.control.def",
-          "punctuation.definition.variable",
-          "entity.name.section.latex",
-          "source.ocaml keyword markup.underline",
-          "source.ocaml constant.language constant.numeric entity.other.attribute-name.id.css",
-          "source.reason entity.other.attribute-name constant.language constant.numeric",
-          "keyword.format.specifier.fsharp",
-          "entity.name.section.fsharp",
-          "binding.fsharp keyword",
-          "binding.fsharp keyword.symbol",
-          "record.fsharp keyword",
-          "keyword.symbol.fsharp",
-          "entity.name.section.fsharp keyword",
-          "namespace.open.fsharp keyword",
-          "namespace.open.fsharp entity",
-          "storage.type",
-          "source.cpp keyword.other",
-          "source.c keyword.other",
-          "keyword.other.unit",
-          "storage.modifier.array.bracket",
-          "keyword.control.default",
-          "meta.import.haskell keyword",
-          "keyword.declaration.dart",
-          "source.wsd keyword.other",
-          "keyword.other.skinparam",
-          "source.css keyword.control",
-          "source.css keyword.operator",
-          "keyword.language.gherkin.feature.scenario",
-          "keyword.control.cucumber.table",
-          "source.toml entity.other.attribute-name",
-          "source.toml keyword",
-          "keyword.other.nim",
-          "source.nim keyword.other.common.function",
-          "source.nim keyword.other",
-          "source.scala keyword.declaration",
-          "source.scala entity.name.class.declaration",
-          "entity.other.attribute-name.pseudo-class",
-          "entity.other.attribute-name.pseudo-element",
-          "entity.other.attribute-name.pseudo-class.css punctuation.definition.entity.css",
-          "entity.other.attribute-name.pseudo-element.css punctuation.definition.entity.css",
-        ],
-        settings: {
-          fontStyle: "",
+          foreground: lightDark(scale.blue[8], scale.blue[1]),
         },
       },
     ],
   };
 }
+
+// Convert to hex
+// VS Code doesn't support other formats like hsl, rgba etc.
+
+function changeColorToHexAlphas(obj) {
+  if (typeof obj === 'object') {
+    for (var keys in obj) {
+      if (typeof obj[keys] === 'object') {
+        changeColorToHexAlphas(obj[keys])
+      } else {
+        let keyValue = obj[keys]
+        if(chroma.valid(keyValue)){
+          obj[keys] = chroma(keyValue).hex();
+        }
+      }
+    }
+  }
+  return obj;
+}
+
 
 module.exports = getTheme;
