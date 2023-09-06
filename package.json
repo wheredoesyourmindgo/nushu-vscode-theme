@@ -4,11 +4,11 @@
   "description": "A VSCode theme that will continue to fade with time",
   "version": "0.4.12",
   "scripts": {
-    "release:major": "vsce publish major && git push",
-    "release:minor": "vsce publish minor && git push",
-    "release:patch": "vsce publish patch && git push",
     "start": "nodemon --watch src src/index.js",
-    "build": "node src/index.js"
+    "build": "node src/index.js && mkdir -p build",
+    "package": "vsce package -o ./build/github-vscode-theme.vsix",
+    "prepublishOnly": "npm run build && vsce publish",
+    "release": "changeset publish"
   },
   "icon": "images/icon.png",
   "publisher": "wheredoesyourmindgo",
@@ -53,8 +53,12 @@
     "publisherDisplayName": "wheredoesyourmindgo"
   },
   "devDependencies": {
-    "@primer/primitives": "^2.0.1",
+    "@changesets/changelog-github": "^0.4.1",
+    "@changesets/cli": "^2.17.0",
+    "@primer/primitives": "7.10.0",
+    "chroma-js": "^2.1.2",
     "color": "^3.1.2",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "vsce": "^1.100.1"
   }
 }
