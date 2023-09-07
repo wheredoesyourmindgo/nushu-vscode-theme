@@ -52,6 +52,7 @@ const ignorePropStrings = [
 ];
 const skipProps = String.raw`(?<!${ignorePropStrings.join("|")})`;
 
+// white, black, gray, yellow, pink, green, orange, purple, coral, red
 const toTmpArry = [
   np.temp.white,
   np.temp.black,
@@ -145,6 +146,7 @@ const toTmpArry = [
   np.temp.red[9],
 ];
 
+// white, black, gray, yellow, pink, green, orange, purple, coral, red
 const fromTmpArry = [
   new RegExp(`${np.temp.white}`, "gi"),
   new RegExp(`${np.temp.black}`, "gi"),
@@ -240,6 +242,7 @@ const fromTmpArry = [
 
 const tmpLightOptions = {
   files: "./themes/nushu-light.json",
+  // white, black, gray, green, red, orange, coral, purple, pink, yellow
   from: [
     new RegExp(`${skipProps}${lightColors.scale.white}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.black}`, "gi"),
@@ -337,6 +340,7 @@ const tmpLightOptions = {
 
 const tmpDarkOptions = {
   files: "./themes/nushu-dark.json",
+  // white, black, gray, green, red, orange, coral, purple, pink, yellow
   from: [
     new RegExp(`${skipProps}${darkColors.scale.white}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.black}`, "gi"),
@@ -439,6 +443,7 @@ const convertedLightOptions = {
     //
     ...fromTmpArry,
   ],
+  // white, black, gray, yellow, pink, green, orange, purple, coral, red
   to: [
     '"name": "Nüshu Light"',
     //
@@ -542,6 +547,7 @@ const convertedDarkOptions = {
     //
     ...fromTmpArry,
   ],
+  // white, black, gray, yellow, pink, green, orange, purple, coral, red
   to: [
     '"name": "Nüshu Dark"',
     //
