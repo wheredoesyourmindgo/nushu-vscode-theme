@@ -45,9 +45,19 @@
   "contributes": {
     "themes": [
       {
-        "label": "Nüshu",
+        "label": "Nüshu Light",
         "uiTheme": "vs",
-        "path": "./themes/light.json"
+        "path": "./themes/nushu-light.json"
+      },
+      {
+        "label": "Nüshu Dark",
+        "uiTheme": "vs",
+        "path": "./themes/nushu-dark.json"
+      },
+      {
+        "label": "Nüshu Classic",
+        "uiTheme": "vs",
+        "path": "./themes/nushu-classic.json"
       }
     ]
   },
@@ -61,6 +71,7 @@
     "@primer/primitives": "7.10.0",
     "chroma-js": "^2.1.2",
     "color": "^3.1.2",
+    "cp-file": "<10",
     "nodemon": "^2.0.3",
     "replace-in-file": "^7.0.1",
     "vsce": "^1.100.1"

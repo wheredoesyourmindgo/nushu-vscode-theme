@@ -1,3 +1,6 @@
+const lightColors = require("@primer/primitives/dist/json/colors/light.json");
+const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
+
 module.exports = {
   classic: {
     black: "#1B1F00",
@@ -7,8 +10,9 @@ module.exports = {
   // https://hihayk.github.io/scale/#9/0/50/80/-51/67/20/14/f3f0e8/243/240/232/white
   light: {
     white: "#f8f6f1", // pen paper coffee background
+    black: lightColors.scale.black, // same as 'light default' theme
     gray: [
-      "#f3f0e8",
+      "#f3f0e8", // custom darker shade of pen paper coffee background
       "#e6e4db",
       "#d8d7ce",
       "#cbcbc1",
@@ -20,9 +24,26 @@ module.exports = {
       "#767a74",
     ],
   },
-  dark: {},
+  // https://hihayk.github.io/scale/#0/9/50/80/-51/67/20/14/292521/41/37/33/white
+  dark: {
+    white: darkColors.scale.white, // same as 'dark default' theme
+    black: "#2f2b27", // custom darker shade of earthsong background
+    gray: [
+      "#d4d2d4",
+      "#c1bfc0",
+      "#aeabac",
+      "#9b9798",
+      "#888384",
+      "#757070",
+      "#625d5c",
+      "#4f4a48",
+      "#3c3835",
+      "#292521", // earthsong background
+    ],
+  },
   temp: {
     white: "TMP_WHITE",
+    black: "TMP_BLACK",
     gray: [
       "TMP_GRAY_0",
       "TMP_GRAY_1",
