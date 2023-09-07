@@ -7,38 +7,43 @@ module.exports = {
     white: "#f8f6f1",
     gray: ["#F3F0E8", "#EFEBE0", "#E7E1D0", "#444e00", "#2f3600", "#252a00"],
   },
-  // https://hihayk.github.io/scale/#9/0/50/80/-51/67/20/14/f3f0e8/243/240/232/white
+  /*
+    Originally tried https://hihayk.github.io/scale/#9/0/50/80/-51/67/20/14/f3f0e8/243/240/232/white, though, the dark version has issues, noted below. Instead, the defaults will be used for shades of gray other than the lightest shade, which is used for the panel backgrounds.
+  */
   light: {
     white: "#f8f6f1", // pen paper coffee background
     black: lightColors.scale.black, // same as 'light default' theme
     gray: [
-      "#f3f0e8", // custom darker shade of pen paper coffee background
-      "#e6e4db",
-      "#d8d7ce",
-      "#cbcbc1",
-      "#bcbdb4",
-      "#aeb0a7",
-      "#a0a29a",
-      "#92958d",
-      "#848781",
-      "#767a74",
+      "#f3f0e8", // custom darker shade of pen paper coffee (derived manually)
+      lightColors.scale.gray[1],
+      lightColors.scale.gray[2],
+      lightColors.scale.gray[3],
+      lightColors.scale.gray[4],
+      lightColors.scale.gray[5],
+      lightColors.scale.gray[6],
+      lightColors.scale.gray[7],
+      lightColors.scale.gray[8],
+      lightColors.scale.gray[9],
     ],
   },
-  // https://hihayk.github.io/scale/#0/9/50/80/-51/67/20/14/292521/41/37/33/white
+  /*
+    https://hihayk.github.io/scale/#0/9/50/80/-51/67/20/14/292521/41/37/33/white didn't yield gradient that scaled well, borders were too bright for dark theme. Instead, the defaults will be used for shades of gray other than the darkest shade, which is used for the editor background.
+  */
   dark: {
     white: darkColors.scale.white, // same as 'dark default' theme
-    black: "#2f2b27", // custom darker shade of earthsong background
+    black: "#2f2b27", // custom brighter shade of earthsong background
     gray: [
-      "#d4d2d4",
-      "#c1bfc0",
-      "#aeabac",
-      "#9b9798",
-      "#888384",
-      "#757070",
-      "#625d5c",
-      "#4f4a48",
-      "#3c3835",
-      "#292521", // earthsong background
+      darkColors.scale.gray[0],
+      darkColors.scale.gray[1],
+      darkColors.scale.gray[2],
+      darkColors.scale.gray[3],
+      darkColors.scale.gray[4],
+      darkColors.scale.gray[5],
+      darkColors.scale.gray[6],
+      darkColors.scale.gray[7],
+      darkColors.scale.gray[8],
+      "#27241F", // custom slightly darker earthsong background (used https://hihayk.github.io/scale/#10/0/50/50/-51/67/20/14/292521/41/37/33/black, the color left adjacent of the original earthsong color)
+      // "#292521", // earthsong background (doesn't feel dark enough)
     ],
   },
   temp: {
