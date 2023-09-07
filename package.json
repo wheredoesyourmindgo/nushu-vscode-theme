@@ -4,11 +4,10 @@
   "description": "A VSCode theme that will continue to fade with time",
   "version": "2.0.0",
   "scripts": {
-    "start": "nodemon --watch src src/index.js",
-    "build": "node src/index.js && mkdir -p build",
-    "package": "vsce package -o ./build/github-vscode-theme.vsix",
-    "prepublishOnly": "npm run build && vsce publish",
-    "release": "changeset publish"
+    "build": "node src/index.js && node src/color-swap.js",
+    "release:major": "vsce publish major && git push",
+    "release:minor": "vsce publish minor && git push",
+    "release:patch": "vsce publish patch && git push"
   },
   "icon": "images/icon.png",
   "publisher": "wheredoesyourmindgo",
