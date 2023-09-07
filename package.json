@@ -2,7 +2,7 @@
   "name": "nushu-vscode-theme",
   "displayName": "Nüshu",
   "description": "A VSCode theme that will continue to fade with time",
-  "version": "0.4.12",
+  "version": "2.0.0",
   "scripts": {
     "start": "nodemon --watch src src/index.js",
     "build": "node src/index.js && mkdir -p build",
