@@ -20,10 +20,35 @@ const ignorePropStrings = [
   `"terminal.ansiBrightMagenta":\\s"`,
   `"terminal.ansiBrightMagenta":\\s"`,
   `"terminal.ansiBrightCyan":\\s"`,
-  `"diffEditor.insertedLineBackground":\\s"`,
-  `"diffEditor.insertedTextBackground":\\s"`,
-  `"diffEditor.removedLineBackground":\\s"`,
-  `"diffEditor.removedTextBackground":\\s"`,
+  `"diffEditor.insertedLineBackground":\\s"`, // green means add
+  `"diffEditor.insertedTextBackground":\\s"`, // green means add
+  `"diffEditor.removedLineBackground":\\s"`, // red means minus
+  `"diffEditor.removedTextBackground":\\s"`, // red means minus
+  `"debugIcon.breakpointForeground":\\s"`, // red means no
+  `"debugConsole.infoForeground":\\s"`, // gray means something
+  `"debugConsole.warningForeground":\\s"`, // orange means something
+  `"debugConsole.errorForeground":\\s"`, // red means something
+  `"debugConsole.sourceForeground":\\s"`, // yellow means something
+  `"editorGutter.modifiedBackground":\\s"`, // yellow means modified
+  `"editorGutter.addedBackground":\\s"`, // green means add
+  `"editorGutter.deletedBackground":\\s"`, // red means minus
+  `"gitDecoration.addedResourceForeground":\\s"`, // green means add
+  `"gitDecoration.modifiedResourceForeground":\\s"`, // yellow means modified
+  `"gitDecoration.deletedResourceForeground":\\s"`,  // red means minus
+  `"gitDecoration.untrackedResourceForeground":\\s"`, // green means something
+  `"gitDecoration.ignoredResourceForeground":\\s"`, // gray means something
+  `"gitDecoration.conflictingResourceForeground":\\s"`, // orange means something
+  `"gitDecoration.submoduleResourceForeground":\\s"`, // gray means something
+  `"editor.findMatchBackground":\\s"`, // yellow (over red)
+  `"editor.findMatchHighlightBackground":\\s"`, // yellow (over red)
+  `"errorForeground":\\s"`, // red means error (ex. find results empty label foreground)
+  `"notificationsErrorIcon.foreground":\\s"`, // red means error
+  `"notificationsWarningIcon.foreground":\\s"`, // orange means warning
+  `"notificationsInfoIcon.foreground":\\s"`, // blue means info
+  `"editor.stackFrameHighlightBackground":\\s"`, // not sure what this is, leave it yellow
+  `"editor.focusedStackFrameHighlightBackground":\\s"`, // not sure what this is, leave it green
+  `"peekViewEditor.matchHighlightBackground":\\s"`, // yellow (over red)
+  `"peekViewResult.matchHighlightBackground":\\s"`, // yellow (over red)
 ];
 const skipProps = String.raw`(?<!${ignorePropStrings.join("|")})`;
 
@@ -75,17 +100,6 @@ const toTmpArry = [
   np.temp.green[8],
   np.temp.green[9],
   //
-  np.temp.coral[0],
-  np.temp.coral[1],
-  np.temp.coral[2],
-  np.temp.coral[3],
-  np.temp.coral[4],
-  np.temp.coral[5],
-  np.temp.coral[6],
-  np.temp.coral[7],
-  np.temp.coral[8],
-  np.temp.coral[9],
-  //
   np.temp.orange[0],
   np.temp.orange[1],
   np.temp.orange[2],
@@ -107,6 +121,17 @@ const toTmpArry = [
   np.temp.purple[7],
   np.temp.purple[8],
   np.temp.purple[9],
+  //
+  np.temp.coral[0],
+  np.temp.coral[1],
+  np.temp.coral[2],
+  np.temp.coral[3],
+  np.temp.coral[4],
+  np.temp.coral[5],
+  np.temp.coral[6],
+  np.temp.coral[7],
+  np.temp.coral[8],
+  np.temp.coral[9],
   //
   np.temp.red[0],
   np.temp.red[1],
@@ -168,17 +193,6 @@ const fromTmpArry = [
   new RegExp(`${np.temp.green[8]}`, "gi"),
   new RegExp(`${np.temp.green[9]}`, "gi"),
   //
-  new RegExp(`${np.temp.coral[0]}`, "gi"),
-  new RegExp(`${np.temp.coral[1]}`, "gi"),
-  new RegExp(`${np.temp.coral[2]}`, "gi"),
-  new RegExp(`${np.temp.coral[3]}`, "gi"),
-  new RegExp(`${np.temp.coral[4]}`, "gi"),
-  new RegExp(`${np.temp.coral[5]}`, "gi"),
-  new RegExp(`${np.temp.coral[6]}`, "gi"),
-  new RegExp(`${np.temp.coral[7]}`, "gi"),
-  new RegExp(`${np.temp.coral[8]}`, "gi"),
-  new RegExp(`${np.temp.coral[9]}`, "gi"),
-  //
   new RegExp(`${np.temp.orange[0]}`, "gi"),
   new RegExp(`${np.temp.orange[1]}`, "gi"),
   new RegExp(`${np.temp.orange[2]}`, "gi"),
@@ -200,6 +214,17 @@ const fromTmpArry = [
   new RegExp(`${np.temp.purple[7]}`, "gi"),
   new RegExp(`${np.temp.purple[8]}`, "gi"),
   new RegExp(`${np.temp.purple[9]}`, "gi"),
+  //
+  new RegExp(`${np.temp.coral[0]}`, "gi"),
+  new RegExp(`${np.temp.coral[1]}`, "gi"),
+  new RegExp(`${np.temp.coral[2]}`, "gi"),
+  new RegExp(`${np.temp.coral[3]}`, "gi"),
+  new RegExp(`${np.temp.coral[4]}`, "gi"),
+  new RegExp(`${np.temp.coral[5]}`, "gi"),
+  new RegExp(`${np.temp.coral[6]}`, "gi"),
+  new RegExp(`${np.temp.coral[7]}`, "gi"),
+  new RegExp(`${np.temp.coral[8]}`, "gi"),
+  new RegExp(`${np.temp.coral[9]}`, "gi"),
   //
   new RegExp(`${np.temp.red[0]}`, "gi"),
   new RegExp(`${np.temp.red[1]}`, "gi"),
@@ -263,17 +288,6 @@ const tmpLightOptions = {
     new RegExp(`${skipProps}${lightColors.scale.orange[8]}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.orange[9]}`, "gi"),
     //
-    new RegExp(`${skipProps}${lightColors.scale.purple[0]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[1]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[2]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[3]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[4]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[5]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[6]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[7]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[8]}`, "gi"),
-    new RegExp(`${skipProps}${lightColors.scale.purple[9]}`, "gi"),
-    //
     new RegExp(`${skipProps}${lightColors.scale.coral[0]}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.coral[1]}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.coral[2]}`, "gi"),
@@ -284,6 +298,17 @@ const tmpLightOptions = {
     new RegExp(`${skipProps}${lightColors.scale.coral[7]}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.coral[8]}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.coral[9]}`, "gi"),
+    //
+    new RegExp(`${skipProps}${lightColors.scale.purple[0]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[1]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[2]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[3]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[4]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[5]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[6]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[7]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[8]}`, "gi"),
+    new RegExp(`${skipProps}${lightColors.scale.purple[9]}`, "gi"),
     //
     new RegExp(`${skipProps}${lightColors.scale.pink[0]}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.pink[1]}`, "gi"),
@@ -360,17 +385,6 @@ const tmpDarkOptions = {
     new RegExp(`${skipProps}${darkColors.scale.orange[8]}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.orange[9]}`, "gi"),
     //
-    new RegExp(`${skipProps}${darkColors.scale.purple[0]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[1]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[2]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[3]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[4]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[5]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[6]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[7]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[8]}`, "gi"),
-    new RegExp(`${skipProps}${darkColors.scale.purple[9]}`, "gi"),
-    //
     new RegExp(`${skipProps}${darkColors.scale.coral[0]}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.coral[1]}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.coral[2]}`, "gi"),
@@ -381,6 +395,17 @@ const tmpDarkOptions = {
     new RegExp(`${skipProps}${darkColors.scale.coral[7]}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.coral[8]}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.coral[9]}`, "gi"),
+    //
+    new RegExp(`${skipProps}${darkColors.scale.purple[0]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[1]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[2]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[3]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[4]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[5]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[6]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[7]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[8]}`, "gi"),
+    new RegExp(`${skipProps}${darkColors.scale.purple[9]}`, "gi"),
     //
     new RegExp(`${skipProps}${darkColors.scale.pink[0]}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.pink[1]}`, "gi"),
@@ -441,8 +466,7 @@ const convertedLightOptions = {
     lightColors.scale.yellow[8],
     lightColors.scale.yellow[9],
     lightColors.scale.yellow[9],
-    // red --> pink
-    lightColors.scale.pink[0],
+    // red --> pink +1 (slightly darker)
     lightColors.scale.pink[1],
     lightColors.scale.pink[2],
     lightColors.scale.pink[3],
@@ -452,8 +476,8 @@ const convertedLightOptions = {
     lightColors.scale.pink[7],
     lightColors.scale.pink[8],
     lightColors.scale.pink[9],
-    // orange --> green
-    lightColors.scale.green[0],
+    lightColors.scale.pink[9],
+    // orange --> green +1 (slightly darker)
     lightColors.scale.green[1],
     lightColors.scale.green[2],
     lightColors.scale.green[3],
@@ -463,17 +487,7 @@ const convertedLightOptions = {
     lightColors.scale.green[7],
     lightColors.scale.green[8],
     lightColors.scale.green[9],
-    // purple --> coral +1 (slightly darker)
-    lightColors.scale.coral[1],
-    lightColors.scale.coral[2],
-    lightColors.scale.coral[3],
-    lightColors.scale.coral[4],
-    lightColors.scale.coral[5],
-    lightColors.scale.coral[6],
-    lightColors.scale.coral[7],
-    lightColors.scale.coral[8],
-    lightColors.scale.coral[9],
-    lightColors.scale.coral[9],
+    lightColors.scale.green[9],
     // coral --> orange
     lightColors.scale.orange[0],
     lightColors.scale.orange[1],
@@ -485,8 +499,7 @@ const convertedLightOptions = {
     lightColors.scale.orange[7],
     lightColors.scale.orange[8],
     lightColors.scale.orange[9],
-    // pink --> purple
-    lightColors.scale.purple[0],
+    // purple --> purple +1 (slightly darker)
     lightColors.scale.purple[1],
     lightColors.scale.purple[2],
     lightColors.scale.purple[3],
@@ -496,6 +509,18 @@ const convertedLightOptions = {
     lightColors.scale.purple[7],
     lightColors.scale.purple[8],
     lightColors.scale.purple[9],
+    lightColors.scale.purple[9],
+    // pink --> coral
+    lightColors.scale.coral[0],
+    lightColors.scale.coral[1],
+    lightColors.scale.coral[2],
+    lightColors.scale.coral[3],
+    lightColors.scale.coral[4],
+    lightColors.scale.coral[5],
+    lightColors.scale.coral[6],
+    lightColors.scale.coral[7],
+    lightColors.scale.coral[8],
+    lightColors.scale.coral[9],
     // yellow --> red
     lightColors.scale.red[0],
     lightColors.scale.red[1],
@@ -544,8 +569,7 @@ const convertedDarkOptions = {
     darkColors.scale.yellow[8],
     darkColors.scale.yellow[9],
     darkColors.scale.yellow[9],
-    // red --> pink
-    darkColors.scale.pink[0],
+    // red --> pink (slightly darker)
     darkColors.scale.pink[1],
     darkColors.scale.pink[2],
     darkColors.scale.pink[3],
@@ -555,8 +579,8 @@ const convertedDarkOptions = {
     darkColors.scale.pink[7],
     darkColors.scale.pink[8],
     darkColors.scale.pink[9],
-    // orange --> green
-    darkColors.scale.green[0],
+    darkColors.scale.pink[9],
+    // orange --> green +1 (slightly darker)
     darkColors.scale.green[1],
     darkColors.scale.green[2],
     darkColors.scale.green[3],
@@ -566,17 +590,7 @@ const convertedDarkOptions = {
     darkColors.scale.green[7],
     darkColors.scale.green[8],
     darkColors.scale.green[9],
-    // purple --> coral +1 (slightly darker)
-    darkColors.scale.coral[1],
-    darkColors.scale.coral[2],
-    darkColors.scale.coral[3],
-    darkColors.scale.coral[4],
-    darkColors.scale.coral[5],
-    darkColors.scale.coral[6],
-    darkColors.scale.coral[7],
-    darkColors.scale.coral[8],
-    darkColors.scale.coral[9],
-    darkColors.scale.coral[9],
+    darkColors.scale.green[9],
     // coral --> orange
     darkColors.scale.orange[0],
     darkColors.scale.orange[1],
@@ -588,8 +602,7 @@ const convertedDarkOptions = {
     darkColors.scale.orange[7],
     darkColors.scale.orange[8],
     darkColors.scale.orange[9],
-    // pink --> purple
-    darkColors.scale.purple[0],
+    // purple --> purple +1 (slightly darker)
     darkColors.scale.purple[1],
     darkColors.scale.purple[2],
     darkColors.scale.purple[3],
@@ -599,6 +612,18 @@ const convertedDarkOptions = {
     darkColors.scale.purple[7],
     darkColors.scale.purple[8],
     darkColors.scale.purple[9],
+    darkColors.scale.purple[9],
+    // pink --> coral
+    darkColors.scale.coral[0],
+    darkColors.scale.coral[1],
+    darkColors.scale.coral[2],
+    darkColors.scale.coral[3],
+    darkColors.scale.coral[4],
+    darkColors.scale.coral[5],
+    darkColors.scale.coral[6],
+    darkColors.scale.coral[7],
+    darkColors.scale.coral[8],
+    darkColors.scale.coral[9],
     // yellow --> red
     darkColors.scale.red[0],
     darkColors.scale.red[1],
