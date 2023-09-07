@@ -34,7 +34,7 @@ const ignorePropStrings = [
   `"editorGutter.deletedBackground":\\s"`, // red means minus
   `"gitDecoration.addedResourceForeground":\\s"`, // green means add
   `"gitDecoration.modifiedResourceForeground":\\s"`, // yellow means modified
-  `"gitDecoration.deletedResourceForeground":\\s"`,  // red means minus
+  `"gitDecoration.deletedResourceForeground":\\s"`, // red means minus
   `"gitDecoration.untrackedResourceForeground":\\s"`, // green means something
   `"gitDecoration.ignoredResourceForeground":\\s"`, // gray means something
   `"gitDecoration.conflictingResourceForeground":\\s"`, // orange means something
@@ -49,6 +49,13 @@ const ignorePropStrings = [
   `"editor.focusedStackFrameHighlightBackground":\\s"`, // not sure what this is, leave it green
   `"peekViewEditor.matchHighlightBackground":\\s"`, // yellow (over red)
   `"peekViewResult.matchHighlightBackground":\\s"`, // yellow (over red)
+  // don't change anything associated with "color.btn" (for now), see theme.js and colors.js for more info
+  `"button.background":\\s"`,
+  `"button.foreground":\\s"`,
+  `"button.hoverBackground":\\s"`,
+  `"button.secondaryBackground":\\s"`,
+  `"button.secondaryForeground":\\s"`,
+  `"button.secondaryHoverBackground":\\s"`,
 ];
 const skipProps = String.raw`(?<!${ignorePropStrings.join("|")})`;
 
