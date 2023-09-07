@@ -4,8 +4,16 @@ const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const np = require("./nushu-palette");
 const lightThemeName = require("../themes/light.json").name;
 
-const ignoreProps = [];
-const skipProps = String.raw`(?<!"terminal.ansiRed":\s"|"terminal.ansiBlue":\s"|"terminal.ansiGreen":\s"|"terminal.ansiYellow":\s"|"terminal.ansiMagenta":\s"|"terminal.ansiMagenta":\s"|"terminal.ansiCyan":\s")`;
+const ignorePropStrings = [
+  `"terminal.ansiRed":\\s"`,
+  `"terminal.ansiBlue":\\s"`,
+  `"terminal.ansiGreen":\\s"`,
+  `"terminal.ansiYellow":\\s"`,
+  `"terminal.ansiMagenta":\\s"`,
+  `"terminal.ansiMagenta":\\s"`,
+  `"terminal.ansiCyan":\\s"`,
+];
+const skipProps = String.raw`(?<!${ignorePropStrings.join("|")})`;
 
 const tmpLightOptions = {
   files: "./themes/light.json",
