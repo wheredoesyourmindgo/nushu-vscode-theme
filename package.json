@@ -31,13 +31,16 @@
   ],
   "keywords": [
     "theme",
+    "women",
     "github",
     "light",
+    "dark",
     "primer",
     "paper",
-    "women",
+    "parchment",
+    "human",
     "pen paper coffee",
-    "parchment"
+    "earthsong"
   ],
   "contributes": {
     "themes": [
@@ -59,6 +62,7 @@
     "chroma-js": "^2.1.2",
     "color": "^3.1.2",
     "nodemon": "^2.0.3",
+    "replace-in-file": "^7.0.1",
     "vsce": "^1.100.1"
   }
 }
