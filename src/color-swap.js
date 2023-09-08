@@ -490,7 +490,8 @@ const convertedLightOptions = {
     lightColors.scale.pink[8],
     lightColors.scale.pink[9],
     lightColors.scale.pink[9],
-    // orange --> green +1 (slightly darker)
+    // orange --> green (dark theme uses a slightly darker green, see below)
+    lightColors.scale.green[0],
     lightColors.scale.green[1],
     lightColors.scale.green[2],
     lightColors.scale.green[3],
@@ -499,7 +500,6 @@ const convertedLightOptions = {
     lightColors.scale.green[6],
     lightColors.scale.green[7],
     lightColors.scale.green[8],
-    lightColors.scale.green[9],
     lightColors.scale.green[9],
     // coral --> orange
     lightColors.scale.orange[0],
