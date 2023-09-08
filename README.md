@@ -58,6 +58,17 @@ You can opt-in to italicizing certain tokens for Nüshu Light and Dark within `s
 }
 ```
 
+### Preferred Themes
+
+Set Light / Dark Theme preferences for toggling and detection with OS appearance.
+
+```json
+{
+   "workbench.preferredDarkColorTheme": "Nüshu Dark",
+   "workbench.preferredLightColorTheme": "Nüshu Light",
+}
+```
+
 *Note, Nüshu Classic italicizes certain tokens by default. You can opt-out of that if you wish with a similar approach to setting "editor.tokenColorCustomizations" as shown above.*
 
 ## Attribution

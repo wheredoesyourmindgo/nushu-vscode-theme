@@ -1,7 +1,7 @@
 {
   "name": "nushu-vscode-theme",
   "displayName": "Nüshu",
-  "description": "A VSCode theme that will continue to fade with time",
+  "description": "A theme that will continue to fade with time",
   "version": "2.0.1",
   "scripts": {
     "build": "node src/index.js && node src/color-swap.js",
@@ -73,6 +73,7 @@
     "cp-file": "<10",
     "nodemon": "^2.0.3",
     "replace-in-file": "^7.0.1",
+    "replace-json-property": "^1.9.0",
     "vsce": "^2.15.0"
   }
 }

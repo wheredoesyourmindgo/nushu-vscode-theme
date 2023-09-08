@@ -4,6 +4,7 @@ const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const np = require("./nushu-palette");
 const cpFile = require("cp-file");
 const fs = require("node:fs/promises");
+const replaceJSONProperty = require('replace-json-property');
 
 const ignorePropStrings = [
   `"terminal.ansiRed":\\s"`,
@@ -668,6 +669,12 @@ async function main() {
       console.log("Temp replacement results:", tmpResults);
       const convertedResults = await replace(convertedLightOptions);
       console.log("Converted replacement results:", convertedResults);
+
+      // additional tweaks 
+      // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
+      const lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json")); // must read this in again for updated values
+      const statusBarBg = lightTheme.colors['statusBar.background']
+      replaceJSONProperty.replace("./themes/nushu-light.json", "statusBarItem.remoteBackground", statusBarBg);
     } else {
       console.log("Skipping Light Theme conversion");
     }
@@ -676,6 +683,12 @@ async function main() {
       console.log("Temp replacement results:", tmpResults);
       const convertedResults = await replace(convertedDarkOptions);
       console.log("Converted replacement results:", convertedResults);
+
+      // additional tweaks 
+      // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
+      const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json")); // must read this in again for updated values
+      const statusBarBg = darkTheme.colors['statusBar.background']
+      replaceJSONProperty.replace("./themes/nushu-dark.json", "statusBarItem.remoteBackground", statusBarBg);
     } else {
       console.log("Skipping Dark Theme conversion");
     }
