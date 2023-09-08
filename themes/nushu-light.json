@@ -55,7 +55,7 @@
     "list.hoverForeground": "#1f2328",
     "list.inactiveSelectionForeground": "#1f2328",
     "list.activeSelectionForeground": "#1f2328",
-    "list.hoverBackground": "#f0ebe080",
+    "list.hoverBackground": "#eaeef280",
     "list.inactiveSelectionBackground": "#afb8c133",
     "list.activeSelectionBackground": "#afb8c133",
     "list.focusForeground": "#1f2328",
@@ -96,7 +96,7 @@
     "tab.inactiveBackground": "#f5f2eb",
     "tab.activeBackground": "#f8f6f1",
     "tab.hoverBackground": "#f8f6f1",
-    "tab.unfocusedHoverBackground": "#f0ebe080",
+    "tab.unfocusedHoverBackground": "#eaeef280",
     "tab.border": "#d0d7de",
     "tab.unfocusedActiveBorderTop": "#d0d7de",
     "tab.activeBorder": "#f8f6f1",
@@ -110,7 +110,7 @@
     "editor.background": "#f8f6f1",
     "editorWidget.background": "#f8f6f1",
     "editor.foldBackground": "#6e77811a",
-    "editor.lineHighlightBackground": "#f0ebe080",
+    "editor.lineHighlightBackground": "#eaeef280",
     "editorLineNumber.foreground": "#8c959f",
     "editorLineNumber.activeForeground": "#1f2328",
     "editorIndentGuide.background": "#1f23281f",
@@ -121,7 +121,7 @@
     "editor.findMatchHighlightBackground": "#fae17d80",
     "editor.linkedEditingBackground": "#0969da12",
     "editor.selectionHighlightBackground": "#bf870040",
-    "editor.wordHighlightBackground": "#f0ebe080",
+    "editor.wordHighlightBackground": "#eaeef280",
     "editor.wordHighlightBorder": "#afb8c199",
     "editor.wordHighlightStrongBackground": "#afb8c14d",
     "editor.wordHighlightStrongBorder": "#afb8c199",
@@ -573,7 +573,7 @@
         "markup.untracked"
       ],
       "settings": {
-        "foreground": "#f0ebe0",
+        "foreground": "#eaeef2",
         "background": "#0550ae"
       }
     },

@@ -12,8 +12,7 @@ module.exports = {
     black: lightColors.scale.black, // same as 'light default' theme
     gray: [
       "#f5f2eb", // hsl(43deg 33% 94%) custom darker shade of pen paper coffee
-      // lightColors.scale.gray[1],
-      "#f0ebe0", // hsl(43deg 33% 91%) used with quick input panels such as command palette and find
+      lightColors.scale.gray[1],
       lightColors.scale.gray[2],
       lightColors.scale.gray[3],
       lightColors.scale.gray[4],
@@ -29,7 +28,7 @@ module.exports = {
   */
   dark: {
     white: darkColors.scale.white, // same as 'dark default' theme
-    black: "#2d2924", // hsl(30deg 11% 16%) custom brighter shade of earthsong background
+    black: "#2d2924", // hsl(30deg 11% 16%) custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
     gray: [
       darkColors.scale.gray[0],
       darkColors.scale.gray[1],
@@ -39,8 +38,7 @@ module.exports = {
       darkColors.scale.gray[5],
       darkColors.scale.gray[6],
       darkColors.scale.gray[7],
-      // darkColors.scale.gray[8],
-      "#302b27", // hsl(30deg 11% 17%) used with quick input panels such as command palette and find
+      darkColors.scale.gray[8],
       "#282420", // hsl(30deg 11% 14%) custom slightly darker earthsong background [Used w/ Editor Bg]
       // "#292521", // hsl(30deg 11% 15%) earthsong background doesn't feel dark enough for editor bg
     ],

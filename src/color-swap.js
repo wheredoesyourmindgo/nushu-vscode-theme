@@ -4,7 +4,7 @@ const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const np = require("./nushu-palette");
 const cpFile = require("cp-file");
 const fs = require("node:fs/promises");
-const replaceJSONProperty = require('replace-json-property');
+const rp = require("replace-json-property");
 
 const ignorePropStrings = [
   `"terminal.ansiRed":\\s"`,
@@ -670,11 +670,26 @@ async function main() {
       const convertedResults = await replace(convertedLightOptions);
       console.log("Converted replacement results:", convertedResults);
 
-      // additional tweaks 
+      // additional tweaks
+      // must read this in again for updated values
+      const lightTheme = JSON.parse(
+        await fs.readFile("./themes/nushu-light.json")
+      );
       // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
-      const lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json")); // must read this in again for updated values
-      const statusBarBg = lightTheme.colors['statusBar.background']
-      replaceJSONProperty.replace("./themes/nushu-light.json", "statusBarItem.remoteBackground", statusBarBg);
+      const statusBarBg = lightTheme.colors["statusBar.background"];
+      rp.replace(
+        "./themes/nushu-light.json",
+        "statusBarItem.remoteBackground",
+        statusBarBg
+      );
+      // set editor.selectionBackground (unset for some reason in GitHub theme) to the same value as editor.selectionHighlightBackground (which is set)
+      const selectionHighlightBackground =
+        lightTheme.colors["editor.selectionHighlightBackground"];
+      rp.replace(
+        "./themes/nushu-light.json",
+        "editor.selectionBackground ",
+        selectionHighlightBackground
+      );
     } else {
       console.log("Skipping Light Theme conversion");
     }
@@ -684,11 +699,72 @@ async function main() {
       const convertedResults = await replace(convertedDarkOptions);
       console.log("Converted replacement results:", convertedResults);
 
-      // additional tweaks 
+      // additional tweaks
+      // must read this in again for updated values
+      const darkTheme = JSON.parse(
+        await fs.readFile("./themes/nushu-dark.json")
+      );
       // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
-      const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json")); // must read this in again for updated values
-      const statusBarBg = darkTheme.colors['statusBar.background']
-      replaceJSONProperty.replace("./themes/nushu-dark.json", "statusBarItem.remoteBackground", statusBarBg);
+      const statusBarBg = darkTheme.colors["statusBar.background"];
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "statusBarItem.remoteBackground",
+        statusBarBg
+      );
+      // use black just as white is used in the light theme
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "quickInput.background",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "breadcrumbPicker.background",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "editorWidget.background",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "debugToolBar.background",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "checkbox.background",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "dropdown.background",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "dropdown.listBackground",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "notificationCenterHeader.background",
+        np.dark.black
+      );
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "notifications.background",
+        np.dark.black
+      );
+      // set editor.selectionBackground (unset for some reason in GitHub theme) to the same value as editor.selectionHighlightBackground (which is set)
+      const selectionHighlightBackground =
+        darkTheme.colors["editor.selectionHighlightBackground"];
+      rp.replace(
+        "./themes/nushu-dark.json",
+        "editor.selectionBackground ",
+        selectionHighlightBackground
+      );
     } else {
       console.log("Skipping Dark Theme conversion");
     }
