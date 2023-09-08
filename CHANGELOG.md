@@ -1,4 +1,9 @@
 # Changelog
+
+## 2.1.6
+
+- Nüshu Light: Use a lighter green (same as GitHub Light Default)
+
 ## 2.1.5
 
 - Nüshu Light: Use darker purple with `terminal.ansiMagenta` and `terminal.ansiBrightMagenta`

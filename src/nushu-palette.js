@@ -10,6 +10,7 @@ module.exports = {
   light: {
     white: "#f8f6f1", // hsl(43deg 33% 96%) pen paper coffee background [Used w/ Editor Bg]
     black: lightColors.scale.black, // same as 'light default' theme
+    border: "#e0d8c2", // hsl(43deg 33% 82%), -14%, similar to nice border, #dfd8c7, found in One Markdown Solarized Light
     gray: [
       "#f5f2eb", // hsl(43deg 33% 94%) custom darker shade of pen paper coffee
       lightColors.scale.gray[1],
