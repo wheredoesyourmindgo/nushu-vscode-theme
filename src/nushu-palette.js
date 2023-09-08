@@ -3,18 +3,15 @@ const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 
 module.exports = {
   classic: {
-    black: "#1B1F00",
+    black: "#1b1f00",
     white: "#f8f6f1",
-    gray: ["#F3F0E8", "#EFEBE0", "#E7E1D0", "#444e00", "#2f3600", "#252a00"],
+    gray: ["#f3f0e8", "#efebe0", "#e7e1d0", "#444e00", "#2f3600", "#252a00"],
   },
-  /*
-    Originally tried https://hihayk.github.io/scale/#9/0/50/80/-51/67/20/14/f3f0e8/243/240/232/white, though, the dark version has issues, noted below. Instead, the defaults will be used for shades of gray other than the lightest shade, which is used for the panel backgrounds.
-  */
   light: {
-    white: "#f8f6f1", // pen paper coffee background
+    white: "#f8f6f1", // hsl(43deg 33% 96%) pen paper coffee background
     black: lightColors.scale.black, // same as 'light default' theme
     gray: [
-      "#f3f0e8", // custom darker shade of pen paper coffee (derived manually)
+      "#f5f2eb", // hsl(43deg 33% 94%) custom darker shade of pen paper coffee
       lightColors.scale.gray[1],
       lightColors.scale.gray[2],
       lightColors.scale.gray[3],
@@ -31,7 +28,7 @@ module.exports = {
   */
   dark: {
     white: darkColors.scale.white, // same as 'dark default' theme
-    black: "#2f2b27", // custom brighter shade of earthsong background
+    black: "#2d2924", // hsl(30deg 11% 16%) custom brighter shade of earthsong background
     gray: [
       darkColors.scale.gray[0],
       darkColors.scale.gray[1],
@@ -42,8 +39,8 @@ module.exports = {
       darkColors.scale.gray[6],
       darkColors.scale.gray[7],
       darkColors.scale.gray[8],
-      "#27241F", // custom slightly darker earthsong background (used https://hihayk.github.io/scale/#10/0/50/50/-51/67/20/14/292521/41/37/33/black, the color left adjacent of the original earthsong color)
-      // "#292521", // earthsong background (doesn't feel dark enough)
+      "#282420", // hsl(30deg 11% 14%) custom slightly darker earthsong background 
+      // "#292521", // hsl(30deg 11% 15%) earthsong background doesn't feel dark enough
     ],
   },
   temp: {
