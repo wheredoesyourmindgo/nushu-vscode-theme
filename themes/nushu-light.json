@@ -236,7 +236,8 @@
     "settings.headerForeground": "#1f2328",
     "settings.modifiedItemIndicator": "#ff818266",
     "welcomePage.buttonBackground": "#f5f2eb",
-    "welcomePage.buttonHoverBackground": "#f3f4f6"
+    "welcomePage.buttonHoverBackground": "#f3f4f6",
+    "editor.selectionBackground": "#bf870040"
   },
   "semanticHighlighting": true,
   "tokenColors": [

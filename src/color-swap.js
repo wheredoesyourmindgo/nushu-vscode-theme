@@ -672,7 +672,7 @@ async function main() {
 
       // additional tweaks
       // must read this in again for updated values
-      const lightTheme = JSON.parse(
+      let lightTheme = JSON.parse(
         await fs.readFile("./themes/nushu-light.json")
       );
       // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
@@ -683,13 +683,12 @@ async function main() {
         statusBarBg
       );
       // set editor.selectionBackground (unset for some reason in GitHub theme) to the same value as editor.selectionHighlightBackground (which is set)
+      lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json"));
+      const colors = lightTheme.colors;
       const selectionHighlightBackground =
         lightTheme.colors["editor.selectionHighlightBackground"];
-      rp.replace(
-        "./themes/nushu-light.json",
-        "editor.selectionBackground ",
-        selectionHighlightBackground
-      );
+      colors["editor.selectionBackground"] = selectionHighlightBackground;
+      rp.replace("./themes/nushu-light.json", "colors", colors);
     } else {
       console.log("Skipping Light Theme conversion");
     }
@@ -701,9 +700,7 @@ async function main() {
 
       // additional tweaks
       // must read this in again for updated values
-      const darkTheme = JSON.parse(
-        await fs.readFile("./themes/nushu-dark.json")
-      );
+      let darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
       // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
       const statusBarBg = darkTheme.colors["statusBar.background"];
       rp.replace(
@@ -758,13 +755,12 @@ async function main() {
         np.dark.black
       );
       // set editor.selectionBackground (unset for some reason in GitHub theme) to the same value as editor.selectionHighlightBackground (which is set)
+      darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
+      const colors = darkTheme.colors;
       const selectionHighlightBackground =
         darkTheme.colors["editor.selectionHighlightBackground"];
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "editor.selectionBackground ",
-        selectionHighlightBackground
-      );
+      colors["editor.selectionBackground"] = selectionHighlightBackground;
+      rp.replace("./themes/nushu-dark.json", "colors", colors);
     } else {
       console.log("Skipping Dark Theme conversion");
     }
