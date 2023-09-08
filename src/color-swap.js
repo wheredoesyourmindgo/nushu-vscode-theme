@@ -660,10 +660,12 @@ async function main() {
     await cpFile("./themes/dark-default.json", "./themes/nushu-dark.json", {
       overwrite: true,
     });
+
     const lightTheme = JSON.parse(
       await fs.readFile("./themes/nushu-light.json")
     );
     const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
+
     if (lightTheme.name === "GitHub Light Default") {
       const tmpResults = await replace(tmpLightOptions);
       console.log("Temp replacement results:", tmpResults);
@@ -689,6 +691,19 @@ async function main() {
         lightTheme.colors["editor.selectionHighlightBackground"];
       colors["editor.selectionBackground"] = selectionHighlightBackground;
       rp.replace("./themes/nushu-light.json", "colors", colors);
+
+      // Magenta doesn't look dark enough in light theme (it looks good in dark theme), so replace with purple + 1
+      lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json"));
+      rp.replace(
+        "./themes/nushu-light.json",
+        "terminal.ansiMagenta",
+        lightColors.scale.purple[6]
+      );
+      rp.replace(
+        "./themes/nushu-light.json",
+        "terminal.ansiBrightMagenta",
+        lightColors.scale.purple[5]
+      );
     } else {
       console.log("Skipping Light Theme conversion");
     }
