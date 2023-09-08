@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.6
+## 2.1.7
 
 - Nüshu Light: Use a lighter green (same as GitHub Light Default)
 - Nüshu Light/Dark: Use a custom color with borders (17 instances in each theme)
