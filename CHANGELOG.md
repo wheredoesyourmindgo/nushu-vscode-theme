@@ -1,4 +1,12 @@
 # Changelog
+## 2.1.5
+
+- Nüshu Light: Use darker purple with `terminal.ansiMagenta` and `terminal.ansiBrightMagenta`
+
+## 2.0.0
+
+- Nüshu Light and Dark Themes added
+- Original Nüshu Theme renamed to Nüshu Classic
 
 ## 0.4.11
 
