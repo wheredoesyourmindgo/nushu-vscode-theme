@@ -8,7 +8,7 @@ module.exports = {
     gray: ["#f3f0e8", "#efebe0", "#e7e1d0", "#444e00", "#2f3600", "#252a00"],
   },
   light: {
-    white: "#f8f6f1", // hsl(43deg 33% 96%) pen paper coffee background
+    white: "#f8f6f1", // hsl(43deg 33% 96%) pen paper coffee background [Used w/ Editor Bg]
     black: lightColors.scale.black, // same as 'light default' theme
     gray: [
       "#f5f2eb", // hsl(43deg 33% 94%) custom darker shade of pen paper coffee
@@ -38,9 +38,10 @@ module.exports = {
       darkColors.scale.gray[5],
       darkColors.scale.gray[6],
       darkColors.scale.gray[7],
-      darkColors.scale.gray[8],
-      "#282420", // hsl(30deg 11% 14%) custom slightly darker earthsong background 
-      // "#292521", // hsl(30deg 11% 15%) earthsong background doesn't feel dark enough
+      // darkColors.scale.gray[8],
+      "#2d2924", // hsl(30deg 11% 16%)
+      "#282420", // hsl(30deg 11% 14%) custom slightly darker earthsong background [Used w/ Editor Bg]
+      // "#292521", // hsl(30deg 11% 15%) earthsong background doesn't feel dark enough for editor bg
     ],
   },
   temp: {
