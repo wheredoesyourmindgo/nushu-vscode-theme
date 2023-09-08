@@ -6,6 +6,16 @@ const cpFile = require("cp-file");
 const fs = require("node:fs/promises");
 const rp = require("replace-json-property");
 
+const lightGray3Borders = new RegExp(
+  `(?<=border":\\s"|borderTop":\\s")${lightColors.scale.gray[2]}`,
+  "gi"
+);
+
+const darkGray7Borders = new RegExp(
+  `(?<=border":\\s"|borderTop":\\s")${darkColors.scale.gray[6]}`,
+  "gi"
+);
+
 const ignorePropStrings = [
   `"terminal.ansiRed":\\s"`,
   `"terminal.ansiBlue":\\s"`,
@@ -58,7 +68,7 @@ const ignorePropStrings = [
   `"button.secondaryForeground":\\s"`,
   `"button.secondaryHoverBackground":\\s"`,
 ];
-const skipProps = String.raw`(?<!${ignorePropStrings.join("|")})`;
+const skipProps = `(?<!${ignorePropStrings.join("|")})`;
 
 // white, black, gray, yellow, pink, green, orange, purple, coral, red
 const toTmpArry = [
@@ -652,6 +662,18 @@ const convertedDarkOptions = {
   ],
 };
 
+const convertedLightBordersOptions = {
+  files: "./themes/nushu-light.json",
+  from: lightGray3Borders,
+  to: np.light.border,
+};
+
+const convertedDarkBordersOptions = {
+  files: "./themes/nushu-dark.json",
+  from: darkGray7Borders,
+  to: np.dark.border,
+};
+
 async function main() {
   try {
     await cpFile("./themes/light-default.json", "./themes/nushu-light.json", {
@@ -671,6 +693,12 @@ async function main() {
       console.log("Temp replacement results:", tmpResults);
       const convertedResults = await replace(convertedLightOptions);
       console.log("Converted replacement results:", convertedResults);
+
+      // swap custom border color
+      const convertedBordersResults = await replace(
+        convertedLightBordersOptions
+      );
+      console.log("Converted replacement results:", convertedBordersResults);
 
       // additional tweaks
       // must read this in again for updated values
@@ -712,6 +740,12 @@ async function main() {
       console.log("Temp replacement results:", tmpResults);
       const convertedResults = await replace(convertedDarkOptions);
       console.log("Converted replacement results:", convertedResults);
+
+      // swap custom border color
+      const convertedBordersResults = await replace(
+        convertedDarkBordersOptions
+      );
+      console.log("Converted replacement results:", convertedBordersResults);
 
       // additional tweaks
       // must read this in again for updated values

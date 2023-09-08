@@ -10,9 +10,9 @@ module.exports = {
   light: {
     white: "#f8f6f1", // hsl(43deg 33% 96%) pen paper coffee background [Used w/ Editor Bg]
     black: lightColors.scale.black, // same as 'light default' theme
-    border: "#e0d8c2", // hsl(43deg 33% 82%), -14%, similar to nice border, #dfd8c7, found in One Markdown Solarized Light
+    border: "#dad7cf", // lch(86% 4 89deg), -10% lightness to gray 1 (#f5f2eb) [Used w/ borders]
     gray: [
-      "#f5f2eb", // hsl(43deg 33% 94%) custom darker shade of pen paper coffee
+      "#f5f2eb", // hsl(43deg 33% 94%) lch(96% 4 89deg) custom darker shade of pen paper coffee
       lightColors.scale.gray[1],
       lightColors.scale.gray[2],
       lightColors.scale.gray[3],
@@ -29,7 +29,8 @@ module.exports = {
   */
   dark: {
     white: darkColors.scale.white, // same as 'dark default' theme
-    black: "#2d2924", // hsl(30deg 11% 16%) custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
+    black: "#2d2924", // hsl(30deg 11% 16%) lch(17% 4 69deg) custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
+    border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2d2924) [Used w/ borders]
     gray: [
       darkColors.scale.gray[0],
       darkColors.scale.gray[1],
