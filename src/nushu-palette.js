@@ -12,6 +12,18 @@ module.exports = {
     black: lightColors.scale.black, // same as 'light default' theme
     border: "#d6d4cf", // lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
     currentLine: "#eae8e2", // lch(92% 3 89deg), -2% lightness to gray 1 (#f0eee8) [Used current line bg]
+    // "gray": [
+    //   "#f6f8fa", // 11
+    //   "#eaeef2", // 6
+    //   "#d0d7de", // 17
+    //   "#afb8c1", // 11
+    //   "#8c959f", // 8
+    //   "#6e7781", // 6
+    //   "#57606a", // 4
+    //   "#424a53", // 0
+    //   "#32383f", // 0
+    //   "#24292f" // 2
+    // ], // 65 occurrences
     gray: [
       "#f0eee8", // lch(94% 3 89deg), -3% lightness to white, custom darker shade of pen paper coffee
       lightColors.scale.gray[1],
@@ -33,6 +45,18 @@ module.exports = {
     black: "#2e2925", // lch(17% 4 69deg) +3% lightness to gray 10, custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
     border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2d2924) [Used w/ borders]
     currentLine: "#322d29", // lch(19% 4 69deg), +2% lightness to black (#2d2924) [Used current line bg]
+    // "gray": [
+    //   "#f0f6fc", // 1
+    //   "#c9d1d9", // 1
+    //   "#b1bac4", // 1
+    //   "#8b949e", // 12
+    //   "#6e7681", // 18
+    //   "#484f58", // 3
+    //   "#30363d", // 20
+    //   "#21262d", // 3
+    //   "#161b22", // 10
+    //   "#0d1117" // 11
+    // ], // 79 occurrences
     gray: [
       darkColors.scale.gray[0],
       darkColors.scale.gray[1],
