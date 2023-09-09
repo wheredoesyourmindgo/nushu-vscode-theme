@@ -8,11 +8,12 @@ module.exports = {
     gray: ["#f3f0e8", "#efebe0", "#e7e1d0", "#444e00", "#2f3600", "#252a00"],
   },
   light: {
-    white: "#f8f6f1", // hsl(43deg 33% 96%) pen paper coffee background [Used w/ Editor Bg]
+    white: "#f8f6f1", // hsl(43deg 33% 96%) lch(97% 3 89deg) pen paper coffee background [Used w/ Editor Bg]
     black: lightColors.scale.black, // same as 'light default' theme
-    border: "#dad7cf", // lch(86% 4 89deg), -10% lightness to gray 1 (#f5f2eb) [Used w/ borders]
+    border: "#d6d4cf", // lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
+    currentLine: "#eae8e2", // lch(92% 3 89deg), -2% lightness to gray 1 (#f0eee8) [Used current line bg]
     gray: [
-      "#f5f2eb", // hsl(43deg 33% 94%) lch(96% 4 89deg) custom darker shade of pen paper coffee
+      "#f0eee8", // lch(94% 3 89deg), -3% lightness to white, custom darker shade of pen paper coffee
       lightColors.scale.gray[1],
       lightColors.scale.gray[2],
       lightColors.scale.gray[3],
@@ -29,8 +30,9 @@ module.exports = {
   */
   dark: {
     white: darkColors.scale.white, // same as 'dark default' theme
-    black: "#2d2924", // hsl(30deg 11% 16%) lch(17% 4 69deg) custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
+    black: "#2e2925", // lch(17% 4 69deg) +3% lightness to gray 10, custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
     border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2d2924) [Used w/ borders]
+    currentLine: "#322d29", // lch(19% 4 69deg), +2% lightness to black (#2d2924) [Used current line bg]
     gray: [
       darkColors.scale.gray[0],
       darkColors.scale.gray[1],
@@ -41,13 +43,14 @@ module.exports = {
       darkColors.scale.gray[6],
       darkColors.scale.gray[7],
       darkColors.scale.gray[8],
-      "#282420", // hsl(30deg 11% 14%) custom slightly darker earthsong background [Used w/ Editor Bg]
-      // "#292521", // hsl(30deg 11% 15%) earthsong background doesn't feel dark enough for editor bg
+      "#27231e", // lch(14% 4 69deg) custom slightly darker earthsong background [Used w/ Editor Bg]
+      // "#292521", hsl(30deg 11% 15%) lch(15% 4 69deg) earthsong background doesn't feel dark enough for editor bg
     ],
   },
   temp: {
     white: "TMP_WHITE",
     black: "TMP_BLACK",
+    foreground: "TMP_FOREGROUND",
     gray: [
       "TMP_GRAY_0",
       "TMP_GRAY_1",

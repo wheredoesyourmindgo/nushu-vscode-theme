@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.8
+
+- Don't use GitHub Theme foreground, revert to foreground found in Primer primitives
+- Nüshu Light/Dark: Use LCH to calculate background css hex codes
+
 ## 2.1.7
 
 - Nüshu Light: Use a lighter green (same as GitHub Light Default)

@@ -1,10 +1,28 @@
 const replace = require("replace-in-file");
-const lightColors = require("@primer/primitives/dist/json/colors/light.json");
-const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const np = require("./nushu-palette");
 const cpFile = require("cp-file");
 const fs = require("node:fs/promises");
 const rp = require("replace-json-property");
+const lightColors = require("@primer/primitives/dist/json/colors/light.json");
+const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
+
+/*
+Select GitHub Theme overrides (eg. foreground) will be reverted back to Primer primitives below.
+It is important to just define these here, due to how javascript works, do not call getColors() in colors.js
+cause it will mutate the Primer primitives.
+*/
+const ghThemeOverrides = {
+  light: {
+    fg: {
+      default: "#1f2328",
+    },
+  },
+  dark: {
+    fg: {
+      default: "#e6edf3",
+    },
+  },
+};
 
 const lightGray3Borders = new RegExp(
   `(?<=border":\\s"|borderTop":\\s")${lightColors.scale.gray[2]}`,
@@ -70,10 +88,11 @@ const ignorePropStrings = [
 ];
 const skipProps = `(?<!${ignorePropStrings.join("|")})`;
 
-// white, black, gray, yellow, pink, green, orange, purple, coral, red
+// white, black, foreground, gray, yellow, pink, green, orange, purple, coral, red
 const toTmpArry = [
   np.temp.white,
   np.temp.black,
+  np.temp.foreground,
   //
   np.temp.gray[0],
   np.temp.gray[1],
@@ -164,10 +183,11 @@ const toTmpArry = [
   np.temp.red[9],
 ];
 
-// white, black, gray, yellow, pink, green, orange, purple, coral, red
+// white, black, foreground, gray, yellow, pink, green, orange, purple, coral, red
 const fromTmpArry = [
   new RegExp(`${np.temp.white}`, "gi"),
   new RegExp(`${np.temp.black}`, "gi"),
+  new RegExp(`${np.temp.foreground}`, "gi"),
   //
   new RegExp(`${np.temp.gray[0]}`, "gi"),
   new RegExp(`${np.temp.gray[1]}`, "gi"),
@@ -260,10 +280,11 @@ const fromTmpArry = [
 
 const tmpLightOptions = {
   files: "./themes/nushu-light.json",
-  // white, black, gray, green, red, orange, coral, purple, pink, yellow
+  // white, black, foreground, gray, green, red, orange, coral, purple, pink, yellow
   from: [
     new RegExp(`${skipProps}${lightColors.scale.white}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.black}`, "gi"),
+    new RegExp(`${skipProps}${ghThemeOverrides.light.fg.default}`, "gi"),
     //
     new RegExp(`${skipProps}${lightColors.scale.gray[0]}`, "gi"),
     new RegExp(`${skipProps}${lightColors.scale.gray[1]}`, "gi"),
@@ -358,10 +379,11 @@ const tmpLightOptions = {
 
 const tmpDarkOptions = {
   files: "./themes/nushu-dark.json",
-  // white, black, gray, green, red, orange, coral, purple, pink, yellow
+  // white, black, foreground, gray, green, red, orange, coral, purple, pink, yellow
   from: [
     new RegExp(`${skipProps}${darkColors.scale.white}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.black}`, "gi"),
+    new RegExp(`${skipProps}${ghThemeOverrides.dark.fg.default}`, "gi"),
     //
     new RegExp(`${skipProps}${darkColors.scale.gray[0]}`, "gi"),
     new RegExp(`${skipProps}${darkColors.scale.gray[1]}`, "gi"),
@@ -461,12 +483,13 @@ const convertedLightOptions = {
     //
     ...fromTmpArry,
   ],
-  // white, black, gray, yellow, pink, green, orange, purple, coral, red
+  // white, black, foreground, gray, yellow, pink, green, orange, purple, coral, red
   to: [
     '"name": "Nüshu Light"',
     //
     np.light.white,
     np.light.black,
+    lightColors.fg.default, // don't use GitHub Theme foreground, just use one found in the theme palette
     //
     np.light.gray[0],
     np.light.gray[1],
@@ -565,12 +588,13 @@ const convertedDarkOptions = {
     //
     ...fromTmpArry,
   ],
-  // white, black, gray, yellow, pink, green, orange, purple, coral, red
+  // white, black, foreground, gray, yellow, pink, green, orange, purple, coral, red
   to: [
     '"name": "Nüshu Dark"',
     //
     np.dark.white,
     np.dark.black,
+    darkColors.fg.default, // don't use GitHub Theme foreground, just use one found in the theme palette
     //
     np.dark.gray[0],
     np.dark.gray[1],
