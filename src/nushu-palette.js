@@ -11,7 +11,7 @@ module.exports = {
     white: "#f8f6f1", // hsl(43deg 33% 96%) lch(97% 3 89deg) pen paper coffee background [Used w/ Editor Bg]
     black: lightColors.scale.black, // same as 'light default' theme
     border: "#d6d4cf", // lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
-    currentLine: "#eae8e2", // lch(92% 3 89deg), -2% lightness to gray 1 (#f0eee8) [Used current line bg]
+    secondary: "#e2dfda", // lch(89% 3 89deg), -5% lightness to gray 1 (#f0eee8) [Used current line bg]
     gray: [
       "#f0eee8", // lch(94% 3 89deg), -3% lightness to white, custom darker shade of pen paper coffee
       lightColors.scale.gray[1],
