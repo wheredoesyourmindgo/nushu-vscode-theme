@@ -43,8 +43,8 @@ module.exports = {
   dark: {
     white: darkColors.scale.white, // same as 'dark default' theme
     black: "#2e2925", // lch(17% 4 69deg) +3% lightness to gray 10, custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
-    border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2d2924) [Used w/ borders]
-    currentLine: "#322d29", // lch(19% 4 69deg), +2% lightness to black (#2d2924) [Used current line bg]
+    border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2e2925) [Used w/ borders]
+    secondary: "#39342f", // lch(22% 4 69deg), +5% lightness to black (#2e2925) [Used current line bg]
     // "gray": [
     //   "#f0f6fc", // 1
     //   "#c9d1d9", // 1
