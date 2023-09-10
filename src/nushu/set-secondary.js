@@ -4,7 +4,7 @@ const np = require("./nushu-palette");
 
 /*
 The following is loosely based on what is being set to some transparent hex value in both the GitHub Default Light and Dark themes.
-The default themes are a bit different, so for simplicity we are aggregating the tokens and will adjust as needed in the future.
+The default themes are a bit different, so for simplicity we are aggregating what both themes set and will adjust as needed in the future.
 */
 
 async function setLightSecondary() {

@@ -9,7 +9,7 @@ const {
   setLightSelectionBackground,
   setDarkSelectionBackground,
 } = require("./set-selection-background");
-const setDarkMiscBlack = require("./set-dark-misc-black");
+const { setLightBackground, setDarkBackground } = require("./set-background");
 const resetThemes = require("./reset-themes");
 const {
   setLightColorScales,
@@ -37,6 +37,7 @@ async function main() {
       await setLightSelectionBackground();
       await setLightEditorHoverWidget();
       await setLightSecondary();
+      setLightBackground();
       setLightTermMagenta();
     } else {
       console.log("Skipping Light Theme conversion");
@@ -50,7 +51,7 @@ async function main() {
       await setDarkSelectionBackground();
       await setDarkEditorHoverWidget();
       await setDarkSecondary();
-      setDarkMiscBlack();
+      setDarkBackground();
     } else {
       console.log("Skipping Dark Theme conversion");
     }
