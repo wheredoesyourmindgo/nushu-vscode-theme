@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.11
+
+- Nüshu Light: Fix some backgrounds used
+
 ## 2.1.10
 
 - Set 6 inconsistently used shades of gray to secondary Nüshu color
