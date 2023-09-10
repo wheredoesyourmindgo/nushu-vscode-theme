@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.9
+## 2.1.10
 
 - Set 6 inconsistently used shades of gray to secondary Nüshu color
 - Set "editorHoverWidget.border"
