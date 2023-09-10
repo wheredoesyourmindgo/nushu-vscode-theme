@@ -2,9 +2,19 @@ const replace = require("replace-in-file");
 const np = require("./nushu-palette");
 const cpFile = require("cp-file");
 const fs = require("node:fs/promises");
-const rp = require("replace-json-property");
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
+const { setDarkBorders, setLightBorders } = require("./set-borders");
+const {
+  setLightRemoteConnect,
+  setDarkRemoteConnect,
+} = require("./set-remote-connect");
+const { setLightTermMagenta } = require("./set-light-magenta");
+const {
+  setLightSelectionBackground,
+  setDarkSelectionBackground,
+} = require("./set-selection-background");
+const setDarkMiscBlack = require("./set-dark-misc-black");
 
 /*
 Select GitHub Theme overrides (eg. foreground) will be reverted back to Primer primitives below.
@@ -23,16 +33,6 @@ const ghThemeOverrides = {
     },
   },
 };
-
-const lightGray3Borders = new RegExp(
-  `(?<=border":\\s"|borderTop":\\s")${lightColors.scale.gray[2]}`,
-  "gi"
-);
-
-const darkGray7Borders = new RegExp(
-  `(?<=border":\\s"|borderTop":\\s")${darkColors.scale.gray[6]}`,
-  "gi"
-);
 
 const ignorePropStrings = [
   `"terminal.ansiRed":\\s"`,
@@ -686,18 +686,6 @@ const convertedDarkOptions = {
   ],
 };
 
-const convertedLightBordersOptions = {
-  files: "./themes/nushu-light.json",
-  from: lightGray3Borders,
-  to: np.light.border,
-};
-
-const convertedDarkBordersOptions = {
-  files: "./themes/nushu-dark.json",
-  from: darkGray7Borders,
-  to: np.dark.border,
-};
-
 async function main() {
   try {
     await cpFile("./themes/light-default.json", "./themes/nushu-light.json", {
@@ -707,10 +695,8 @@ async function main() {
       overwrite: true,
     });
 
-    const lightTheme = JSON.parse(
-      await fs.readFile("./themes/nushu-light.json")
-    );
-    const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
+    let lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json"));
+    let darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
 
     if (lightTheme.name === "GitHub Light Default") {
       const tmpResults = await replace(tmpLightOptions);
@@ -718,44 +704,10 @@ async function main() {
       const convertedResults = await replace(convertedLightOptions);
       console.log("Converted replacement results:", convertedResults);
 
-      // swap custom border color
-      const convertedBordersResults = await replace(
-        convertedLightBordersOptions
-      );
-      console.log("Converted replacement results:", convertedBordersResults);
-
-      // additional tweaks
-      // must read this in again for updated values
-      let lightTheme = JSON.parse(
-        await fs.readFile("./themes/nushu-light.json")
-      );
-      // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
-      const statusBarBg = lightTheme.colors["statusBar.background"];
-      rp.replace(
-        "./themes/nushu-light.json",
-        "statusBarItem.remoteBackground",
-        statusBarBg
-      );
-      // set editor.selectionBackground (unset for some reason in GitHub theme) to the same value as editor.selectionHighlightBackground (which is set)
-      lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json"));
-      const colors = lightTheme.colors;
-      const selectionHighlightBackground =
-        lightTheme.colors["editor.selectionHighlightBackground"];
-      colors["editor.selectionBackground"] = selectionHighlightBackground;
-      rp.replace("./themes/nushu-light.json", "colors", colors);
-
-      // Magenta doesn't look dark enough in light theme (it looks good in dark theme), so replace with purple + 1
-      lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json"));
-      rp.replace(
-        "./themes/nushu-light.json",
-        "terminal.ansiMagenta",
-        lightColors.scale.purple[6]
-      );
-      rp.replace(
-        "./themes/nushu-light.json",
-        "terminal.ansiBrightMagenta",
-        lightColors.scale.purple[5]
-      );
+      await setLightRemoteConnect();
+      await setLightBorders();
+      setLightTermMagenta();
+      await setLightSelectionBackground();
     } else {
       console.log("Skipping Light Theme conversion");
     }
@@ -765,75 +717,10 @@ async function main() {
       const convertedResults = await replace(convertedDarkOptions);
       console.log("Converted replacement results:", convertedResults);
 
-      // swap custom border color
-      const convertedBordersResults = await replace(
-        convertedDarkBordersOptions
-      );
-      console.log("Converted replacement results:", convertedBordersResults);
-
-      // additional tweaks
-      // must read this in again for updated values
-      let darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
-      // don't use gray background with Remote Connect button in status bar, just use the status bar background for uniform appearance
-      const statusBarBg = darkTheme.colors["statusBar.background"];
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "statusBarItem.remoteBackground",
-        statusBarBg
-      );
-      // use black just as white is used in the light theme
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "quickInput.background",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "breadcrumbPicker.background",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "editorWidget.background",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "debugToolBar.background",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "checkbox.background",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "dropdown.background",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "dropdown.listBackground",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "notificationCenterHeader.background",
-        np.dark.black
-      );
-      rp.replace(
-        "./themes/nushu-dark.json",
-        "notifications.background",
-        np.dark.black
-      );
-      // set editor.selectionBackground (unset for some reason in GitHub theme) to the same value as editor.selectionHighlightBackground (which is set)
-      darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
-      const colors = darkTheme.colors;
-      const selectionHighlightBackground =
-        darkTheme.colors["editor.selectionHighlightBackground"];
-      colors["editor.selectionBackground"] = selectionHighlightBackground;
-      rp.replace("./themes/nushu-dark.json", "colors", colors);
+      await setDarkRemoteConnect();
+      await setDarkBorders();
+      await setDarkSelectionBackground();
+      setDarkMiscBlack();
     } else {
       console.log("Skipping Dark Theme conversion");
     }
