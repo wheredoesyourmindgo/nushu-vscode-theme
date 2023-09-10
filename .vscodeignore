@@ -3,5 +3,11 @@
 images/**
 extra/**
 .vscode-test/**
+.changeset/
+.github/
 .gitignore
 .markdownlintrc
+/node_modules/
+/package-lock.json
+/src/
+/build/
