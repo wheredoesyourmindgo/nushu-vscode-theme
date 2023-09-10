@@ -16,7 +16,6 @@ async function setLightSelectionBackground() {
 }
 
 async function setDarkSelectionBackground() {
-  // set editor.selectionBackground (unset for some reason in GitHub theme) to the same value as editor.selectionHighlightBackground (which is set)
   const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
   const colors = darkTheme.colors;
   const selectionHighlightBackground =

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.9
+
+- Set "editorHoverWidget.border"
+
 ## 2.1.8
 
 - Don't use GitHub Theme foreground, revert to foreground found in Primer primitives

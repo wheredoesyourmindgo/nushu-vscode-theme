@@ -16,6 +16,10 @@ const {
   setDarkColorScales,
 } = require("./set-color-scales");
 const { setLightForeground, setDarkForeground } = require("./set-foreground");
+const {
+  setLightEditorHoverWidget,
+  setDarkEditorHoverWidget,
+} = require("./set-editor-hover-widget");
 
 async function main() {
   try {
@@ -24,24 +28,25 @@ async function main() {
     const lightTheme = JSON.parse(
       await fs.readFile("./themes/nushu-light.json")
     );
-    const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
-
     if (lightTheme.name === "GitHub Light Default") {
       await setLightColorScales();
       await setLightForeground();
       await setLightRemoteConnect();
       await setLightBorders();
       await setLightSelectionBackground();
+      await setLightEditorHoverWidget();
       setLightTermMagenta();
     } else {
       console.log("Skipping Light Theme conversion");
     }
+    const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
     if (darkTheme.name === "GitHub Dark Default") {
       await setDarkColorScales();
       await setDarkForeground();
       await setDarkRemoteConnect();
       await setDarkBorders();
       await setDarkSelectionBackground();
+      await setDarkEditorHoverWidget();
       setDarkMiscBlack();
     } else {
       console.log("Skipping Dark Theme conversion");
