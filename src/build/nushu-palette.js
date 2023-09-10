@@ -11,7 +11,7 @@ module.exports = {
     white: "#f8f6f1", // hsl(43deg 33% 96%) lch(97% 3 89deg) pen paper coffee background [Used w/ Editor Bg]
     black: lightColors.scale.black, // same as 'light default' theme
     border: "#d6d4cf", // lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
-    secondary: "#e2dfda", // lch(89% 3 89deg), -5% lightness to gray 1 (#f0eee8) [Used current line bg]
+    secondary: "#e4e2dd", // lch(90% 3 89deg), -4% lightness to gray 1 (#f0eee8) [Used current line bg]
     // "gray": [
     //   "#f6f8fa", // 11
     //   "#eaeef2", // 6
@@ -25,7 +25,7 @@ module.exports = {
     //   "#24292f" // 2
     // ], // 65 occurrences
     gray: [
-      "#f0eee8", // lch(94% 3 89deg), -3% lightness to white, custom darker shade of pen paper coffee
+      "#f0eee8", // lch(94% 3 89deg), -3% lightness to white, custom darker shade of pen paper coffee [Used w/ quick input panels such as command palette and find]
       lightColors.scale.gray[1],
       lightColors.scale.gray[2],
       lightColors.scale.gray[3],
@@ -44,7 +44,7 @@ module.exports = {
     white: darkColors.scale.white, // same as 'dark default' theme
     black: "#2e2925", // lch(17% 4 69deg) +3% lightness to gray 10, custom brighter shade of earthsong background, [Used w/ quick input panels such as command palette and find]
     border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2e2925) [Used w/ borders]
-    secondary: "#39342f", // lch(22% 4 69deg), +5% lightness to black (#2e2925) [Used current line bg]
+    secondary: "#36322d", // lch(21% 4 69deg), +4% lightness to black (#2e2925) [Used current line bg]
     // "gray": [
     //   "#f0f6fc", // 1
     //   "#c9d1d9", // 1
