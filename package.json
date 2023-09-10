@@ -4,7 +4,7 @@
   "description": "A theme that will continue to fade with time",
   "version": "2.1.10",
   "scripts": {
-    "build": "node src/index.js && node src/color-swap.js",
+    "build": "node src/index.js && node src/nushu/index.js",
     "release:major": "vsce publish major && git push",
     "release:minor": "vsce publish minor && git push",
     "release:patch": "vsce publish patch && git push"
