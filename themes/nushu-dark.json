@@ -252,7 +252,8 @@
     "settings.modifiedItemIndicator": "#f8514966",
     "welcomePage.buttonBackground": "#21262d",
     "welcomePage.buttonHoverBackground": "#30363d",
-    "editor.selectionBackground": "#bb800940"
+    "editor.selectionBackground": "#bb800940",
+    "editorHoverWidget.border": "#423d38"
   },
   "semanticHighlighting": true,
   "tokenColors": [
