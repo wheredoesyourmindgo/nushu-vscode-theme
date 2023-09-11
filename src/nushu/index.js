@@ -22,6 +22,9 @@ const {
 } = require("./set-editor-hover-widget");
 const { setLightSecondary, setDarkSecondary } = require("./set-secondary");
 const { setLightComments, setDarkComments } = require("./set-comments");
+const { setDarkTertiary, setLightTertiary } = require("./set-tertiary");
+const { setDarkQuickInputList, setLightQuickInputList } = require("./set-quick-input-list");
+const { setLightQuaternary, setDarkQuaternary } = require("./set-quadinary");
 
 async function main() {
   try {
@@ -38,7 +41,10 @@ async function main() {
       await setLightSelectionBackground();
       await setLightEditorHoverWidget();
       await setLightSecondary();
+      await setLightTertiary();
+      await setLightQuaternary();
       await setLightComments();
+      await setLightQuickInputList();
       setLightBackground();
       setLightTermMagenta();
     } else {
@@ -53,7 +59,10 @@ async function main() {
       await setDarkSelectionBackground();
       await setDarkEditorHoverWidget();
       await setDarkSecondary();
+      await setDarkTertiary();
+      await setDarkQuaternary();
       await setDarkComments();
+      await setDarkQuickInputList()
       setDarkBackground();
     } else {
       console.log("Skipping Dark Theme conversion");

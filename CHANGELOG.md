@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.13
+
+- Nüshu Light/Dark: Use secondary, tertiary, and quaternary shades in lieu of grays
+
 ## 2.1.12
 
 - Nüshu Light/Dark: Use gray instead of green for parameters
