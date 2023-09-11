@@ -1,7 +1,5 @@
 const np = require("./nushu-palette");
 const replace = require("replace-in-file");
-const lightColors = require("@primer/primitives/dist/json/colors/light.json");
-const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 
 /*
 Don't use GitHub Theme foreground, just use one found in the theme palette since it
