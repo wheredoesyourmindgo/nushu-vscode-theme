@@ -618,6 +618,17 @@ const convertedDarkOptions = {
 };
 
 async function setLightColorScales() {
+  !(
+    convertedLightOptions.from.length === convertedLightOptions.to.length &&
+    convertedDarkOptions.from.length === convertedDarkOptions.to.length &&
+    tmpLightOptions.from.length === tmpLightOptions.to.length &&
+    tmpDarkOptions.from.length === tmpDarkOptions.to.length
+  )
+    ? console.error(
+        "WHOA THERE! SOMETHING IS NOT ADDING UP IN 'set-color-scales.js'"
+      )
+    : null;
+
   const tmpResults = await replace(tmpLightOptions);
   //   console.log("Temp replacement results:", tmpResults);
   const convertedResults = await replace(convertedLightOptions);
