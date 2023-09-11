@@ -8,6 +8,7 @@ module.exports = {
     gray: ["#f3f0e8", "#efebe0", "#e7e1d0", "#444e00", "#2f3600", "#252a00"],
   },
   light: {
+    foreground: "#2a2821", // lch(16% 5 89deg), hue transform from default #24292f, lch(16% 5 257deg)
     white: "#f8f6f1", // hsl(43deg 33% 96%) lch(97% 3 89deg) pen paper coffee background [Used w/ Editor Bg]
     black: lightColors.scale.black, // same as 'light default' theme
     border: "#d6d4cf", // lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
@@ -43,6 +44,7 @@ module.exports = {
     https://hihayk.github.io/scale/#0/9/50/80/-51/67/20/14/292521/41/37/33/white didn't yield gradient that scaled well, borders were too bright for dark theme. Instead, the defaults will be used for shades of gray other than the darkest shade, which is used for the editor background.
   */
   dark: {
+    foreground: "#d5cdc6", // lch(83% 5 69deg), hue transform from default #c9d1d9, lch(83% 5 251deg)
     white: darkColors.scale.white, // same as 'dark default' theme
     black: "#2e2925", // lch(17% 4 69deg) +3% lightness to gray 10, custom brighter shade of earthsong background
     border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2e2925) [Used w/ borders]

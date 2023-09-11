@@ -45,13 +45,13 @@ const tmpDarkOptions = {
 const convertedLightOptions = {
   files: "./themes/nushu-light.json",
   from: [/"name": "GitHub Light Default"/g, ...fromTmpArry],
-  to: ['"name": "Nüshu Light"', lightColors.fg.default],
+  to: ['"name": "Nüshu Light"', np.light.foreground],
 };
 
 const convertedDarkOptions = {
   files: "./themes/nushu-dark.json",
   from: [/"name": "GitHub Dark Default"/g, ...fromTmpArry],
-  to: ['"name": "Nüshu Dark"', darkColors.fg.default],
+  to: ['"name": "Nüshu Dark"', np.dark.foreground],
 };
 
 async function setLightForeground() {
@@ -70,5 +70,5 @@ async function setDarkForeground() {
 module.exports = {
   setLightForeground,
   setDarkForeground,
-  ghThemeOverrides
+  ghThemeOverrides,
 };
