@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.14
+
+- Nüshu Light/Dark: Match hue of Foreground to Background
+
 ## 2.1.13
 
 - Nüshu Light/Dark: Use secondary, tertiary, and quaternary shades in lieu of grays
