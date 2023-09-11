@@ -3,42 +3,14 @@ const replace = require("replace-in-file");
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 
-
 const ignorePropStrings = [
-  `"symbolIcon.*":\\s"`,
-  `"terminal.ansiRed":\\s"`,
-  `"terminal.ansiBlue":\\s"`,
-  `"terminal.ansiGreen":\\s"`,
-  `"terminal.ansiYellow":\\s"`,
-  `"terminal.ansiMagenta":\\s"`,
-  `"terminal.ansiMagenta":\\s"`,
-  `"terminal.ansiCyan":\\s"`,
-  `"terminal.ansiBrightRed":\\s"`,
-  `"terminal.ansiBrightBlue":\\s"`,
-  `"terminal.ansiBrightGreen":\\s"`,
-  `"terminal.ansiBrightYellow":\\s"`,
-  `"terminal.ansiBrightMagenta":\\s"`,
-  `"terminal.ansiBrightMagenta":\\s"`,
-  `"terminal.ansiBrightCyan":\\s"`,
-  `"diffEditor.insertedLineBackground":\\s"`, // green means add
-  `"diffEditor.insertedTextBackground":\\s"`, // green means add
-  `"diffEditor.removedLineBackground":\\s"`, // red means minus
-  `"diffEditor.removedTextBackground":\\s"`, // red means minus
+  `"symbolIcon\..*":\\s"`,
+  `"terminal\..*":\\s"`,
+  `"gitDecoration\..*":\\s"`, // green, yellow, red, orange, and gray all mean something
+  `"debugConsole\..*":\\s"`,
+  `"diffEditor\..*":\\s"`, // green means add, red means minus
+  `"editorGutter\..*":\\s"`, //  red means minus, yellow means modified, and green means add
   `"debugIcon.breakpointForeground":\\s"`, // red means no
-  `"debugConsole.infoForeground":\\s"`, // gray means something
-  `"debugConsole.warningForeground":\\s"`, // orange means something
-  `"debugConsole.errorForeground":\\s"`, // red means something
-  `"debugConsole.sourceForeground":\\s"`, // yellow means something
-  `"editorGutter.modifiedBackground":\\s"`, // yellow means modified
-  `"editorGutter.addedBackground":\\s"`, // green means add
-  `"editorGutter.deletedBackground":\\s"`, // red means minus
-  `"gitDecoration.addedResourceForeground":\\s"`, // green means add
-  `"gitDecoration.modifiedResourceForeground":\\s"`, // yellow means modified
-  `"gitDecoration.deletedResourceForeground":\\s"`, // red means minus
-  `"gitDecoration.untrackedResourceForeground":\\s"`, // green means something
-  `"gitDecoration.ignoredResourceForeground":\\s"`, // gray means something
-  `"gitDecoration.conflictingResourceForeground":\\s"`, // orange means something
-  `"gitDecoration.submoduleResourceForeground":\\s"`, // gray means something
   `"editor.findMatchBackground":\\s"`, // yellow (over red)
   `"editor.findMatchHighlightBackground":\\s"`, // yellow (over red)
   `"errorForeground":\\s"`, // red means error (ex. find results empty label foreground)
@@ -49,13 +21,7 @@ const ignorePropStrings = [
   `"editor.focusedStackFrameHighlightBackground":\\s"`, // not sure what this is, leave it green
   `"peekViewEditor.matchHighlightBackground":\\s"`, // yellow (over red)
   `"peekViewResult.matchHighlightBackground":\\s"`, // yellow (over red)
-  // don't change anything associated with "color.btn" (for now), see theme.js and colors.js for more info
-  `"button.background":\\s"`,
-  `"button.foreground":\\s"`,
-  `"button.hoverBackground":\\s"`,
-  `"button.secondaryBackground":\\s"`,
-  `"button.secondaryForeground":\\s"`,
-  `"button.secondaryHoverBackground":\\s"`,
+  `"button\..*":\\s"`, // don't change anything associated with "color.btn" (for now), see theme.js and colors.js for more info
 ];
 const skipProps = `(?<!${ignorePropStrings.join("|")})`;
 
