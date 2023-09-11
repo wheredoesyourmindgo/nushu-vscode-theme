@@ -10,6 +10,7 @@ const ignorePropStrings = [
   `"debugConsole\..*":\\s"`,
   `"diffEditor\..*":\\s"`, // green means add, red means minus
   `"editorGutter\..*":\\s"`, //  red means minus, yellow means modified, and green means add
+  `"button\..*":\\s"`, // don't change anything associated with "color.btn" (for now), see theme.js and colors.js for more info
   `"debugIcon.breakpointForeground":\\s"`, // red means no
   `"editor.findMatchBackground":\\s"`, // yellow (over red)
   `"editor.findMatchHighlightBackground":\\s"`, // yellow (over red)
@@ -21,7 +22,6 @@ const ignorePropStrings = [
   `"editor.focusedStackFrameHighlightBackground":\\s"`, // not sure what this is, leave it green
   `"peekViewEditor.matchHighlightBackground":\\s"`, // yellow (over red)
   `"peekViewResult.matchHighlightBackground":\\s"`, // yellow (over red)
-  `"button\..*":\\s"`, // don't change anything associated with "color.btn" (for now), see theme.js and colors.js for more info
 ];
 const skipProps = `(?<!${ignorePropStrings.join("|")})`;
 
@@ -455,17 +455,6 @@ const convertedLightOptions = {
     lightColors.scale.pink[8],
     lightColors.scale.pink[9],
     lightColors.scale.pink[9],
-    // orange --> green (dark theme uses a slightly darker green, see below)
-    // lightColors.scale.green[0],
-    // lightColors.scale.green[1],
-    // lightColors.scale.green[2],
-    // lightColors.scale.green[3],
-    // lightColors.scale.green[4],
-    // lightColors.scale.green[5],
-    // lightColors.scale.green[6],
-    // lightColors.scale.green[7],
-    // lightColors.scale.green[8],
-    // lightColors.scale.green[9],
     // orange --> gray (green provides too much contrast in dark theme, and not enough contrast in light theme)
     lightColors.scale.gray[0],
     lightColors.scale.gray[1],
@@ -559,7 +548,7 @@ const convertedDarkOptions = {
     darkColors.scale.yellow[8],
     darkColors.scale.yellow[9],
     darkColors.scale.yellow[9],
-    // red --> pink (slightly darker)
+    // red --> pink +1 (slightly darker)
     darkColors.scale.pink[1],
     darkColors.scale.pink[2],
     darkColors.scale.pink[3],
@@ -570,17 +559,6 @@ const convertedDarkOptions = {
     darkColors.scale.pink[8],
     darkColors.scale.pink[9],
     darkColors.scale.pink[9],
-    // orange --> green +1 (slightly darker)
-    // darkColors.scale.green[1],
-    // darkColors.scale.green[2],
-    // darkColors.scale.green[3],
-    // darkColors.scale.green[4],
-    // darkColors.scale.green[5],
-    // darkColors.scale.green[6],
-    // darkColors.scale.green[7],
-    // darkColors.scale.green[8],
-    // darkColors.scale.green[9],
-    // darkColors.scale.green[9],
     // orange --> gray (green provides too much contrast in dark theme, and not enough contrast in light theme)
     darkColors.scale.gray[0],
     darkColors.scale.gray[1],
