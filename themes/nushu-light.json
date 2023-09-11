@@ -159,7 +159,7 @@
     "debugConsole.warningForeground": "#7d4e00",
     "debugConsole.errorForeground": "#cf222e",
     "debugConsole.sourceForeground": "#9a6700",
-    "debugConsoleInputIcon.foreground": "#512a97",
+    "debugConsoleInputIcon.foreground": "#6639ba",
     "debugTokenExpression.name": "#0550ae",
     "debugTokenExpression.value": "#0a3069",
     "debugTokenExpression.string": "#0a3069",
