@@ -241,26 +241,26 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.15686275064945221</real>
+		<real>0.12941177189350128</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0.13725490868091583</real>
+		<real>0.15686275064945221</real>
 		<key>Red Component</key>
-		<real>0.12156862765550613</real>
+		<real>0.16470588743686676</real>
 	</dict>
 	<key>Cursor Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.15686275064945221</real>
+		<real>0.21568627655506134</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0.13725490868091583</real>
+		<real>0.49803921580314636</real>
 		<key>Red Component</key>
-		<real>0.12156862765550613</real>
+		<real>0.10196078568696976</real>
 	</dict>
 	<key>Cursor Guide Color</key>
 	<dict>
@@ -280,26 +280,26 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.15686275064945221</real>
+		<real>0.21568627655506134</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0.13725490868091583</real>
+		<real>0.49803921580314636</real>
 		<key>Red Component</key>
-		<real>0.12156862765550613</real>
+		<real>0.10196078568696976</real>
 	</dict>
 	<key>Foreground Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.15686275064945221</real>
+		<real>0.12941177189350128</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0.13725490868091583</real>
+		<real>0.15686275064945221</real>
 		<key>Red Component</key>
-		<real>0.12156862765550613</real>
+		<real>0.16470588743686676</real>
 	</dict>
 	<key>Link Color</key>
 	<dict>
@@ -319,13 +319,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.15686275064945221</real>
+		<real>0.12941177189350128</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0.13725490868091583</real>
+		<real>0.15686275064945221</real>
 		<key>Red Component</key>
-		<real>0.12156862765550613</real>
+		<real>0.16470588743686676</real>
 	</dict>
 	<key>Selection Color</key>
 	<dict>
