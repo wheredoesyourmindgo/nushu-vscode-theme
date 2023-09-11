@@ -2,7 +2,7 @@
   "name": "nushu-vscode-theme",
   "displayName": "Nüshu",
   "description": "A theme that will continue to fade with time",
-  "version": "2.1.13",
+  "version": "2.1.14",
   "scripts": {
     "build": "node src/index.js && node src/nushu/index.js",
     "release:major": "vsce publish major && git push",
