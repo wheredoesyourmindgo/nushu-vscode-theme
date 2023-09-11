@@ -70,4 +70,5 @@ async function setDarkForeground() {
 module.exports = {
   setLightForeground,
   setDarkForeground,
+  ghThemeOverrides
 };
