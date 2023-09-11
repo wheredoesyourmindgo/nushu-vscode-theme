@@ -166,38 +166,38 @@
     "debugTokenExpression.boolean": "#d29922",
     "debugTokenExpression.number": "#d29922",
     "debugTokenExpression.error": "#f778ba",
-    "symbolIcon.arrayForeground": "#2ea043",
+    "symbolIcon.arrayForeground": "#f0883e",
     "symbolIcon.booleanForeground": "#58a6ff",
-    "symbolIcon.classForeground": "#2ea043",
+    "symbolIcon.classForeground": "#f0883e",
     "symbolIcon.colorForeground": "#79c0ff",
-    "symbolIcon.constructorForeground": "#bc8cff",
-    "symbolIcon.enumeratorForeground": "#2ea043",
+    "symbolIcon.constructorForeground": "#d2a8ff",
+    "symbolIcon.enumeratorForeground": "#f0883e",
     "symbolIcon.enumeratorMemberForeground": "#58a6ff",
     "symbolIcon.eventForeground": "#6e7681",
-    "symbolIcon.fieldForeground": "#2ea043",
-    "symbolIcon.fileForeground": "#ff7b72",
-    "symbolIcon.folderForeground": "#ff7b72",
-    "symbolIcon.functionForeground": "#a371f7",
-    "symbolIcon.interfaceForeground": "#2ea043",
+    "symbolIcon.fieldForeground": "#f0883e",
+    "symbolIcon.fileForeground": "#d29922",
+    "symbolIcon.folderForeground": "#d29922",
+    "symbolIcon.functionForeground": "#bc8cff",
+    "symbolIcon.interfaceForeground": "#f0883e",
     "symbolIcon.keyForeground": "#58a6ff",
-    "symbolIcon.keywordForeground": "#db61a2",
-    "symbolIcon.methodForeground": "#a371f7",
-    "symbolIcon.moduleForeground": "#db61a2",
-    "symbolIcon.namespaceForeground": "#db61a2",
+    "symbolIcon.keywordForeground": "#ff7b72",
+    "symbolIcon.methodForeground": "#bc8cff",
+    "symbolIcon.moduleForeground": "#ff7b72",
+    "symbolIcon.namespaceForeground": "#ff7b72",
     "symbolIcon.nullForeground": "#58a6ff",
-    "symbolIcon.numberForeground": "#bb8009",
-    "symbolIcon.objectForeground": "#2ea043",
+    "symbolIcon.numberForeground": "#3fb950",
+    "symbolIcon.objectForeground": "#f0883e",
     "symbolIcon.operatorForeground": "#79c0ff",
-    "symbolIcon.packageForeground": "#2ea043",
-    "symbolIcon.propertyForeground": "#2ea043",
+    "symbolIcon.packageForeground": "#f0883e",
+    "symbolIcon.propertyForeground": "#f0883e",
     "symbolIcon.referenceForeground": "#58a6ff",
     "symbolIcon.snippetForeground": "#58a6ff",
     "symbolIcon.stringForeground": "#79c0ff",
-    "symbolIcon.structForeground": "#2ea043",
+    "symbolIcon.structForeground": "#f0883e",
     "symbolIcon.textForeground": "#79c0ff",
     "symbolIcon.typeParameterForeground": "#79c0ff",
     "symbolIcon.unitForeground": "#58a6ff",
-    "symbolIcon.variableForeground": "#2ea043",
+    "symbolIcon.variableForeground": "#f0883e",
     "symbolIcon.constantForeground": [
       "#f2cc60",
       "#e3b341",
@@ -264,7 +264,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#8b949e"
+        "foreground": "#3fb950E6"
       }
     },
     {
@@ -296,7 +296,7 @@
         "meta.definition.variable"
       ],
       "settings": {
-        "foreground": "#3fb950"
+        "foreground": "#b1bac4"
       }
     },
     {
@@ -377,7 +377,7 @@
     {
       "scope": "variable",
       "settings": {
-        "foreground": "#3fb950"
+        "foreground": "#b1bac4"
       }
     },
     {
@@ -489,7 +489,7 @@
     {
       "scope": "punctuation.definition.list.begin.markdown",
       "settings": {
-        "foreground": "#3fb950"
+        "foreground": "#b1bac4"
       }
     },
     {
@@ -580,8 +580,8 @@
         "punctuation.definition.changed"
       ],
       "settings": {
-        "background": "#04260f",
-        "foreground": "#3fb950"
+        "background": "#161b22",
+        "foreground": "#b1bac4"
       }
     },
     {

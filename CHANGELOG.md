@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.12
+
+- Nüshu Light/Dark: Use gray instead of green for parameters
+- Nüshu Light/Dark: Use green with comments
+
 ## 2.1.11
 
 - Nüshu Light: Fix some backgrounds used

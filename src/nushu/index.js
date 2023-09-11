@@ -21,6 +21,7 @@ const {
   setDarkEditorHoverWidget,
 } = require("./set-editor-hover-widget");
 const { setLightSecondary, setDarkSecondary } = require("./set-secondary");
+const { setLightComments, setDarkComments } = require("./set-comments");
 
 async function main() {
   try {
@@ -37,6 +38,7 @@ async function main() {
       await setLightSelectionBackground();
       await setLightEditorHoverWidget();
       await setLightSecondary();
+      await setLightComments();
       setLightBackground();
       setLightTermMagenta();
     } else {
@@ -51,6 +53,7 @@ async function main() {
       await setDarkSelectionBackground();
       await setDarkEditorHoverWidget();
       await setDarkSecondary();
+      await setDarkComments();
       setDarkBackground();
     } else {
       console.log("Skipping Dark Theme conversion");
