@@ -30,7 +30,6 @@ When generating minimap preview images:
 
 ```json
 {
-  "editor.minimap.renderCharacters": false,
   "editor.minimap.scale": 3,
 }
 ```
