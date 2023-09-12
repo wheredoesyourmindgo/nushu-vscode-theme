@@ -1,5 +1,14 @@
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
+const chroma = require("chroma-js");
+
+const LIGHT_BG = "#f8f6f1"; // hsl(43deg 33% 96%) lch(97% 3 89deg) pen paper coffee background [Used w/ Editor Bg]
+const DARK_BG = "#25211d"; // lch(14% 4 69deg) custom slightly darker earthsong background [Used w/ Editor Bg], cause earthsong background (#292521) doesn't feel dark enough for editor bg
+
+const lightHue = chroma(LIGHT_BG).get("lch.h");
+const darkHue = chroma(DARK_BG).get("lch.h");
+// console.log("lh", lightHue);
+// console.log("dh", darkHue);
 
 module.exports = {
   classic: {
@@ -8,73 +17,49 @@ module.exports = {
     gray: ["#f3f0e8", "#efebe0", "#e7e1d0", "#444e00", "#2f3600", "#252a00"],
   },
   light: {
-    foreground: "#2a2821", // lch(16% 5 89deg), hue transform from default #24292f, lch(16% 5 257deg)
-    white: "#f8f6f1", // hsl(43deg 33% 96%) lch(97% 3 89deg) pen paper coffee background [Used w/ Editor Bg]
-    black: lightColors.scale.black, // same as 'light default' theme
-    border: "#d6d4cf", // lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
-    secondary: "#eae8e2", // lch(92% 3 89deg), -2% lightness to gray 1 (#f0eee8)
-    tertiary: "#e4e2dd", // lch(90% 3 89deg), -4% lightness to gray 1 (#f0eee8)
-    quaternary: "#dfddd7", // lch(88% 3 89deg), -6% lightness to gray 1 (#f0eee8)
-    // "gray": [
-    //   "#f6f8fa", // 11
-    //   "#eaeef2", // 6
-    //   "#d0d7de", // 17
-    //   "#afb8c1", // 11
-    //   "#8c959f", // 8
-    //   "#6e7781", // 6
-    //   "#57606a", // 4
-    //   "#424a53", // 0
-    //   "#32383f", // 0
-    //   "#24292f" // 2
-    // ], // 65 occurrences
+    foreground: chroma(lightColors.fg.default).set("lch.h", lightHue).hex(),
+    white: LIGHT_BG,
+    black: chroma(lightColors.scale.black).set("lch.h", lightHue).hex(),
+    border: adjLightGray2Lightness("-9"), // "#d6d4cf" lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
+    secondary: adjLightGray2Lightness("-2"), // "#eae8e2" lch(92% 3 89deg), -2% lightness to gray 1 (#f0eee8)
+    tertiary: adjLightGray2Lightness("-4"), // "#e4e2dd" lch(90% 3 89deg), -4% lightness to gray 1 (#f0eee8)
+    quaternary: adjLightGray2Lightness("-6"), // "#dfddd7" lch(88% 3 89deg), -6% lightness to gray 1 (#f0eee8)
     gray: [
-      "#f0eee8", // lch(94% 3 89deg), -3% lightness to white, custom darker shade of pen paper coffee
-      lightColors.scale.gray[1],
-      lightColors.scale.gray[2],
-      lightColors.scale.gray[3],
-      lightColors.scale.gray[4],
-      lightColors.scale.gray[5],
-      lightColors.scale.gray[6],
-      lightColors.scale.gray[7],
-      lightColors.scale.gray[8],
-      lightColors.scale.gray[9],
+      chroma(lightColors.scale.gray[0]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[1]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[2]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[3]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[4]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[5]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[6]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[7]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[8]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[9]).set("lch.h", lightHue).hex(),
     ],
   },
   /*
     https://hihayk.github.io/scale/#0/9/50/80/-51/67/20/14/292521/41/37/33/white didn't yield gradient that scaled well, borders were too bright for dark theme. Instead, the defaults will be used for shades of gray other than the darkest shade, which is used for the editor background.
   */
   dark: {
-    foreground: "#d5cdc6", // lch(83% 5 69deg), hue transform from default #c9d1d9, lch(83% 5 251deg)
+    foreground: chroma(darkColors.fg.default).set("lch.h", darkHue).hex(),
     white: darkColors.scale.white, // same as 'dark default' theme
-    black: "#2e2925", // lch(17% 4 69deg) +3% lightness to gray 10, custom brighter shade of earthsong background
-    border: "#423d38", // lch(26% 4 69deg), +9% lightness to black (#2e2925) [Used w/ borders]
-    secondary: "#322d29", // lch(19% 4 69deg), +2% lightness to black (#2e2925)
-    tertiary: "#36322d", // lch(21% 4 69deg), +4% lightness to black (#2e2925)
-    quaternary: "#3b3631", // lch(23% 4 69deg), +6% lightness to black (#f0eee8)
-    // "gray": [
-    //   "#f0f6fc", // 1
-    //   "#c9d1d9", // 1
-    //   "#b1bac4", // 1
-    //   "#8b949e", // 12
-    //   "#6e7681", // 18
-    //   "#484f58", // 3
-    //   "#30363d", // 20
-    //   "#21262d", // 3
-    //   "#161b22", // 10
-    //   "#0d1117" // 11
-    // ], // 79 occurrences
+    black: adjDarkGray10Lightness("+0"), // custom brighter shade of earthsong background
+    border: adjDarkGray10Lightness("+9"), // 9 + 3 (we are adding the offset to black, aka adjDarkGray10Lightness("+3"), not directly off DARK_BG)
+    secondary: adjDarkGray10Lightness("+2"), // 2 + 3  "
+    tertiary: adjDarkGray10Lightness("+4"), // 4 + 3  "
+    quaternary: adjDarkGray10Lightness("+6"), // 6 + 3  "
     gray: [
-      darkColors.scale.gray[0],
-      darkColors.scale.gray[1],
-      darkColors.scale.gray[2],
-      darkColors.scale.gray[3],
-      darkColors.scale.gray[4],
-      darkColors.scale.gray[5],
-      darkColors.scale.gray[6],
-      darkColors.scale.gray[7],
-      darkColors.scale.gray[8],
-      "#27231e", // lch(14% 4 69deg) custom slightly darker earthsong background [Used w/ Editor Bg]
-      // "#292521", hsl(30deg 11% 15%) lch(15% 4 69deg) earthsong background doesn't feel dark enough for editor bg
+      chroma(darkColors.scale.gray[0]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[1]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[2]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[3]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[4]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[5]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[6]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[7]).set("lch.h", darkHue).hex(),
+      chroma(darkColors.scale.gray[8]).set("lch.h", darkHue).hex(),
+      // chroma(darkColors.scale.gray[9]).set("lch.h", darkHue).hex(),
+      DARK_BG,
     ],
   },
   temp: {
@@ -179,3 +164,15 @@ module.exports = {
     ],
   },
 };
+
+// this one needs gray hue adjust
+function adjLightGray2Lightness(diff) {
+  return chroma(chroma(lightColors.scale.gray[1]).set("lch.h", lightHue))
+    .set("lch.l", diff)
+    .hex();
+}
+
+// this one DOES NOT need gray hue adjust, and we add 3, which will be the baseline for Dark Black
+function adjDarkGray10Lightness(diff) {
+  return chroma(DARK_BG).set("lch.l", "+3").set("lch.l", diff).hex();
+}
