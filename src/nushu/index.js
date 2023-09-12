@@ -38,11 +38,11 @@ async function main() {
       await fs.readFile("./themes/nushu-light.json")
     );
     if (lightTheme.name === "GitHub Light Default") {
+      // Order matters, call things that are explicit first, and place less
+      // explicit/important conversions later. Some scripts require things to
+      // already be set, so they should be run after any such requirement is met.
       await setLightBorders();
-      await setLightColorScales();
       await setLightForeground();
-      await setLightRemoteConnect();
-      await setLightSelectionBackground();
       await setLightEditorHoverWidget();
       await setLightSecondary();
       await setLightTertiary();
@@ -51,16 +51,19 @@ async function main() {
       await setLightQuickInputList();
       setLightBackground();
       setLightTermMagenta();
+      await setLightColorScales();
+      await setLightRemoteConnect(); // should run after setLightColorScales()
+      await setLightSelectionBackground(); // should run after setLightColorScales()
     } else {
       console.log("Skipping Light Theme conversion");
     }
     const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
     if (darkTheme.name === "GitHub Dark Default") {
+      // Order matters, call things that are explicit first, and place less
+      // explicit/important conversions later. Some scripts require things to
+      // already be set, so they should be run after any such requirement is met.
       await setDarkBorders();
-      await setDarkColorScales();
       await setDarkForeground();
-      await setDarkRemoteConnect();
-      await setDarkSelectionBackground();
       await setDarkEditorHoverWidget();
       await setDarkSecondary();
       await setDarkTertiary();
@@ -68,6 +71,9 @@ async function main() {
       await setDarkComments();
       await setDarkQuickInputList();
       setDarkBackground();
+      await setDarkColorScales();
+      await setDarkRemoteConnect(); // should run after setLightColorScales()
+      await setDarkSelectionBackground(); // should run after setLightColorScales()
     } else {
       console.log("Skipping Dark Theme conversion");
     }

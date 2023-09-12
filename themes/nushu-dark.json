@@ -252,13 +252,13 @@
     "settings.modifiedItemIndicator": "#f8514966",
     "welcomePage.buttonBackground": "#2b2723",
     "welcomePage.buttonHoverBackground": "#3b342e",
-    "editor.selectionBackground": "#bb800940",
     "editorHoverWidget.border": "#3f3b36",
     "welcomePage.tileBackground": "#302b27",
     "welcomePage.tileHoverBackground": "#383430",
     "quickInputList.focusForeground": "#e3b341",
     "quickInputList.focusIconForeground": "#e3b341",
-    "quickInputList.focusBackground": "#34302c"
+    "quickInputList.focusBackground": "#34302c",
+    "editor.selectionBackground": "#bb800940"
   },
   "semanticHighlighting": true,
   "tokenColors": [

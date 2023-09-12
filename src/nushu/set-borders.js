@@ -2,6 +2,7 @@ const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const np = require("./nushu-palette");
 const replace = require("replace-in-file");
+const { flagHex } = require("./util");
 
 /*
 Should produce 21 occurrences in both the light and dark Nüshu themes.
@@ -32,13 +33,13 @@ const darkBlackBorders = new RegExp(
 const convertedLightBordersOptions = {
   files: "./themes/nushu-light.json",
   from: [lightGray3Borders, lightWhiteBorders],
-  to: np.light.border,
+  to: flagHex(np.light.border),
 };
 
 const convertedDarkBordersOptions = {
   files: "./themes/nushu-dark.json",
   from: [darkGray7Borders, darkBlackBorders, darkGray10Borders],
-  to: np.dark.border,
+  to: flagHex(np.dark.border),
 };
 
 // swap light theme custom border color
