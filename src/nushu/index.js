@@ -23,7 +23,10 @@ const {
 const { setLightSecondary, setDarkSecondary } = require("./set-secondary");
 const { setLightComments, setDarkComments } = require("./set-comments");
 const { setDarkTertiary, setLightTertiary } = require("./set-tertiary");
-const { setDarkQuickInputList, setLightQuickInputList } = require("./set-quick-input-list");
+const {
+  setDarkQuickInputList,
+  setLightQuickInputList,
+} = require("./set-quick-input-list");
 const { setLightQuaternary, setDarkQuaternary } = require("./set-quadinary");
 
 async function main() {
@@ -34,10 +37,10 @@ async function main() {
       await fs.readFile("./themes/nushu-light.json")
     );
     if (lightTheme.name === "GitHub Light Default") {
+      await setLightBorders();
       await setLightColorScales();
       await setLightForeground();
       await setLightRemoteConnect();
-      await setLightBorders();
       await setLightSelectionBackground();
       await setLightEditorHoverWidget();
       await setLightSecondary();
@@ -52,17 +55,17 @@ async function main() {
     }
     const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
     if (darkTheme.name === "GitHub Dark Default") {
+      await setDarkBorders();
       await setDarkColorScales();
       await setDarkForeground();
       await setDarkRemoteConnect();
-      await setDarkBorders();
       await setDarkSelectionBackground();
       await setDarkEditorHoverWidget();
       await setDarkSecondary();
       await setDarkTertiary();
       await setDarkQuaternary();
       await setDarkComments();
-      await setDarkQuickInputList()
+      await setDarkQuickInputList();
       setDarkBackground();
     } else {
       console.log("Skipping Dark Theme conversion");

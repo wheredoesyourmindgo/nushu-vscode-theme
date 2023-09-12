@@ -19,7 +19,7 @@ module.exports = {
   light: {
     foreground: chroma(lightColors.fg.default).set("lch.h", lightHue).hex(),
     white: LIGHT_BG,
-    black: chroma(lightColors.scale.black).set("lch.h", lightHue).hex(),
+    black: chroma(lightColors.scale.black).set("lch.h", lightHue).hex(), // set hue since primer light black isn't #000000
     border: adjLightGray2Lightness("-9"), // "#d6d4cf" lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
     secondary: adjLightGray2Lightness("-2"), // "#eae8e2" lch(92% 3 89deg), -2% lightness to gray 1 (#f0eee8)
     tertiary: adjLightGray2Lightness("-4"), // "#e4e2dd" lch(90% 3 89deg), -4% lightness to gray 1 (#f0eee8)
@@ -42,12 +42,12 @@ module.exports = {
   */
   dark: {
     foreground: chroma(darkColors.fg.default).set("lch.h", darkHue).hex(),
-    white: darkColors.scale.white, // same as 'dark default' theme
-    black: adjDarkGray10Lightness("+0"), // custom brighter shade of earthsong background
-    border: adjDarkGray10Lightness("+9"), // 9 + 3 (we are adding the offset to black, aka adjDarkGray10Lightness("+3"), not directly off DARK_BG)
-    secondary: adjDarkGray10Lightness("+2"), // 2 + 3  "
-    tertiary: adjDarkGray10Lightness("+4"), // 4 + 3  "
-    quaternary: adjDarkGray10Lightness("+6"), // 6 + 3  "
+    white: darkColors.scale.white, // same as 'dark default' white in dark theme #ffffff (hue adjust not necessary)
+    black: adjDarkGray10Lightness("+0"), // custom brighter shade of earthsong background (+3)
+    border: adjDarkGray10Lightness("+9"), // 9 + 3
+    secondary: adjDarkGray10Lightness("+2"), // 2 + 3
+    tertiary: adjDarkGray10Lightness("+4"), // 4 + 3
+    quaternary: adjDarkGray10Lightness("+6"), // 6 + 3
     gray: [
       chroma(darkColors.scale.gray[0]).set("lch.h", darkHue).hex(),
       chroma(darkColors.scale.gray[1]).set("lch.h", darkHue).hex(),
@@ -172,7 +172,7 @@ function adjLightGray2Lightness(diff) {
     .hex();
 }
 
-// this one DOES NOT need gray hue adjust, and we add 3, which will be the baseline for Dark Black
+// this one DOES NOT need gray hue adjust, and we add 3, which will be the baseline for Dark Black which should be brighter than DARK_BG
 function adjDarkGray10Lightness(diff) {
   return chroma(DARK_BG).set("lch.l", "+3").set("lch.l", diff).hex();
 }
