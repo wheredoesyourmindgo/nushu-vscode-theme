@@ -72,8 +72,8 @@ async function main() {
       await setDarkQuickInputList();
       setDarkBackground();
       await setDarkColorScales();
-      await setDarkRemoteConnect(); // should run after setLightColorScales()
-      await setDarkSelectionBackground(); // should run after setLightColorScales()
+      await setDarkRemoteConnect(); // should run after setDarkColorScales()
+      await setDarkSelectionBackground(); // should run after setDarkColorScales()
     } else {
       console.log("Skipping Dark Theme conversion");
     }
