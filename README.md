@@ -4,7 +4,7 @@
 
 ### TL;DR
 
-Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme). The World isn't so Black or White, so why should our code *backgrounds* be.
+Nüshu is a fork of the VSCode [Github theme](https://github.com/primer/github-vscode-theme). The World isn't so Black or White, so why should our code _backgrounds_ be.
 
 ### About
 
@@ -31,34 +31,34 @@ Nüshu (this theme) is a fork of the VSCode Github theme, specifically the GitHu
 
 ## Hints
 
-
 ### Italic Fonts
 
 You can opt-in to italicizing certain tokens for Nüshu Light and Dark within `settings.json`, for example you can render Comments and Types in italic with the following VSCode settings:
 
 ```json
 {
-   "editor.tokenColorCustomizations": {
-      "[Nüshu Light][Nüshu Dark]": {
-         "textMateRules": [
-            {
-               "name": "Italic Comments and Types",
-               "scope": [
-                  "comment",
-                  "punctuation.definition.comment",
-                  "entity.name.type"
-               ],
-               "settings": {
-                  "fontStyle": "italic"
-               }
-            }
-         ]
-      }
-   }
+  "editor.tokenColorCustomizations": {
+    "[Nüshu Light][Nüshu Dark]": {
+      "textMateRules": [
+        {
+          "name": "Italic Comments and Types",
+          "scope": [
+            "comment",
+            "punctuation.definition.comment",
+            "string.comment",
+            "entity.name.type"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    }
+  }
 }
 ```
 
-*Note, Nüshu Classic italicizes certain tokens by default. You can opt-out of that if you wish with a similar approach to setting "editor.tokenColorCustomizations" as shown above.*
+_Note, Nüshu Classic italicizes certain tokens by default. You can opt-out of that if you wish with a similar approach to setting "editor.tokenColorCustomizations" as shown above._
 
 ### Preferred Themes
 
@@ -66,10 +66,134 @@ Set Light / Dark Theme preferences in `settings.json` for toggling and detection
 
 ```json
 {
-   "workbench.preferredDarkColorTheme": "Nüshu Dark",
-   "workbench.preferredLightColorTheme": "Nüshu Light",
+  "workbench.preferredDarkColorTheme": "Nüshu Dark",
+  "workbench.preferredLightColorTheme": "Nüshu Light"
 }
 ```
+
+## Opinions
+
+The Light/Dark themes do not color the following tokens (deviating from the GitHub Default Light/Dark themes in this regard):
+
+- "variable"
+- "punctuation.definition.list.begin.markdown"
+- "markup.changed" & "punctuation.definition.changed"
+- "entity.name", "meta.export.default", & "meta.definition.variable"
+
+The rational for this change is to decrease the amount of colors being displayed on screen at once, with the aim being to keep syntax coloring meaningful in most use cases. IMHO, front end web development (eg. .tsx) can often yield too many colors, so by default this theme will default to a shade of gray (slightly lighter than the foreground color) for those tokens listed above. To customize this to your liking, you can simply patch the theme in `settings.json` any manner as follows to suit the desired appearance either _"across the board"_, or conversely, just for specific file extensions/languages.
+
+Additionally, comments are shown in color by default (cause I love to hear what people have to say I suppose 😊) in both the light/dark themes. If that isn't to your liking there is a snippet shown below to opt out of this behavior.
+
+```json
+// Example: Orange Variables, similar to Github Default Light/Dark Syntax
+{
+  "editor.tokenColorCustomizations": {
+    "[Nüshu Light]": {
+      "textMateRules": [
+        {
+          "name": "Orange LightThm Syntax",
+          "scope": [
+            "variable",
+            "punctuation.definition.list.begin.markdown",
+            "markup.changed",
+            "punctuation.definition.changed",
+            "markup.changed",
+            "punctuation.definition.changed",
+            "entity.name",
+            "meta.export.default",
+            "meta.definition.variable"
+          ],
+          "settings": {
+            "foreground": "#953800"
+          }
+        }
+      ]
+    },
+    "[Nüshu Dark]": {
+      "textMateRules": [
+        {
+          "name": "Orange DarkThm Syntax",
+          "scope": [
+            "variable",
+            "punctuation.definition.list.begin.markdown",
+            "markup.changed",
+            "punctuation.definition.changed",
+            "markup.changed",
+            "punctuation.definition.changed",
+            "entity.name",
+            "meta.export.default",
+            "meta.definition.variable"
+          ],
+          "settings": {
+            "foreground": "#FFA657"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+```json
+// Example: Bold Props with C Files
+{
+  "editor.tokenColorCustomizations": {
+    "[Nüshu Light][Nüshu Dark]": {
+      "textMateRules": [
+        {
+          "name": "Bold C Props",
+          "scope": ["variable.parameter.c"],
+          "settings": {
+            "fontStyle": "bold"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+```json
+// Example: Gray comments, similar to Github Default Light/Dark Syntax
+{
+  "editor.tokenColorCustomizations": {
+    "[Nüshu Light]": {
+      "textMateRules": [
+        {
+          "name": "Gray LightThm Comments",
+          "scope": [
+            "comment",
+            "punctuation.definition.comment",
+            "string.comment"
+          ],
+          "settings": {
+            "foreground": "#6E7781"
+          }
+        }
+      ]
+    },
+    "[Nüshu Dark]": {
+      "textMateRules": [
+        {
+          "name": "Gray DarkThm Comments",
+          "scope": [
+            "comment",
+            "punctuation.definition.comment",
+            "string.comment"
+          ],
+          "settings": {
+            "foreground": "#8B949E"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+### Extra
+
+I'll likely be maintaining iTerm, One Markdown, and other such themes too that compliment the light/dark Nüshu themes. Find this repo on GitHub at [link](https://github.com/wheredoesyourmindgo/nushu-vscode-theme) and take a look at the extra folder if those are of interest to you. Note, any Terminal themes I post in there will likely use the respective themes editor background color, not the background color used embedded VSCode terminal; it just makes more sense to me this way due to how the programs are used.
 
 ## Attribution
 
