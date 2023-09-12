@@ -28,6 +28,7 @@ const {
   setLightQuickInputList,
 } = require("./set-quick-input-list");
 const { setLightQuaternary, setDarkQuaternary } = require("./set-quadinary");
+const { removeFlags } = require("./remove-flags");
 
 async function main() {
   try {
@@ -70,6 +71,8 @@ async function main() {
     } else {
       console.log("Skipping Dark Theme conversion");
     }
+    // lastly, remove flags
+    removeFlags();
   } catch (error) {
     console.error("Error occurred:", error);
   }
