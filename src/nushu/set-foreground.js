@@ -1,5 +1,6 @@
 const np = require("./nushu-palette");
 const replace = require("replace-in-file");
+const { flagHex } = require("./util");
 
 /*
 Don't use GitHub Theme foreground, just use one found in the theme palette since it
@@ -24,43 +25,23 @@ const ghThemeOverrides = {
   },
 };
 
-const toTmpArry = [np.temp.foreground];
-
-const fromTmpArry = [new RegExp(`${np.temp.foreground}`, "gi")];
-
-const tmpLightOptions = {
-  files: "./themes/nushu-light.json",
-  from: [new RegExp(`${ghThemeOverrides.light.fg.default}`, "gi")],
-  to: toTmpArry,
-};
-
-const tmpDarkOptions = {
-  files: "./themes/nushu-dark.json",
-  from: [new RegExp(`${ghThemeOverrides.dark.fg.default}`, "gi")],
-  to: toTmpArry,
-};
-
 const convertedLightOptions = {
   files: "./themes/nushu-light.json",
-  from: [/"name": "GitHub Light Default"/g, ...fromTmpArry],
-  to: ['"name": "Nüshu Light"', np.light.foreground],
+  from: new RegExp(`${ghThemeOverrides.light.fg.default}`, "gi"),
+  to: flagHex(np.light.foreground),
 };
 
 const convertedDarkOptions = {
   files: "./themes/nushu-dark.json",
-  from: [/"name": "GitHub Dark Default"/g, ...fromTmpArry],
-  to: ['"name": "Nüshu Dark"', np.dark.foreground],
+  from: new RegExp(`${ghThemeOverrides.dark.fg.default}`, "gi"),
+  to: flagHex(np.dark.foreground),
 };
 
 async function setLightForeground() {
-  const tmpResults = await replace(tmpLightOptions);
-  //   console.log("Temp replacement results:", tmpResults);
   const convertedResults = await replace(convertedLightOptions);
   console.log("Converted replacement results:", convertedResults);
 }
 async function setDarkForeground() {
-  const tmpResults = await replace(tmpDarkOptions);
-  //   console.log("Temp replacement results:", tmpResults);
   const convertedResults = await replace(convertedDarkOptions);
   console.log("Converted replacement results:", convertedResults);
 }
