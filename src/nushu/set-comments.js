@@ -2,6 +2,7 @@ const rp = require("replace-json-property");
 const fs = require("node:fs/promises");
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
+const { flagHex } = require("./util");
 
 /*
 Set comments to green 4 & 6, 90% alpha
@@ -19,7 +20,7 @@ async function setLightComments() {
     (token) => token.scope.indexOf("comment") <= -1
   );
 
-  commentToken.settings.foreground = green;
+  commentToken.settings.foreground = flagHex(green);
   rp.replace(
     "./themes/nushu-light.json",
     "tokenColors",
@@ -40,7 +41,7 @@ async function setDarkComments() {
     (token) => token.scope.indexOf("comment") <= -1
   );
 
-  commentToken.settings.foreground = green;
+  commentToken.settings.foreground = flagHex(green);
   rp.replace(
     "./themes/nushu-dark.json",
     "tokenColors",
