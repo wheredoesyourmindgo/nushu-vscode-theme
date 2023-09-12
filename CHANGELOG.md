@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.15
+
+- Nüshu Light/Dark: Use Chroma JS to calc Nüshu color palette
+
 ## 2.1.14
 
 - Nüshu Light/Dark: Match hue of Foreground to Background
