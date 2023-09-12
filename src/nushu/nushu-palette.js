@@ -20,10 +20,10 @@ module.exports = {
     foreground: chroma(lightColors.fg.default).set("lch.h", lightHue).hex(),
     white: LIGHT_BG,
     black: chroma(lightColors.scale.black).set("lch.h", lightHue).hex(), // set hue since primer light black isn't #000000
-    border: adjLightGray2Lightness("-9"), // "#d6d4cf" lch(85% 3 89deg), -9% lightness to gray 1 (#f0eee8) [Used w/ borders]
-    secondary: adjLightGray2Lightness("-2"), // "#eae8e2" lch(92% 3 89deg), -2% lightness to gray 1 (#f0eee8)
-    tertiary: adjLightGray2Lightness("-4"), // "#e4e2dd" lch(90% 3 89deg), -4% lightness to gray 1 (#f0eee8)
-    quaternary: adjLightGray2Lightness("-6"), // "#dfddd7" lch(88% 3 89deg), -6% lightness to gray 1 (#f0eee8)
+    border: adjLightGray2Lightness("-9"), 
+    secondary: adjLightGray2Lightness("-2"),
+    tertiary: adjLightGray2Lightness("-4"),
+    quaternary: adjLightGray2Lightness("-6"), 
     gray: [
       chroma(lightColors.scale.gray[0]).set("lch.h", lightHue).hex(),
       chroma(lightColors.scale.gray[1]).set("lch.h", lightHue).hex(),
@@ -58,6 +58,7 @@ module.exports = {
       chroma(darkColors.scale.gray[6]).set("lch.h", darkHue).hex(),
       chroma(darkColors.scale.gray[7]).set("lch.h", darkHue).hex(),
       chroma(darkColors.scale.gray[8]).set("lch.h", darkHue).hex(),
+      // tenth shade of gray isn't used, at least, not in Nushu/adjusted form in favor of using Earthsong background
       // chroma(darkColors.scale.gray[9]).set("lch.h", darkHue).hex(),
       DARK_BG,
     ],
