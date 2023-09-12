@@ -2,7 +2,8 @@
 
 ## 2.1.15
 
-- Nüshu Light/Dark: Use flagHex to write hex values and enforce single color conversions.
+- Updated Readme.md
+- Nüshu Light/Dark: Use flagHex to write hex values and enforce single color conversions
 - Nüshu Light/Dark: Adjustments to gray borders
 - Nüshu Light/Dark: Use Chroma JS to calc Nüshu color palette
 
