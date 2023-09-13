@@ -193,7 +193,7 @@ Additionally, comments are shown in color by default (cause I love to hear what 
 
 ### Extra
 
-I'll likely be maintaining iTerm, One Markdown, and other such themes too that compliment the light/dark Nüshu themes. Find this repo on GitHub at [link](https://github.com/wheredoesyourmindgo/nushu-vscode-theme) and take a look at the `extra` folder if those are of interest to you. Note, any Terminal themes I post in there will likely use the respective themes editor background color, not the background color used embedded VSCode terminal; it just makes more sense to me this way due to how the programs are used.
+I'll likely be maintaining iTerm, One Markdown, and other such themes too that compliment the light/dark Nüshu themes. Find this repo on GitHub at [link](https://github.com/wheredoesyourmindgo/nushu-vscode-theme) and take a look at the `extra` folder if those are of interest to you. Note, any Terminal themes I post in there will likely use the respective themes editor background color, not the background color used within the embedded VSCode terminal; it just makes more sense to me this way due to how the programs are used.
 
 ## Attribution
 
