@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.17
+
+- Nüshu Light/Dark: Set specific UI colors explicitly, based on what they were falling back to in their respective GitHub Default Dark/Light themes
+
 ## 2.1.16
 
 - Nüshu Light/Dark: Add proper file status foreground to filenames in lists and tabs

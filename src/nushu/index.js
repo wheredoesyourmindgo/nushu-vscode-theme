@@ -33,6 +33,7 @@ const {
   setDarkFilenameForeground,
   setLightFilenameForeground,
 } = require("./set-filename-foreground");
+const { setDarkFallback, setLightFallback } = require("./set-fallback");
 
 async function main() {
   try {
@@ -53,6 +54,7 @@ async function main() {
       await setLightQuaternary();
       await setLightComments();
       await setLightQuickInputList();
+      await setLightFallback();
       setLightBackground();
       setLightTermMagenta();
       await setLightColorScales();
@@ -75,6 +77,7 @@ async function main() {
       await setDarkQuaternary();
       await setDarkComments();
       await setDarkQuickInputList();
+      await setDarkFallback();
       setDarkBackground();
       await setDarkColorScales();
       await setDarkRemoteConnect(); // should run after setDarkColorScales()
