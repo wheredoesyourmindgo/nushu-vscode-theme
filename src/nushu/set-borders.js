@@ -3,9 +3,10 @@ const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const np = require("./nushu-palette");
 const replace = require("replace-in-file");
 const { flagHex } = require("./util");
+const chroma = require("chroma-js");
 
 /*
-Should produce 21 occurrences in both the light and dark Nüshu themes.
+Should produce 21 occurrences in both the light and dark Nüshu themes. Uses slightly transparent standard borders, 90%.
 editorOverviewRuler.border (?), tab.unfocusedActiveBorder, and tab.activeBorder should match editor background.
 */
 
@@ -34,13 +35,13 @@ const darkBlackBorders = new RegExp(
 const convertedLightBordersOptions = {
   files: "./themes/nushu-light.json",
   from: [lightGray3Borders, lightWhiteBorders],
-  to: [flagHex(np.light.border), flagHex(np.light.white)],
+  to: [flagHex(chroma(np.light.border).alpha(0.9).hex()), flagHex(np.light.white)],
 };
 
 const convertedDarkBordersOptions = {
   files: "./themes/nushu-dark.json",
   from: [darkGray7Borders, darkBlackBorders, darkGray10Borders],
-  to: [flagHex(np.dark.border), flagHex(np.dark.border), flagHex(np.dark.gray[9])]
+  to: [flagHex(chroma(np.dark.border).alpha(0.9).hex()), flagHex(np.dark.border), flagHex(np.dark.gray[9])]
 };
 
 // swap light theme custom border color
