@@ -244,7 +244,12 @@
     "quickInputList.focusForeground": "#633c01",
     "quickInputList.focusIconForeground": "#633c01",
     "quickInputList.focusBackground": "#e4e2dd",
-    "editor.selectionBackground": "#bf870040"
+    "editor.selectionBackground": "#bf870040",
+    "list.warningForeground": "#9a6700",
+    "list.errorForeground": "#cf222e",
+    "gitDecoration.stageModifiedResourceForeground": "#9a6700",
+    "gitDecoration.renamedResourceForeground": "#1a7f37",
+    "gitDecoration.stageDeletedResourceForeground": "#cf222e"
   },
   "semanticHighlighting": true,
   "tokenColors": [

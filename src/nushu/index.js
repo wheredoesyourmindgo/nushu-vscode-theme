@@ -29,6 +29,10 @@ const {
 } = require("./set-quick-input-list");
 const { setLightQuaternary, setDarkQuaternary } = require("./set-quadinary");
 const { removeFlags } = require("./remove-flags");
+const {
+  setDarkFilenameForeground,
+  setLightFilenameForeground,
+} = require("./set-filename-foreground");
 
 async function main() {
   try {
@@ -54,6 +58,7 @@ async function main() {
       await setLightColorScales();
       await setLightRemoteConnect(); // should run after setLightColorScales()
       await setLightSelectionBackground(); // should run after setLightColorScales()
+      await setLightFilenameForeground(); // should run after setLightColorScales()
     } else {
       console.log("Skipping Light Theme conversion");
     }
@@ -74,6 +79,7 @@ async function main() {
       await setDarkColorScales();
       await setDarkRemoteConnect(); // should run after setDarkColorScales()
       await setDarkSelectionBackground(); // should run after setDarkColorScales()
+      await setDarkFilenameForeground(); // should run after setDarkColorScales()
     } else {
       console.log("Skipping Dark Theme conversion");
     }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.16
+
+- Nüshu Light/Dark: Add proper file status foreground to filenames in lists and tabs
+
 ## 2.1.15
 
 - Updated Readme.md
