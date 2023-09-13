@@ -6,6 +6,7 @@ const { flagHex } = require("./util");
 
 /*
 Should produce 21 occurrences in both the light and dark Nüshu themes.
+editorOverviewRuler.border (?), tab.unfocusedActiveBorder, and tab.activeBorder should match editor background.
 */
 
 const lightGray3Borders = new RegExp(
@@ -22,7 +23,7 @@ const darkGray7Borders = new RegExp(
   "gi"
 );
 const darkGray10Borders = new RegExp(
-  `(?<=border":\\s"|borderTop":\\s")${darkColors.scale.gray[9]}`, // tab.unfocusedActiveBorder, tab.activeBorder
+  `(?<=border":\\s"|borderTop":\\s")${darkColors.scale.gray[9]}`, //editorOverviewRuler.border, tab.unfocusedActiveBorder, tab.activeBorder
   "gi"
 );
 const darkBlackBorders = new RegExp(
@@ -33,13 +34,13 @@ const darkBlackBorders = new RegExp(
 const convertedLightBordersOptions = {
   files: "./themes/nushu-light.json",
   from: [lightGray3Borders, lightWhiteBorders],
-  to: flagHex(np.light.border),
+  to: [flagHex(np.light.border), flagHex(np.light.white)],
 };
 
 const convertedDarkBordersOptions = {
   files: "./themes/nushu-dark.json",
   from: [darkGray7Borders, darkBlackBorders, darkGray10Borders],
-  to: flagHex(np.dark.border),
+  to: [flagHex(np.dark.border), flagHex(np.dark.border), flagHex(np.dark.gray[9])]
 };
 
 // swap light theme custom border color
