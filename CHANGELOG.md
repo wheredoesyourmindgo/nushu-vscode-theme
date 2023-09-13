@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.19
+
+- Nüshu Light/Dark: Use slightly transparent borders in standard cases
+
 ## 2.1.18
 
 - Nüshu Light/Dark: Fix active tab borders
