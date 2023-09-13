@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.18
+
+- Nüshu Light/Dark: Fix active tab borders
+
 ## 2.1.17
 
 - Nüshu Light/Dark: Set specific UI colors explicitly, based on what they were falling back to in their respective GitHub Default Dark/Light themes
