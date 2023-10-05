@@ -1,3 +1,38 @@
+dividing line color: "editorHoverWidget.border"
+outline view background color: "panel.background"
+editor text color: "foreground"
+editor background color: "editor.background"
+editor current line bg color: "editor.lineHighlightBackground"
+editor caret color: "terminal.ansiBlue"
+editor selection text color: "foreground"
+editor selection text bg color: use color picker to pick screenshot example in VSCode
+heading 1-3: __bold__  "markup.heading" *(blue)*
+heading 4-6: "markup.heading" *(blue)*
+emphasis: *italic* "keyword" *(pink)*
+bold: __bold__ "keyword" *(pink)*
+underline: <u>underline</u> "variable" *(grey)*
+strikethrough: ~~strikethrough~~ "variable" *(grey)*
+link title: "entity.name.function" *(purple)*
+link: <u>underline</u> "entity.name.function" *(purple)*
+image: "keyword" *(pink)*
+footnote def: "terminal.ansiGreen" *(green)*
+footnote ref: "terminal.ansiGreen" *(green)*
+horizontal rule: "variable" *(grey)*
+quote: "entity.name.tag" *(brown)*
+order list: "entity.name.tag" *(brown)*
+unorder list: "entity.name.tag" *(brown)*
+inline html: "entity.name.tag" *(brown)*
+block html: "entity.name.tag" *(brown)*
+table: "variable" *(grey)*
+inline code: "string" *(dark blue)*
+block code: "foreground"
+block code number: "markup.heading" *(blue)*
+block code string: "string" *(dark blue)*
+block code character: "foreground"
+block code keyword: "keyword" *(pink)*
+block code attribute: "markup.heading" *(blue)*
+block code preprocessor: "keyword" *(pink)*
+block code comment: _italic_ "terminal.ansiGreen"
 
 
 > left off at rmstrstkxd, Link was last preference set. [^1]

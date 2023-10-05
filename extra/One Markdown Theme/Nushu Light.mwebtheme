@@ -4,7 +4,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "1f2328"
+    "color" : "2b2822"
   },
   "footnoteDef" : {
     "isBold" : false,
@@ -28,8 +28,8 @@
     "color" : "633c01"
   },
   "editor" : {
-    "color" : "2a2821",
-    "currentLineBgColor" : "eae8e2",
+    "color" : "2b2822",
+    "currentLineBgColor" : "eae8e3",
     "app-row-content-color" : "758e8e",
     "app-icon-color" : "6d72c1",
     "selectionBgColor" : "ebdabd",
@@ -37,10 +37,10 @@
     "app-tab-borderColor" : "d6d4cf",
     "app-row-title-color" : "596d75",
     "app-row-icon-color" : "6d72c1",
-    "app-outlineView-bgColor" : "f0eee8",
+    "app-outlineView-bgColor" : "efede9",
     "app-2col-bgColor" : "f6eedc",
     "app-row-selected-bgColor" : "7075c4",
-    "selectionColor" : "",
+    "selectionColor" : "2b2822",
     "app-tab-bgColor" : "eee7d4",
     "bgColor" : "f8f6f1",
     "app-group-bgColor" : "e5e5d1",
@@ -68,7 +68,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "bf3989"
+    "color" : "99286e"
   },
   "h2" : {
     "isBold" : true,
@@ -82,7 +82,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "586e75"
+    "color" : "57606a"
   },
   "h3" : {
     "isBold" : true,
@@ -132,7 +132,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "bc319c"
+    "color" : "99286e"
   },
   "h5" : {
     "isBold" : false,
@@ -160,7 +160,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "116329"
+    "color" : "99286e"
   },
   "blockHTML" : {
     "isBold" : false,
@@ -195,7 +195,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "bc319c"
+    "color" : "99286e"
   },
   "ul" : {
     "isBold" : false,
@@ -209,21 +209,21 @@
     "isItalic" : true,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "6e7781"
+    "color" : "116329"
   },
   "emph" : {
     "isBold" : false,
     "isItalic" : true,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "9e2f1c"
+    "color" : "99286e"
   },
   "codeblock-character" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "1f2328"
+    "color" : "2b2822"
   },
   "codeblock-number" : {
     "isBold" : false,
@@ -237,7 +237,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "586e75"
+    "color" : "57606a"
   }
 }
 

@@ -4,120 +4,120 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "859900"
+    "color" : "d7cfc7"
   },
   "footnoteDef" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "808900"
+    "color" : "3fb950"
   },
   "linkLink" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
-    "isUnderline" : false,
-    "color" : "545d5d"
+    "isUnderline" : true,
+    "color" : "bc8cff"
   },
   "ol" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "b58900"
+    "color" : "e3b341"
   },
   "editor" : {
-    "color" : "d5cdc6",
-    "currentLineBgColor" : "322d29",
+    "color" : "d7cfc7",
+    "currentLineBgColor" : "302b27",
     "app-row-content-color" : "7c8e87",
     "app-icon-color" : "6d72c1",
-    "selectionBgColor" : "4d3b20",
+    "selectionBgColor" : "4b391d",
     "app-row-bgColor" : "16353f",
-    "app-tab-borderColor" : "423d38",
+    "app-tab-borderColor" : "3f3b36",
     "app-row-title-color" : "93a0a0",
     "app-row-icon-color" : "6d72c1",
-    "app-outlineView-bgColor" : "2e2925",
+    "app-outlineView-bgColor" : "2b2723",
     "app-2col-bgColor" : "012229",
     "app-row-selected-bgColor" : "6d72c1",
-    "selectionColor" : "",
+    "selectionColor" : "d7cfc7",
     "app-tab-bgColor" : "011f27",
-    "bgColor" : "27231e",
+    "bgColor" : "25211d",
     "app-group-bgColor" : "16333d",
     "app-row-separator-color" : "021935",
     "app-row-info-color" : "96a8a0",
     "app-group-color" : "7f7f7f",
-    "caretColor" : "2f81f7"
+    "caretColor" : "58a6ff"
   },
   "h1" : {
     "isBold" : true,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "6c71c4"
+    "color" : "79c0ff"
   },
   "inlineCode" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "859900"
+    "color" : "a5d6ff"
   },
   "image" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "d33682"
+    "color" : "db61a2"
   },
   "h2" : {
     "isBold" : true,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "6c71c4"
+    "color" : "79c0ff"
   },
   "table" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "586e75"
+    "color" : "b1bac4"
   },
   "h3" : {
     "isBold" : true,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "6c71c4"
+    "color" : "79c0ff"
   },
   "link" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "2aa198"
+    "color" : "bc8cff"
   },
   "strikethrough" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : true,
     "isUnderline" : false,
-    "color" : "859900"
+    "color" : "b1bac4"
   },
   "h4" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "268bd2"
+    "color" : "79c0ff"
   },
   "footnoteRef" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "808900"
+    "color" : "3fb950"
   },
   "isAutoGenCSS" : true,
   "codeblock-string" : {
@@ -125,119 +125,119 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "d32d26"
+    "color" : "a5d6ff"
   },
   "codeblock-preprocessor" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "784830"
+    "color" : "db61a2"
   },
   "h5" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "268bd2"
+    "color" : "79c0ff"
   },
   "underline" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : true,
-    "color" : "93a1a1"
+    "color" : "b1bac4"
   },
   "inlineHTML" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "6c71c4"
+    "color" : "e3b341"
   },
   "strong" : {
     "isBold" : true,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "dc322f"
+    "color" : "db61a2"
   },
   "blockHTML" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "6c71c4"
+    "color" : "e3b341"
   },
   "codeblock-attribute" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "967d41"
+    "color" : "79c0ff"
   },
   "h6" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "268bd2"
+    "color" : "79c0ff"
   },
   "quote" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "d33682"
+    "color" : "e3b341"
   },
   "codeblock-keyword" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "bc319c"
+    "color" : "db61a2"
   },
   "ul" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "b58900"
+    "color" : "e3b341"
   },
   "codeblock-comment" : {
     "isBold" : false,
-    "isItalic" : false,
+    "isItalic" : true,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "008327"
+    "color" : "3fb950"
   },
   "emph" : {
     "isBold" : false,
     "isItalic" : true,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "cb4b16"
+    "color" : "db61a2"
   },
   "codeblock-character" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "2834ce"
+    "color" : "d7cfc7"
   },
   "codeblock-number" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "2834ce"
+    "color" : "79c0ff"
   },
   "hr" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "586e75"
+    "color" : "b1bac4"
   }
 }
 
