@@ -17,8 +17,8 @@ const {
 } = require("./set-color-scales");
 const { setLightForeground, setDarkForeground } = require("./set-foreground");
 const {
-  setLightEditorHoverWidget,
-  setDarkEditorHoverWidget,
+  setDarkUnsetBorders,
+  setLightUnsetBorders,
 } = require("./set-editor-hover-widget");
 const { setLightSecondary, setDarkSecondary } = require("./set-secondary");
 const { setLightComments, setDarkComments } = require("./set-comments");
@@ -34,6 +34,10 @@ const {
   setLightFilenameForeground,
 } = require("./set-filename-foreground");
 const { setDarkFallback, setLightFallback } = require("./set-fallback");
+const {
+  setLightStringPunctuation,
+  setDarkStringPunctuation,
+} = require("./set-string-punctuation");
 
 async function main() {
   try {
@@ -48,7 +52,7 @@ async function main() {
       // already be set, so they should be run after any such requirement is met.
       await setLightBorders();
       await setLightForeground();
-      await setLightEditorHoverWidget();
+      await setLightUnsetBorders();
       await setLightSecondary();
       await setLightTertiary();
       await setLightQuaternary();
@@ -61,6 +65,7 @@ async function main() {
       await setLightRemoteConnect(); // should run after setLightColorScales()
       await setLightSelectionBackground(); // should run after setLightColorScales()
       await setLightFilenameForeground(); // should run after setLightColorScales()
+      await setLightStringPunctuation();
     } else {
       console.log("Skipping Light Theme conversion");
     }
@@ -71,7 +76,7 @@ async function main() {
       // already be set, so they should be run after any such requirement is met.
       await setDarkBorders();
       await setDarkForeground();
-      await setDarkEditorHoverWidget();
+      await setDarkUnsetBorders();
       await setDarkSecondary();
       await setDarkTertiary();
       await setDarkQuaternary();
@@ -83,6 +88,7 @@ async function main() {
       await setDarkRemoteConnect(); // should run after setDarkColorScales()
       await setDarkSelectionBackground(); // should run after setDarkColorScales()
       await setDarkFilenameForeground(); // should run after setDarkColorScales()
+      await setDarkStringPunctuation();
     } else {
       console.log("Skipping Dark Theme conversion");
     }
