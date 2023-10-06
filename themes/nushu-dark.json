@@ -253,6 +253,11 @@
     "welcomePage.buttonBackground": "#2b2723",
     "welcomePage.buttonHoverBackground": "#3b342e",
     "editorHoverWidget.border": "#3f3b36",
+    "editorWidget.border": "#3f3b36",
+    "inlineChat.border": "#3f3b36",
+    "inlineChatInput.border": "#3f3b36",
+    "scm.providerBorder": "#3f3b36",
+    "settings.dropdownListBorder": "#3f3b36",
     "welcomePage.tileBackground": "#302b27",
     "welcomePage.tileHoverBackground": "#383430",
     "quickInputList.focusForeground": "#e3b341",
@@ -285,7 +290,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#3fb950E6"
+        "foreground": "#3fb950e6"
       }
     },
     {
@@ -667,6 +672,24 @@
       ],
       "settings": {
         "foreground": "#a5d6ff"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.definition.string.end",
+        "punctuation.definition.string.begin"
+      ],
+      "settings": {
+        "foreground": "#a5d6ffcc"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.support.type.property-name.begin",
+        "punctuation.support.type.property-name.end"
+      ],
+      "settings": {
+        "foreground": "#e3b341cc"
       }
     }
   ]
