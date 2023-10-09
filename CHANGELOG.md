@@ -1,10 +1,10 @@
 # Changelog
 
-## 2.1.23
+## 2.1.24
 
 - Nüshu Light/Dark: peekView workbench updates
 
-## 2.1.22
+## 2.1.23
 
 - Nüshu Light/Dark: Explicitly set peekViewResult text color
 
