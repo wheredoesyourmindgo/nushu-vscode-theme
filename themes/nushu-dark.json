@@ -279,7 +279,10 @@
     "list.errorForeground": "#f85149",
     "gitDecoration.stageModifiedResourceForeground": "#d29922",
     "gitDecoration.renamedResourceForeground": "#3fb950",
-    "gitDecoration.stageDeletedResourceForeground": "#f85149"
+    "gitDecoration.stageDeletedResourceForeground": "#f85149",
+    "peekViewResult.fileForeground": "#d7cfc7",
+    "peekViewResult.lineForeground": "#b1bac4",
+    "peekViewResult.selectionForeground": "#d7cfc7"
   },
   "semanticHighlighting": true,
   "tokenColors": [

@@ -265,7 +265,10 @@
     "list.errorForeground": "#cf222e",
     "gitDecoration.stageModifiedResourceForeground": "#9a6700",
     "gitDecoration.renamedResourceForeground": "#1a7f37",
-    "gitDecoration.stageDeletedResourceForeground": "#cf222e"
+    "gitDecoration.stageDeletedResourceForeground": "#cf222e",
+    "peekViewResult.fileForeground": "#2b2822",
+    "peekViewResult.lineForeground": "#57606a",
+    "peekViewResult.selectionForeground": "#2b2822"
   },
   "semanticHighlighting": true,
   "tokenColors": [

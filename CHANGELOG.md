@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.21
+
+- Nüshu Light/Dark: Explicitly set peekViewResult text color
+
 ## 2.1.20
 
 - Nüshu Light/Dark: Use slightly transparent text for begin/end text strings, so the content that matters pops a bit
