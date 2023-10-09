@@ -11,7 +11,6 @@ async function setLightTertiary() {
   const colors = lightTheme.colors;
   colors["list.inactiveSelectionBackground"] = flagHex(np.light.tertiary);
   colors["list.activeSelectionBackground"] = flagHex(np.light.tertiary);
-  colors["peekViewEditor.background"] = flagHex(np.light.tertiary);
   colors["tab.unfocusedHoverBackground"] = flagHex(np.light.tertiary);
   colors["list.hoverBackground"] = flagHex(np.light.tertiary);
   colors["editor.wordHighlightBackground"] = flagHex(np.light.tertiary);
@@ -23,7 +22,6 @@ async function setDarkTertiary() {
   const colors = darkTheme.colors;
   colors["list.inactiveSelectionBackground"] = flagHex(np.dark.tertiary);
   colors["list.activeSelectionBackground"] = flagHex(np.dark.tertiary);
-  colors["peekViewEditor.background"] = flagHex(np.dark.tertiary);
   colors["tab.unfocusedHoverBackground"] = flagHex(np.dark.tertiary);
   colors["list.hoverBackground"] = flagHex(np.dark.tertiary);
   colors["editor.wordHighlightBackground"] = flagHex(np.dark.tertiary);

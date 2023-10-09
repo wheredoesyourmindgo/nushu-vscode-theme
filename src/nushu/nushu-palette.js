@@ -26,7 +26,7 @@ module.exports = {
     quaternary: adjLightGray2Lightness("-6"), 
     gray: [
       chroma(lightColors.scale.gray[0]).set("lch.h", lightHue).hex(),
-      chroma(lightColors.scale.gray[1]).set("lch.h", lightHue).hex(),
+      chroma(lightColors.scale.gray[1]).set("lch.h", lightHue).hex(), // darker shade of LIGHT_BG, used as dark themes 'black' is used, ex. sidebar.background
       chroma(lightColors.scale.gray[2]).set("lch.h", lightHue).hex(),
       chroma(lightColors.scale.gray[3]).set("lch.h", lightHue).hex(),
       chroma(lightColors.scale.gray[4]).set("lch.h", lightHue).hex(),

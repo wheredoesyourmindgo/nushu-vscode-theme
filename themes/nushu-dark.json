@@ -246,8 +246,8 @@
     "editor.focusedStackFrameHighlightBackground": "#2ea04366",
     "peekViewEditor.matchHighlightBackground": "#bb800966",
     "peekViewResult.matchHighlightBackground": "#bb800966",
-    "peekViewEditor.background": "#34302c",
-    "peekViewResult.background": "#25211d",
+    "peekViewEditor.background": "#2b2723",
+    "peekViewResult.background": "#302b27",
     "settings.headerForeground": "#d7cfc7",
     "settings.modifiedItemIndicator": "#f8514966",
     "welcomePage.buttonBackground": "#2b2723",
@@ -282,7 +282,10 @@
     "gitDecoration.stageDeletedResourceForeground": "#f85149",
     "peekViewResult.fileForeground": "#d7cfc7",
     "peekViewResult.lineForeground": "#b1bac4",
-    "peekViewResult.selectionForeground": "#d7cfc7"
+    "peekViewResult.selectionForeground": "#d7cfc7",
+    "peekViewTitle.background": "#34302c",
+    "peekViewTitleLabel.foreground": "#d7cfc7",
+    "peekViewTitleDescription.foreground": "#b1bac4"
   },
   "semanticHighlighting": true,
   "tokenColors": [
