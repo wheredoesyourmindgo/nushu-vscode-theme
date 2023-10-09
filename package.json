@@ -3,7 +3,7 @@
   "displayName": "Nüshu",
   "homepage": "https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.nushu-vscode-theme",
   "description": "A theme that will continue to fade with time",
-  "version": "2.1.22",
+  "version": "2.1.21",
   "scripts": {
     "build": "node src/index.js && node src/nushu/index.js",
     "release:major": "vsce publish major && git push",
