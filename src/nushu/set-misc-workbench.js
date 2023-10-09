@@ -23,6 +23,7 @@ async function setLightMiscWorkbench() {
   ); // variable gray
   colors["peekViewEditor.background"] = flagHex(np.light.gray[1]);
   colors["peekViewResult.background"] = flagHex(np.light.secondary);
+  colors["peekView.border"] = flagHex(np.light.border);
   rp.replace("./themes/nushu-light.json", "colors", colors);
 }
 
@@ -39,6 +40,7 @@ async function setDarkMiscWorkbench() {
   ); // variable
   colors["peekViewEditor.background"] = flagHex(np.dark.black);
   colors["peekViewResult.background"] = flagHex(np.dark.secondary);
+  colors["peekView.border"] = flagHex(np.dark.border);
   rp.replace("./themes/nushu-dark.json", "colors", colors);
 }
 
