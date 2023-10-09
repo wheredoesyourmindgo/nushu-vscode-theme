@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.26
+
+- Nüshu Light/Dark: peekView workbench border updates
+
 ## 2.1.25
 
 - Nüshu Light/Dark: peekView workbench updates

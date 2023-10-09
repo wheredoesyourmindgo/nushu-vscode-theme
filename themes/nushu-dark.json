@@ -285,7 +285,8 @@
     "peekViewResult.selectionForeground": "#d7cfc7",
     "peekViewTitle.background": "#34302c",
     "peekViewTitleLabel.foreground": "#d7cfc7",
-    "peekViewTitleDescription.foreground": "#b1bac4"
+    "peekViewTitleDescription.foreground": "#b1bac4",
+    "peekView.border": "#3f3b36"
   },
   "semanticHighlighting": true,
   "tokenColors": [
