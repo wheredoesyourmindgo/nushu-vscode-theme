@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.21
+## 2.1.22
 
 - Nüshu Light/Dark: Explicitly set peekViewResult text color
 
