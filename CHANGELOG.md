@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.24
+## 2.1.25
 
 - Nüshu Light/Dark: peekView workbench updates
 
