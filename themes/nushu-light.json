@@ -244,7 +244,6 @@
     "scm.providerBorder": "#d6d4cf",
     "settings.dropdownListBorder": "#d6d4cf",
     "welcomePage.tileBackground": "#eae8e3",
-    "peekViewEditor.background": "#e4e2dd",
     "welcomePage.tileHoverBackground": "#dedcd8",
     "quickInputList.focusForeground": "#633c01",
     "quickInputList.focusIconForeground": "#633c01",
@@ -265,7 +264,16 @@
     "list.errorForeground": "#cf222e",
     "gitDecoration.stageModifiedResourceForeground": "#9a6700",
     "gitDecoration.renamedResourceForeground": "#1a7f37",
-    "gitDecoration.stageDeletedResourceForeground": "#cf222e"
+    "gitDecoration.stageDeletedResourceForeground": "#cf222e",
+    "peekViewResult.fileForeground": "#2b2822",
+    "peekViewResult.lineForeground": "#57606a",
+    "peekViewResult.selectionForeground": "#2b2822",
+    "peekViewTitle.background": "#e4e2dd",
+    "peekViewTitleLabel.foreground": "#2b2822",
+    "peekViewTitleDescription.foreground": "#57606a",
+    "peekViewEditor.background": "#efede9",
+    "peekViewResult.background": "#eae8e3",
+    "peekView.border": "#d6d4cf"
   },
   "semanticHighlighting": true,
   "tokenColors": [

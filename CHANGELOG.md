@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.26
+
+- Nüshu Light/Dark: peekView workbench border updates
+
+## 2.1.25
+
+- Nüshu Light/Dark: peekView workbench updates
+
+## 2.1.23
+
+- Nüshu Light/Dark: Explicitly set peekViewResult text color
+
 ## 2.1.20
 
 - Nüshu Light/Dark: Use slightly transparent text for begin/end text strings, so the content that matters pops a bit
