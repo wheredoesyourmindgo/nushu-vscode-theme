@@ -273,7 +273,8 @@
     "peekViewTitleDescription.foreground": "#57606a",
     "peekViewEditor.background": "#efede9",
     "peekViewResult.background": "#eae8e3",
-    "peekView.border": "#d6d4cf"
+    "peekView.border": "#d6d4cf",
+    "inputOption.activeForeground": "#2b2822"
   },
   "semanticHighlighting": true,
   "tokenColors": [
