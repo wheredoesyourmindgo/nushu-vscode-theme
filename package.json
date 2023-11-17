@@ -50,7 +50,7 @@
       },
       {
         "label": "Nüshu Dark",
-        "uiTheme": "vs",
+        "uiTheme": "vs-dark",
         "path": "./themes/nushu-dark.json"
       },
       {
