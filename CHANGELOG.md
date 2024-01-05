@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.28
+
+- Nüshu Light/Dark: Fix Word selection colors.
+
 ## 2.1.27
 
 - Nüshu Dark: Fix contributes.
