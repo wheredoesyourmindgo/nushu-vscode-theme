@@ -6,8 +6,7 @@ const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 
 /*
-Set editor.selectionBackground (unset for some reason in GitHub theme) to the same value
-as editor.selectionHighlightBackground, which is set.
+Misc workbench
 */
 
 async function setLightMiscWorkbench() {
