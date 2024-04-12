@@ -201,6 +201,6 @@ The project name references [Remembering Nüshu, the 19th-Century Chinese Script
 
 The font used in this README's title (logo) is [Kiperman](https://www.harbortype.com/fonts/kiperman/) from Harbor Type. The font used in the code previews is [Sudo](https://github.com/jenskutilek/sudo-font) from Jens Kutilek.
 
-Icon template provided via Freepik <a href="https://www.freepik.com/free-vector/illustration-document-icon_2945058.htm#page=1&query=pen%20paper%20icon&position=0">Business vector created by rawpixel.com - www.freepik.com</a>
+App Icon by Chase Lean, via OpenAI Logo Creator <a href="https://chat.openai.com">OpenAI</a>
 
 [GitHub Theme](https://github.com/primer/github-vscode-theme) VSCode theme, [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) Atom theme, & [Earthsong](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/earthsong.css) monkeytype theme.
