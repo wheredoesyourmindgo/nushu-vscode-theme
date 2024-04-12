@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2
+
+- New App Icon.
+
 ## 2.1.28
 
 - Nüshu Light/Dark: Fix Word selection colors.
