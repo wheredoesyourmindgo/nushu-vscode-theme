@@ -1,12 +1,16 @@
 # Changelog
 
+## 2.2.1
+
+- Merge in upstream/main commits, aka GitHub Theme
+
 ## 2.2
 
 - New App Icon.
 
 ## 2.1.28
 
-- Nüshu Light/Dark: Fix Word selection colors.
+- Nüshu Light/Dark: Fix Word selection colors
 
 ## 2.1.27
 
