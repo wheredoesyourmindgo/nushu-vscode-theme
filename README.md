@@ -1,6 +1,6 @@
-<p align="center">
+<!-- <p align="center">
    <img width="400" src="https://raw.githubusercontent.com/wheredoesyourmindgo/nushu-vscode-theme/master/images/logo.png" />
-</p>
+</p> -->
 
 ### TL;DR
 
