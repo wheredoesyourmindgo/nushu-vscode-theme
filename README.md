@@ -15,11 +15,11 @@ Nüshu (this theme) is a fork of the VSCode Github theme, specifically the GitHu
 ### Light / Dark
 
 <div align="center" style="padding-top:16px;padding-bottom:32px; display: flex; justify-content: center; align-items: center; gap: 20px;">
-<div>
-  <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu Light Theme Preview.png" alt="Light Theme Preview" width="400" />
-     <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/light_palette_aside.png" alt="Light Theme Palette Aside" width="116" />
+  <div style="display: flex;">
+    <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu Light Theme Preview.png" alt="Light Theme Preview" width="400" />
+      <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/light_palette_aside.png" alt="Light Theme Palette Aside" width="116" />
   </div>
-  <div>
+  <div style="display: flex;">
     <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu Dark Theme Preview.png" alt="Dark Theme Preview" width="400" />
     <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/dark_palette_aside.png" alt="Dark Theme Palette Aside" width="116" />
   </div>
