@@ -1,7 +1,36 @@
-.DS_Store
-node_modules
+# VSCode
 *.vsix
+.vscode
+
+# Node.js dependencies and cache
+node_modules/
+.pnp/
+.pnp.js
+.pnp.cjs
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Temporary files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.vscode
+
+# macOS system files
+.AppleDouble
