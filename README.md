@@ -75,6 +75,22 @@ Set Light / Dark Theme preferences in `settings.json` for toggling and detection
 }
 ```
 
+### Variable Font Goodness
+
+If you are using a variable font with VSCode consider using `"editor.fontVariations": true`. Below is a code snippet that utilizes another extension to switch font weights out based on light/dark theme settings.
+
+```json
+{
+  "editor.fontVariations": true,
+  "settingsOnThemeSwitch.darkColorThemeSettings": {
+    "editor.fontWeight": 375
+  },
+  "settingsOnThemeSwitch.lightColorThemeSettings": {
+    "editor.fontWeight": 400
+  }
+}
+```
+
 ## Opinions
 
 The Light/Dark themes do not color the following tokens (deviating from the GitHub Default Light/Dark themes in this regard):
@@ -203,7 +219,7 @@ I'll likely be maintaining iTerm, One Markdown, and other such themes too that c
 
 The project name references [Remembering Nüshu, the 19th-Century Chinese Script Only Women Could Write](https://www.atlasobscura.com/articles/nushu-chinese-script-women).
 
-The font used in this README's title (logo) is [Kiperman](https://www.harbortype.com/fonts/kiperman/) from Harbor Type. The font used in the code previews is [Sudo](https://github.com/jenskutilek/sudo-font) from Jens Kutilek.
+The font used in this README's title (logo) is [Kiperman](https://www.harbortype.com/fonts/kiperman/). The font used in the Light/Dark code previews is [Maple](https://github.com/subframe7536/Maple-font), and the font used in the Classic code preview is [Sudo](https://github.com/jenskutilek/sudo-font).
 
 App Icon by Chase Lean, via OpenAI Logo Creator <a href="https://chat.openai.com">OpenAI</a>
 
