@@ -77,7 +77,7 @@ Set Light / Dark Theme preferences in `settings.json` for toggling and detection
 
 ### Variable Font Goodness
 
-If you are using a variable font with VSCode consider using `"editor.fontVariations": true`. Below is a code snippet that utilizes another extension to switch font weights out based on light/dark theme settings.
+If you are using a variable font with VSCode consider using `"editor.fontVariations": true`. Below is a code snippet that utilizes another extension called [Settings on Theme Switch](https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-settings-on-theme-switch) to switch font weights out based on light/dark theme settings.
 
 ```json
 {
