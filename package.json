@@ -5,6 +5,7 @@
   "description": "A theme that will continue to fade with time",
   "version": "2.2.3",
   "scripts": {
+    "list": "echo 'Skipping yarn list'",
     "build": "node src/index.js && node src/nushu/index.js",
     "release:major": "vsce publish major && git push",
     "release:minor": "vsce publish minor && git push",
