@@ -219,7 +219,7 @@ I'll likely be maintaining iTerm, One Markdown, and other such themes too that c
 
 The project name references [Remembering Nüshu, the 19th-Century Chinese Script Only Women Could Write](https://www.atlasobscura.com/articles/nushu-chinese-script-women).
 
-The font used in this README's title (logo) is [Kiperman](https://www.harbortype.com/fonts/kiperman/). The font used in the Light/Dark code previews is [Maple](https://github.com/subframe7536/Maple-font), and the font used in the Classic code preview is [Sudo](https://github.com/jenskutilek/sudo-font).
+The font used in the Light/Dark code previews is [Maple](https://github.com/subframe7536/Maple-font), and the font used in the Classic code preview is [Sudo](https://github.com/jenskutilek/sudo-font).
 
 App Icon by Chase Lean, via OpenAI Logo Creator <a href="https://chat.openai.com">OpenAI</a>
 
