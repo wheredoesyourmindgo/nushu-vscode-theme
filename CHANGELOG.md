@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.2
+
+- Readme.md updates
+
 ## 2.2.1
 
 - Merge in upstream/main commits, aka GitHub Theme
