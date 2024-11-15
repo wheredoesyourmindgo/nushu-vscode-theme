@@ -15,14 +15,15 @@ Nüshu (this theme) is a fork of the VSCode Github theme, specifically the GitHu
 ### Light / Dark
 
 <div align="center" style="padding-top:16px; padding-bottom:32px;">
-  <div style="display: inline-block; box-shadow: rgba(17, 12, 46, 0.15) 0px 8px 16px;">
-    <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu Light Theme Preview.png" alt="Light Theme Preview" width="400" style="display: block;" />
+  <div style="width: 95%; max-width: 800px; margin: 0 auto; box-shadow: rgba(17, 12, 46, 0.15) 0px 8px 16px;">
+    <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu Light Theme Preview.png" alt="Light Theme Preview" style="width: 100%; display: block;" />
   </div>
   <div style="height: 32px;"></div>
-  <div style="display: inline-block; box-shadow: rgba(17, 12, 46, 0.15) 0px 8px 16px;">
-    <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu Dark Theme Preview.png" alt="Dark Theme Preview" width="400" style="display: block;" />
+  <div style="width: 95%; max-width: 800px; margin: 0 auto; box-shadow: rgba(17, 12, 46, 0.15) 0px 8px 16px;">
+    <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu Dark Theme Preview.png" alt="Dark Theme Preview" style="width: 100%; display: block;" />
   </div>
 </div>
+
 
 ### Classic
 

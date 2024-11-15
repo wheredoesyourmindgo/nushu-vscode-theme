@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.7
+
+- Readme.md updates
+
 ## 2.2.6
 
 - Readme.md updates
