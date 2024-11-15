@@ -7,9 +7,9 @@
   "scripts": {
     "list": "echo 'Skipping yarn list'",
     "build": "node src/index.js && node src/nushu/index.js",
-    "release:major": "vsce publish major && git push",
-    "release:minor": "vsce publish minor && git push",
-    "release:patch": "vsce publish patch && git push"
+    "release:major": "vsce publish --no-yarn major && git push",
+    "release:minor": "vsce publish --no-yarn minor && git push",
+    "release:patch": "vsce publish --no-yarn patch && git push"
   },
   "icon": "images/icon.png",
   "publisher": "wheredoesyourmindgo",

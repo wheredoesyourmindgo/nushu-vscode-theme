@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.2.4
+## 2.2.6
 
 - Readme.md updates
 
