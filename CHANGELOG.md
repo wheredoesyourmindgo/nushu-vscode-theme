@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.11
+
+- Preview image (for README.md) updates
+
 ## 2.2.10
 
 - Readme.md updates
