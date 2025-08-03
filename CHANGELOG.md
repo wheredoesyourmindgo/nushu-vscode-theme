@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.12
+
+- Don't use alpha with comment color
+
 ## 2.2.11
 
 - Preview image (for README.md) updates

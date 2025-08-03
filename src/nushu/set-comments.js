@@ -3,16 +3,17 @@ const fs = require("node:fs/promises");
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const { flagHex } = require("./util");
-const chroma = require("chroma-js");
 
 /*
-Set comments to green 4 & 6, 90% alpha
+See ansiGreen for baseline green. Comments use one shade lighter in light mode and one shade darker in dark mode
+for subdued/less emphasis on comments.
+Baseline green is green.at(6) in light mode and green.at(3) in dark mode.
 */
 
 async function setLightComments() {
   const lightTheme = JSON.parse(await fs.readFile("./themes/nushu-light.json"));
   const tokenColors = lightTheme.tokenColors;
-  const green = chroma(lightColors.scale.green[5]).alpha(0.9).hex(); // 90%
+  const green = lightColors.scale.green.at(5);
 
   const [commentToken] = tokenColors.filter(
     (token) => token.scope.indexOf("comment") >= 0
@@ -33,7 +34,7 @@ async function setLightComments() {
 async function setDarkComments() {
   const darkTheme = JSON.parse(await fs.readFile("./themes/nushu-dark.json"));
   const tokenColors = darkTheme.tokenColors;
-  const green = chroma(darkColors.scale.green[3]).alpha(0.9).hex(); // 90%
+  const green = darkColors.scale.green.at(4);
 
   const [commentToken] = tokenColors.filter(
     (token) => token.scope.indexOf("comment") >= 0
