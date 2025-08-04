@@ -11,7 +11,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "116329"
+    "color" : "1a7f37"
   },
   "linkLink" : {
     "isBold" : false,
@@ -117,7 +117,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "116329"
+    "color" : "1a7f37"
   },
   "isAutoGenCSS" : true,
   "codeblock-string" : {
@@ -209,7 +209,7 @@
     "isItalic" : true,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "116329"
+    "color" : "1a7f37"
   },
   "emph" : {
     "isBold" : false,
