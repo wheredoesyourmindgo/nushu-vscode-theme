@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.14
+
+- Add Ghostty theme to extras
+
 ## 2.2.12
 
 - Don't use alpha with comment color
