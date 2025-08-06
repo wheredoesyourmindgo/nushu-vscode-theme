@@ -217,7 +217,7 @@ const convertedLightOptions = {
   ],
   // name, white, black, gray, yellow, pink, green, orange, purple, coral, red
   to: [
-    '"name": "Nüshu Light"',
+    '"name": "Nushu Light"',
     //
     ...toLightTmpHex,
   ],
@@ -414,7 +414,7 @@ const convertedDarkOptions = {
   ],
   // name, white, black, gray, yellow, pink, green, orange, purple, coral, red
   to: [
-    '"name": "Nüshu Dark"',
+    '"name": "Nushu Dark"',
     //
     ...toDarkTmpHex,
   ],

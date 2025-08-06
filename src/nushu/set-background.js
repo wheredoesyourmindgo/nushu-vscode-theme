@@ -4,7 +4,7 @@ const { flagHex } = require("./util");
 
 /*
 Use black with dark theme and gray 2 with light theme for various backgrounds. Should produce
-17 occurrences in both the light and dark Nüshu themes.
+17 occurrences in both the light and dark Nushu themes.
 */
 
 function setLightBackground() {
