@@ -1,6 +1,6 @@
 {
   "name": "nushu-vscode-theme",
-  "displayName": "Nüshu",
+  "displayName": "Nushu",
   "homepage": "https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.nushu-vscode-theme",
   "description": "A theme that will continue to fade with time",
   "version": "2.2.14",
@@ -45,17 +45,17 @@
   "contributes": {
     "themes": [
       {
-        "label": "Nüshu Light",
+        "label": "Nushu Light",
         "uiTheme": "vs",
         "path": "./themes/nushu-light.json"
       },
       {
-        "label": "Nüshu Dark",
+        "label": "Nushu Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/nushu-dark.json"
       },
       {
-        "label": "Nüshu Classic",
+        "label": "Nushu Classic",
         "uiTheme": "vs",
         "path": "./themes/nushu-classic.json"
       }

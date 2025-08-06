@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.15
+
+- Remove special character, "ü" with diaeresis, from name
+
 ## 2.2.14
 
 - Add Ghostty theme to extras
@@ -30,92 +34,92 @@
 
 ## 2.1.28
 
-- Nüshu Light/Dark: Fix Word selection colors
+- Nushu Light/Dark: Fix Word selection colors
 
 ## 2.1.27
 
-- Nüshu Dark: Fix contributes.
+- Nushu Dark: Fix contributes.
 
 ## 2.1.26
 
-- Nüshu Light/Dark: peekView workbench border updates
+- Nushu Light/Dark: peekView workbench border updates
 
 ## 2.1.25
 
-- Nüshu Light/Dark: peekView workbench updates
+- Nushu Light/Dark: peekView workbench updates
 
 ## 2.1.23
 
-- Nüshu Light/Dark: Explicitly set peekViewResult text color
+- Nushu Light/Dark: Explicitly set peekViewResult text color
 
 ## 2.1.20
 
-- Nüshu Light/Dark: Use slightly transparent text for begin/end text strings, so the content that matters pops a bit
-- Nüshu Light/Dark: Set unset specific borders explicitly
+- Nushu Light/Dark: Use slightly transparent text for begin/end text strings, so the content that matters pops a bit
+- Nushu Light/Dark: Set unset specific borders explicitly
 
 ## 2.1.19
 
-- Nüshu Light/Dark: Use slightly transparent borders in standard cases
+- Nushu Light/Dark: Use slightly transparent borders in standard cases
 
 ## 2.1.18
 
-- Nüshu Light/Dark: Fix active tab borders
+- Nushu Light/Dark: Fix active tab borders
 
 ## 2.1.17
 
-- Nüshu Light/Dark: Set specific UI colors explicitly, based on what they were falling back to in their respective GitHub Default Dark/Light themes
+- Nushu Light/Dark: Set specific UI colors explicitly, based on what they were falling back to in their respective GitHub Default Dark/Light themes
 
 ## 2.1.16
 
-- Nüshu Light/Dark: Add proper file status foreground to filenames in lists and tabs
+- Nushu Light/Dark: Add proper file status foreground to filenames in lists and tabs
 
 ## 2.1.15
 
 - Updated Readme.md
-- Nüshu Light/Dark: Use flagHex to write hex values and enforce single color conversions
-- Nüshu Light/Dark: Adjustments to gray borders
-- Nüshu Light/Dark: Use Chroma JS to calc Nüshu color palette
+- Nushu Light/Dark: Use flagHex to write hex values and enforce single color conversions
+- Nushu Light/Dark: Adjustments to gray borders
+- Nushu Light/Dark: Use Chroma JS to calc Nushu color palette
 
 ## 2.1.14
 
-- Nüshu Light/Dark: Match hue of Foreground to Background
+- Nushu Light/Dark: Match hue of Foreground to Background
 
 ## 2.1.13
 
-- Nüshu Light/Dark: Use secondary, tertiary, and quaternary shades in lieu of grays
+- Nushu Light/Dark: Use secondary, tertiary, and quaternary shades in lieu of grays
 
 ## 2.1.12
 
-- Nüshu Light/Dark: Use gray instead of green for parameters
-- Nüshu Light/Dark: Use green with comments
+- Nushu Light/Dark: Use gray instead of green for parameters
+- Nushu Light/Dark: Use green with comments
 
 ## 2.1.11
 
-- Nüshu Light: Fix some backgrounds used
+- Nushu Light: Fix some backgrounds used
 
 ## 2.1.10
 
-- Set 6 inconsistently used shades of gray to secondary Nüshu color
+- Set 6 inconsistently used shades of gray to secondary Nushu color
 - Set "editorHoverWidget.border"
 
 ## 2.1.8
 
 - Don't use GitHub Theme foreground, revert to foreground found in Primer primitives
-- Nüshu Light/Dark: Use LCH to calculate background css hex codes
+- Nushu Light/Dark: Use LCH to calculate background css hex codes
 
 ## 2.1.7
 
-- Nüshu Light: Use a lighter green (same as GitHub Light Default)
-- Nüshu Light/Dark: Use a custom color with borders (17 instances in each theme)
+- Nushu Light: Use a lighter green (same as GitHub Light Default)
+- Nushu Light/Dark: Use a custom color with borders (17 instances in each theme)
 
 ## 2.1.5
 
-- Nüshu Light: Use darker purple with `terminal.ansiMagenta` and `terminal.ansiBrightMagenta`
+- Nushu Light: Use darker purple with `terminal.ansiMagenta` and `terminal.ansiBrightMagenta`
 
 ## 2.0.0
 
-- Nüshu Light and Dark Themes added
-- Original Nüshu Theme renamed to Nüshu Classic
+- Nushu Light and Dark Themes added
+- Original Nushu Theme renamed to Nushu Classic
 
 ## 0.4.11
 
