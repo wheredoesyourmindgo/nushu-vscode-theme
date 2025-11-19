@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.17
+
+- Rebuild yarn.lock
+
 ## 2.2.16
 
 - Remove vsce dev dependency
