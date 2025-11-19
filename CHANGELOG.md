@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.16
+
+- Remove vsce dev dependency
+
 ## 2.2.15
 
 - Remove special character, "ü" with diaeresis, from name
