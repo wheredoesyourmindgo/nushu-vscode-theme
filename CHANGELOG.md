@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.18
+
+- .vscodeignore updates
+
 ## 2.2.17
 
 - Rebuild yarn.lock
