@@ -74,8 +74,7 @@
     "cp-file": "<10",
     "nodemon": "^2.0.3",
     "replace-in-file": "^7.0.1",
-    "replace-json-property": "^1.9.0",
-    "vsce": "^2.15.0"
+    "replace-json-property": "^1.9.0"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.11.0"
 }
