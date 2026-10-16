@@ -1,0 +1,13 @@
+{
+  "name": "nushu-hero",
+  "private": true,
+  "type": "module",
+  "description": "Renders the Nushu README hero animation",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "23.11.1",
+    "shiki": "1.29.2"
+  }
+}
