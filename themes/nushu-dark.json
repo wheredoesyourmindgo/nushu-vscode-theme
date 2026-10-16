@@ -199,18 +199,7 @@
     "symbolIcon.typeParameterForeground": "#79c0ff",
     "symbolIcon.unitForeground": "#58a6ff",
     "symbolIcon.variableForeground": "#f0883e",
-    "symbolIcon.constantForeground": [
-      "#f2cc60",
-      "#e3b341",
-      "#d29922",
-      "#bb8009",
-      "#9e6a03",
-      "#845306",
-      "#693e00",
-      "#4b2900",
-      "#341a00",
-      "#341a00"
-    ],
+    "symbolIcon.constantForeground": "#3fb950",
     "terminal.foreground": "#d7cfc7",
     "terminal.ansiBlack": "#484f58",
     "terminal.ansiRed": "#ff7b72",
@@ -338,7 +327,7 @@
         "meta.definition.variable"
       ],
       "settings": {
-        "foreground": "#b1bac4"
+        "foreground": "#c1b7ae"
       }
     },
     {
@@ -419,7 +408,7 @@
     {
       "scope": "variable",
       "settings": {
-        "foreground": "#b1bac4"
+        "foreground": "#c1b7ae"
       }
     },
     {
@@ -531,7 +520,7 @@
     {
       "scope": "punctuation.definition.list.begin.markdown",
       "settings": {
-        "foreground": "#b1bac4"
+        "foreground": "#c1b7ae"
       }
     },
     {
@@ -622,8 +611,8 @@
         "punctuation.definition.changed"
       ],
       "settings": {
-        "background": "#161b22",
-        "foreground": "#b1bac4"
+        "background": "#201a13",
+        "foreground": "#c1b7ae"
       }
     },
     {

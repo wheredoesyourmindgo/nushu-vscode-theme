@@ -33,13 +33,17 @@
     "theme",
     "light",
     "dark",
+    "low contrast",
+    "warm",
+    "github",
+    "primer",
     "paper",
     "parchment",
     "pen paper coffee",
     "earthsong",
-    "primer",
-    "focus",
-    "astigmatism"
+    "astigmatism",
+    "eye strain",
+    "readability"
   ],
   "contributes": {
     "themes": [

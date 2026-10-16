@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.0
+
+- Variables, list bullets, and changed-markup now use warm grays that match Nushu's backgrounds, instead of GitHub's cool blue-grays (same lightness, so contrast is unchanged)
+- Fix constant symbol icons in Nushu Dark, which had an invalid color inherited from GitHub's theme and showed as plain text; they're now green
+- Update Marketplace keywords
+
 ## 2.3.0
 
 - New icon: a Nüshu character in a calligraphy-style layout, in Nushu Light colors
