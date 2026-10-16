@@ -1,12 +1,11 @@
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const np = require("./nushu-palette");
-const replace = require("replace-in-file");
-const { flagHex } = require("./util");
+const { flagHex, replaceExpecting } = require("./util");
 const chroma = require("chroma-js");
 
 /*
-Should produce 21 occurrences in both the light and dark Nushu themes. Uses slightly transparent standard borders, 90%.
+Produces 20 replacements in each of the light and dark Nushu themes (enforced by replaceExpecting below). Uses slightly transparent standard borders, 90%.
 editorOverviewRuler.border (?), tab.unfocusedActiveBorder, and tab.activeBorder should match editor background.
 */
 
@@ -53,14 +52,12 @@ const convertedDarkBordersOptions = {
 
 // swap light theme custom border color
 async function setLightBorders() {
-  const convertedBordersResults = await replace(convertedLightBordersOptions);
-  console.log("Converted replacement results:", convertedBordersResults);
+  await replaceExpecting("Light borders", convertedLightBordersOptions, 20);
 }
 
 // swap dark theme custom border color
 async function setDarkBorders() {
-  const convertedBordersResults = await replace(convertedDarkBordersOptions);
-  console.log("Converted replacement results:", convertedBordersResults);
+  await replaceExpecting("Dark borders", convertedDarkBordersOptions, 20);
 }
 
 module.exports = {

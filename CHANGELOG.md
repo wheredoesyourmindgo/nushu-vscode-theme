@@ -6,6 +6,7 @@
 - Rewrite README
 - New Marketplace description and banner color
 - Switch from yarn to npm (no changes to the themes)
+- Build checks: each conversion step must make its expected number of replacements, renamed properties fail the build, and every output color must be valid hex (no changes to the themes)
 
 ## 2.2.18
 

@@ -1,28 +1,29 @@
 const np = require("./nushu-palette");
-const replace = require("replace-in-file");
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
-const { flagHex } = require("./util");
+const { flagHex, replaceExpecting } = require("./util");
 
+// Template strings drop a lone backslash, so dots are written as \\. to stay literal in the regex
 const ignorePropStrings = [
-  `"symbolIcon\..*":\\s"`,
-  `"terminal\..*":\\s"`,
-  `"gitDecoration\..*":\\s"`, // green, yellow, red, orange, and gray all mean something
-  `"debugConsole\..*":\\s"`,
-  `"diffEditor\..*":\\s"`, // green means add, red means minus
-  `"editorGutter\..*":\\s"`, //  red means minus, yellow means modified, and green means add
-  `"button\..*":\\s"`, // don't change anything associated with "color.btn" (for now), see theme.js and colors.js for more info
-  `"debugIcon.breakpointForeground":\\s"`, // red means no
-  `"editor.findMatchBackground":\\s"`, // yellow (over red)
-  `"editor.findMatchHighlightBackground":\\s"`, // yellow (over red)
+  `"symbolIcon\\..*":\\s"`,
+  `"terminal\\..*":\\s"`,
+  `"gitDecoration\\..*":\\s"`, // green, yellow, red, orange, and gray all mean something
+  `"debugConsole\\..*":\\s"`,
+  `"debugConsoleInputIcon\\.foreground":\\s"`, // used to be skipped by accident, when "debugConsole." matched any character after it
+  `"diffEditor\\..*":\\s"`, // green means add, red means minus
+  `"editorGutter\\..*":\\s"`, //  red means minus, yellow means modified, and green means add
+  `"button\\..*":\\s"`, // don't change anything associated with "color.btn" (for now), see theme.js and colors.js for more info
+  `"debugIcon\\.breakpointForeground":\\s"`, // red means no
+  `"editor\\.findMatchBackground":\\s"`, // yellow (over red)
+  `"editor\\.findMatchHighlightBackground":\\s"`, // yellow (over red)
   `"errorForeground":\\s"`, // red means error (ex. find results empty label foreground)
-  `"notificationsErrorIcon.foreground":\\s"`, // red means error
-  `"notificationsWarningIcon.foreground":\\s"`, // orange means warning
-  `"notificationsInfoIcon.foreground":\\s"`, // blue means info
-  `"editor.stackFrameHighlightBackground":\\s"`, // not sure what this is, leave it yellow
-  `"editor.focusedStackFrameHighlightBackground":\\s"`, // not sure what this is, leave it green
-  `"peekViewEditor.matchHighlightBackground":\\s"`, // yellow (over red)
-  `"peekViewResult.matchHighlightBackground":\\s"`, // yellow (over red)
+  `"notificationsErrorIcon\\.foreground":\\s"`, // red means error
+  `"notificationsWarningIcon\\.foreground":\\s"`, // orange means warning
+  `"notificationsInfoIcon\\.foreground":\\s"`, // blue means info
+  `"editor\\.stackFrameHighlightBackground":\\s"`, // not sure what this is, leave it yellow
+  `"editor\\.focusedStackFrameHighlightBackground":\\s"`, // not sure what this is, leave it green
+  `"peekViewEditor\\.matchHighlightBackground":\\s"`, // yellow (over red)
+  `"peekViewResult\\.matchHighlightBackground":\\s"`, // yellow (over red)
 ];
 const skipProps = `(?<!${ignorePropStrings.join("|")})`;
 
@@ -421,21 +422,17 @@ const convertedDarkOptions = {
 };
 
 async function setLightColorScales() {
-  !(
-    convertedLightOptions.from.length === convertedLightOptions.to.length &&
-    convertedDarkOptions.from.length === convertedDarkOptions.to.length
-  )
-    ? console.error(
-        "WHOA THERE! SOMETHING IS NOT ADDING UP IN 'set-color-scales.js'"
-      )
-    : null;
+  if (
+    convertedLightOptions.from.length !== convertedLightOptions.to.length ||
+    convertedDarkOptions.from.length !== convertedDarkOptions.to.length
+  ) {
+    throw new Error("set-color-scales.js: 'from' and 'to' lists have different lengths");
+  }
 
-  const convertedResults = await replace(convertedLightOptions);
-  console.log("Converted replacement results:", convertedResults);
+  await replaceExpecting("Light color scales", convertedLightOptions, 77);
 }
 async function setDarkColorScales() {
-  const convertedResults = await replace(convertedDarkOptions);
-  console.log("Converted replacement results:", convertedResults);
+  await replaceExpecting("Dark color scales", convertedDarkOptions, 92);
 }
 
 module.exports = {

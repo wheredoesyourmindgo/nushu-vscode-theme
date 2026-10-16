@@ -1,6 +1,5 @@
-const rp = require("replace-json-property");
 const np = require("./nushu-palette");
-const { flagHex } = require("./util");
+const { flagHex, replaceExistingProp } = require("./util");
 
 /*
 Use black with dark theme and gray 2 with light theme for various backgrounds. Should produce
@@ -28,7 +27,7 @@ function setLightBackground() {
 }
 
 function rpLightGray2(key) {
-  rp.replace("./themes/nushu-light.json", key, flagHex(np.light.gray[1]));
+  replaceExistingProp("./themes/nushu-light.json", key, flagHex(np.light.gray[1]));
 }
 
 function setDarkBackground() {
@@ -52,7 +51,7 @@ function setDarkBackground() {
 }
 
 function rpDarkBlack(key) {
-  rp.replace("./themes/nushu-dark.json", key, flagHex(np.dark.black));
+  replaceExistingProp("./themes/nushu-dark.json", key, flagHex(np.dark.black));
 }
 module.exports = {
   setDarkBackground,
