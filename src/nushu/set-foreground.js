@@ -1,6 +1,5 @@
 const np = require("./nushu-palette");
-const replace = require("replace-in-file");
-const { flagHex } = require("./util");
+const { flagHex, replaceExpecting } = require("./util");
 
 /*
 Don't use GitHub Theme foreground, just use one found in the theme palette since it
@@ -38,12 +37,10 @@ const convertedDarkOptions = {
 };
 
 async function setLightForeground() {
-  const convertedResults = await replace(convertedLightOptions);
-  console.log("Converted replacement results:", convertedResults);
+  await replaceExpecting("Light foreground", convertedLightOptions, 31);
 }
 async function setDarkForeground() {
-  const convertedResults = await replace(convertedDarkOptions);
-  console.log("Converted replacement results:", convertedResults);
+  await replaceExpecting("Dark foreground", convertedDarkOptions, 31);
 }
 
 module.exports = {

@@ -29,6 +29,7 @@ const {
 } = require("./set-quick-input-list");
 const { setLightQuaternary, setDarkQuaternary } = require("./set-quadinary");
 const { removeFlags } = require("./remove-flags");
+const { assertValidColors } = require("./util");
 const {
   setDarkFilenameForeground,
   setLightFilenameForeground,
@@ -98,10 +99,16 @@ async function main() {
     } else {
       console.log("Skipping Dark Theme conversion");
     }
-    // lastly, remove flags
-    removeFlags();
+    // lastly, remove flags, then check nothing malformed was left behind
+    await removeFlags();
+    assertValidColors("./themes/nushu-light.json");
+    // Known upstream bug: src/theme.js passes the whole green scale (no index) for the dark
+    // symbolIcon.constantForeground, so it comes out as an array and VS Code ignores it.
+    assertValidColors("./themes/nushu-dark.json", ["symbolIcon.constantForeground"]);
   } catch (error) {
     console.error("Error occurred:", error);
+    // Fail the build, so half-converted themes aren't mistaken for good ones
+    process.exitCode = 1;
   }
 }
 
