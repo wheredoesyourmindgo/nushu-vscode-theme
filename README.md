@@ -5,11 +5,11 @@ Warm, low-contrast light and dark themes for VS Code, built on GitHub's Primer c
 Nushu replaces pure white and near-black backgrounds with softer paper and earth tones, which lowers overall contrast without washing out the code. It's built from the same Primer palette as the GitHub Light Default and GitHub Dark Default themes, with some hues remapped: keywords are magenta rather than red, for example, and tags are gold rather than green.
 
 <p align="center">
-  <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu%20Light%20Theme%20Preview.png" alt="Nushu Light" width="800" />
+  <img src="https://raw.githubusercontent.com/wheredoesyourmindgo/nushu-vscode-theme/HEAD/images/Nushu%20Light%20Theme%20Preview.png" alt="Nushu Light" width="800" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/Nushu%20Dark%20Theme%20Preview.png" alt="Nushu Dark" width="800" />
+  <img src="https://raw.githubusercontent.com/wheredoesyourmindgo/nushu-vscode-theme/HEAD/images/Nushu%20Dark%20Theme%20Preview.png" alt="Nushu Dark" width="800" />
 </p>
 
 ## Themes
@@ -21,7 +21,7 @@ Nushu replaces pure white and near-black backgrounds with softer paper and earth
 | **Nushu Classic** | The original Nushu: a light theme with italics for some tokens |
 
 <p align="center">
-  <img src="https://github.com/wheredoesyourmindgo/nushu-vscode-theme/raw/master/images/preview-collage@2x.png" alt="Nushu Classic" width="700" />
+  <img src="https://raw.githubusercontent.com/wheredoesyourmindgo/nushu-vscode-theme/HEAD/images/preview-collage@2x.png" alt="Nushu Classic" width="700" />
 </p>
 
 ## What's different from GitHub's themes
@@ -181,7 +181,7 @@ Scopes can target a single language. For example, to bold parameters in C files:
 
 ## Nushu for other apps
 
-The [`extra`](https://github.com/wheredoesyourmindgo/nushu-vscode-theme/tree/master/extra) folder on GitHub has matching themes for Ghostty, iTerm2, Hyper, Monkeytype, and One Markdown. The terminal themes use each theme's editor background, rather than the slightly different background of VS Code's built-in terminal.
+The [`extra`](https://github.com/wheredoesyourmindgo/nushu-vscode-theme/tree/HEAD/extra) folder on GitHub has matching themes for Ghostty, iTerm2, Hyper, Monkeytype, and One Markdown. The terminal themes use each theme's editor background, rather than the slightly different background of VS Code's built-in terminal.
 
 ## About the name
 
