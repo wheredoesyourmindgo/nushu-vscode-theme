@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.0
+
+- New icon: a Nüshu character in a calligraphy-style layout, in Nushu Light colors
+- Rewrite README
+- New Marketplace description and banner color
+- Switch from yarn to npm (no changes to the themes)
+
 ## 2.2.18
 
 - .vscodeignore updates
