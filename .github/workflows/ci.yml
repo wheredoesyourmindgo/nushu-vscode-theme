@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      # Fail if the committed themes don't match what the build generates,
+      # so dependency bumps and upstream merges can't silently change colors
+      - name: Check generated themes are up to date
+        run: git diff --exit-code -- themes
