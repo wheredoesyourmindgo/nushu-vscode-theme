@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.4.3
+
+- README: credit the fonts used in the animation (no changes to the themes)
+
 ## 2.4.2
 
 - README: new animated header, refreshed Light and Dark previews, and a clearer layout (no changes to the themes)

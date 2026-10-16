@@ -193,15 +193,15 @@ The [`extra`](https://github.com/wheredoesyourmindgo/nushu-vscode-theme/tree/HEA
 
 ## About the name
 
-The name refers to [Nüshu](https://www.atlasobscura.com/articles/nushu-chinese-script-women), a script from Hunan, China, that was written only by women. The icon is a Nüshu character, drawn from Google's [Noto Sans Nüshu](https://fonts.google.com/noto/specimen/Noto+Sans+Nushu) font.
+The name refers to [Nüshu](https://www.atlasobscura.com/articles/nushu-chinese-script-women), a script from Hunan, China, that was written only by women. The icon and the animation at the top use Nüshu characters from Google's [Noto Sans Nüshu](https://fonts.google.com/noto/specimen/Noto+Sans+Nushu) font.
 
 ## Credits
 
 - [GitHub Theme](https://github.com/primer/github-vscode-theme) for VS Code, which Nushu is a fork of, and GitHub's [Primer](https://primer.style) colors.
 - [Pen Paper Coffee](https://github.com/nylki/pen-paper-coffee-syntax) for Atom, which inspired the light background.
 - [Earthsong](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/earthsong.css) for Monkeytype, which inspired the dark background.
-- The previews use [Maple Mono](https://github.com/subframe7536/Maple-font) for Light and Dark, and [Sudo](https://github.com/jenskutilek/sudo-font) for Classic.
-- [Noto Sans Nüshu](https://fonts.google.com/noto/specimen/Noto+Sans+Nushu), under the SIL Open Font License, for the character in the icon.
+- The animation and previews use [Maple Mono](https://github.com/subframe7536/Maple-font) for Light and Dark, and [Sudo](https://github.com/jenskutilek/sudo-font) for Classic.
+- [Noto Sans Nüshu](https://fonts.google.com/noto/specimen/Noto+Sans+Nushu), under the SIL Open Font License, for the Nüshu characters in the icon and the animation.
 
 ## License
 
