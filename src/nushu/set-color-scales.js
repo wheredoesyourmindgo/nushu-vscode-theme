@@ -2,6 +2,15 @@ const np = require("./nushu-palette");
 const lightColors = require("@primer/primitives/dist/json/colors/light.json");
 const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
 const { flagHex, replaceExpecting } = require("./util");
+const chroma = require("chroma-js");
+
+// Hues of the Nushu backgrounds, the same ones nushu-palette.js uses to warm the UI grays
+const lightHue = chroma(np.light.white).get("lch.h");
+const darkHue = chroma(np.dark.gray[9]).get("lch.h");
+
+function warmGrays(grays, hue) {
+  return grays.map((gray) => chroma(gray).set("lch.h", hue).hex());
+}
 
 // Template strings drop a lone backslash, so dots are written as \\. to stay literal in the regex
 const ignorePropStrings = [
@@ -63,17 +72,9 @@ const toLightTmpHex = [
   lightColors.scale.pink[8],
   lightColors.scale.pink[9],
   lightColors.scale.pink[9],
-  // orange --> gray (green provides too much contrast in dark theme, and not enough contrast in light theme)
-  lightColors.scale.gray[0],
-  lightColors.scale.gray[1],
-  lightColors.scale.gray[2],
-  lightColors.scale.gray[3],
-  lightColors.scale.gray[4],
-  lightColors.scale.gray[5],
-  lightColors.scale.gray[6],
-  lightColors.scale.gray[7],
-  lightColors.scale.gray[8],
-  lightColors.scale.gray[9],
+  // orange --> gray (green provides too much contrast in dark theme, and not enough contrast in light theme).
+  // Primer's grays are cool, so re-hue them to match the light background, keeping their lightness.
+  ...warmGrays(lightColors.scale.gray, lightHue),
   // coral --> orange
   lightColors.scale.orange[0],
   lightColors.scale.orange[1],
@@ -260,17 +261,9 @@ const toDarkTmpHex = [
   darkColors.scale.pink[8],
   darkColors.scale.pink[9],
   darkColors.scale.pink[9],
-  // orange --> gray (green provides too much contrast in dark theme, and not enough contrast in light theme)
-  darkColors.scale.gray[0],
-  darkColors.scale.gray[1],
-  darkColors.scale.gray[2],
-  darkColors.scale.gray[3],
-  darkColors.scale.gray[4],
-  darkColors.scale.gray[5],
-  darkColors.scale.gray[6],
-  darkColors.scale.gray[7],
-  darkColors.scale.gray[8],
-  darkColors.scale.gray[9],
+  // orange --> gray (green provides too much contrast in dark theme, and not enough contrast in light theme).
+  // Primer's grays are cool, so re-hue them to match the dark background, keeping their lightness.
+  ...warmGrays(darkColors.scale.gray, darkHue),
   // coral --> orange
   darkColors.scale.orange[0],
   darkColors.scale.orange[1],
@@ -432,7 +425,7 @@ async function setLightColorScales() {
   await replaceExpecting("Light color scales", convertedLightOptions, 77);
 }
 async function setDarkColorScales() {
-  await replaceExpecting("Dark color scales", convertedDarkOptions, 92);
+  await replaceExpecting("Dark color scales", convertedDarkOptions, 82);
 }
 
 module.exports = {

@@ -325,7 +325,7 @@
         "meta.definition.variable"
       ],
       "settings": {
-        "foreground": "#57606a"
+        "foreground": "#635f54"
       }
     },
     {
@@ -406,7 +406,7 @@
     {
       "scope": "variable",
       "settings": {
-        "foreground": "#57606a"
+        "foreground": "#635f54"
       }
     },
     {
@@ -518,7 +518,7 @@
     {
       "scope": "punctuation.definition.list.begin.markdown",
       "settings": {
-        "foreground": "#57606a"
+        "foreground": "#635f54"
       }
     },
     {
@@ -609,8 +609,8 @@
         "punctuation.definition.changed"
       ],
       "settings": {
-        "background": "#eaeef2",
-        "foreground": "#57606a"
+        "background": "#efede9",
+        "foreground": "#635f54"
       }
     },
     {

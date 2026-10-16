@@ -102,9 +102,7 @@ async function main() {
     // lastly, remove flags, then check nothing malformed was left behind
     await removeFlags();
     assertValidColors("./themes/nushu-light.json");
-    // Known upstream bug: src/theme.js passes the whole green scale (no index) for the dark
-    // symbolIcon.constantForeground, so it comes out as an array and VS Code ignores it.
-    assertValidColors("./themes/nushu-dark.json", ["symbolIcon.constantForeground"]);
+    assertValidColors("./themes/nushu-dark.json");
   } catch (error) {
     console.error("Error occurred:", error);
     // Fail the build, so half-converted themes aren't mistaken for good ones
