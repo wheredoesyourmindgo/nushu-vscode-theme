@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.4.1
+
+- README image links no longer depend on the branch name (no changes to the themes)
+
 ## 2.4.0
 
 - Variables, list bullets, and changed-markup now use warm grays that match Nushu's backgrounds, instead of GitHub's cool blue-grays (same lightness, so contrast is unchanged)
