@@ -1,8 +1,16 @@
-# Nushu
+<h1 align="center">Nushu</h1>
 
-Warm, low-contrast light and dark themes for VS Code, built on GitHub's Primer colors.
+<p align="center">Warm, low-contrast light and dark themes for VS Code, built on GitHub's Primer colors.</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wheredoesyourmindgo/nushu-vscode-theme/HEAD/images/hero.webp" alt="Nüshu characters resolving into code in Nushu Dark, then switching to Nushu Light" width="870" />
+</p>
+
+## Why Nushu
 
 Nushu replaces pure white and near-black backgrounds with softer paper and earth tones, which lowers overall contrast without washing out the code. It's built from the same Primer palette as the GitHub Light Default and GitHub Dark Default themes, with some hues remapped: keywords are magenta rather than red, for example, and tags are gold rather than green.
+
+## Previews
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wheredoesyourmindgo/nushu-vscode-theme/HEAD/images/Nushu%20Light%20Theme%20Preview.png" alt="Nushu Light" width="800" />
