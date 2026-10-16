@@ -5,16 +5,15 @@
   "description": "A theme that will continue to fade with time",
   "version": "2.2.18",
   "scripts": {
-    "list": "echo 'Skipping yarn list'",
     "build": "node src/index.js && node src/nushu/index.js",
-    "release:major": "vsce publish --no-yarn major && git push",
-    "release:minor": "vsce publish --no-yarn minor && git push",
-    "release:patch": "vsce publish --no-yarn patch && git push"
+    "release:major": "npx @vscode/vsce publish major && git push --follow-tags",
+    "release:minor": "npx @vscode/vsce publish minor && git push --follow-tags",
+    "release:patch": "npx @vscode/vsce publish patch && git push --follow-tags"
   },
   "icon": "images/icon.png",
   "publisher": "wheredoesyourmindgo",
   "galleryBanner": {
-    "color": "#1b1f23",
+    "color": "#25211d",
     "theme": "dark"
   },
   "repository": {
