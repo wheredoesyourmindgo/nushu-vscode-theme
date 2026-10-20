@@ -1,0 +1,34 @@
+# Spelling dictionary for nushu-vscode-theme.
+# One word per line; '#' starts a comment.
+# The VS Code cSpell 'add to dictionary' quick-fix appends here.
+
+activeline
+apacheconf
+brackethighlighter
+earthsong
+emph
+enummember
+fedtax
+Ghostty
+hashkey
+hlsl
+jnsr
+magick
+Monkeytype
+Neue
+Noto
+nushu
+Nushu's
+Nüshu
+objc
+phpdoc
+quadinary
+repitition
+roxygen
+royalblue
+shiki
+skinparam
+textit
+topo
+vscodeignore
+wheredoesyourmindgo
