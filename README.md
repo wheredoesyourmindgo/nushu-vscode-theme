@@ -189,7 +189,9 @@ Scopes can target a single language. For example, to bold parameters in C files:
 
 ## Nushu for other apps
 
-The [`extra`](https://github.com/wheredoesyourmindgo/nushu-vscode-theme/tree/HEAD/extra) folder on GitHub has matching themes for Ghostty, iTerm2, Hyper, Monkeytype, and One Markdown. The terminal themes use each theme's editor background, rather than the slightly different background of VS Code's built-in terminal.
+The [`extra`](https://github.com/wheredoesyourmindgo/nushu-vscode-theme/tree/HEAD/extra) folder on GitHub has matching themes for Ghostty, iTerm2, Hyper, MarkEdit, and Monkeytype. The terminal themes use each theme's editor background, rather than the slightly different background of VS Code's built-in terminal.
+
+The MarkEdit theme is a single CSS file that switches between Nushu Light and Nushu Dark with MarkEdit's appearance. To install it, copy `extra/MarkEdit Theme/nushu.css` to `~/Library/Containers/app.cyan.markedit/Data/Documents/styles/`, then restart MarkEdit.
 
 ## About the name
 
