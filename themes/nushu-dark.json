@@ -418,6 +418,16 @@
       }
     },
     {
+      "scope": [
+        "variable.other.normal.shell",
+        "punctuation.definition.variable.shell",
+        "variable.parameter.positional.shell"
+      ],
+      "settings": {
+        "foreground": "#e3b341"
+      }
+    },
+    {
       "scope": "invalid.broken",
       "settings": {
         "fontStyle": "italic",
