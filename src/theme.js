@@ -453,6 +453,18 @@ function getTheme({ theme, name }) {
         },
       },
       {
+        // Color the whole expansion ($, ${, }, name) so variables stand out inside double-quoted strings.
+        // Same ramp as JSX tags, which Nushu converts to gold; shell has no tags, so the two never meet.
+        scope: [
+          "variable.other.normal.shell",
+          "punctuation.definition.variable.shell",
+          "variable.parameter.positional.shell",
+        ],
+        settings: {
+          foreground: lightDark(scale.green[6], scale.green[1]),
+        },
+      },
+      {
         scope: "invalid.broken",
         settings: {
           fontStyle: "italic",

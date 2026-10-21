@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.0
+
+- Shell variables are now gold, the same color as JSX tags. The whole expansion is colored, `$`, `${`, and `}` included, so a variable like `"${HOME}/Backups"` stands out from the string around it instead of showing as blue braces around plain text
+
 ## 2.4.3
 
 - README: credit the fonts used in the animation (no changes to the themes)
