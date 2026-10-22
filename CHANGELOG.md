@@ -1,7 +1,10 @@
 # Changelog
 
-## Unreleased
+## 2.6.0
 
+- Shell variables are no longer gold. Names use the regular text color, like variables in other languages, and `$`, `${`, and `}` are pink, like the `${ }` in JavaScript template strings, so a variable like `"${HOME}/Backups"` stands out from the string around it
+- Shell commands are now purple like functions, including builtins like `echo` and `printf`, which were blue, and other commands like `rsync` and `cat`, which were gray
+- CSS, SCSS, and Less are less blue: property names use the regular text color, selectors are purple (element selectors were gold, which was hard to see in Nushu Light), and units like `px` and `rem` match their numbers instead of being pink
 - Package only the Nushu themes; drop GitHub's build-intermediate themes and dev config files from the extension
 
 ## 2.5.0

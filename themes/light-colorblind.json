@@ -373,9 +373,55 @@
     {
       "scope": [
         "variable.other.normal.shell",
-        "punctuation.definition.variable.shell",
-        "variable.parameter.positional.shell"
+        "variable.parameter.positional.shell",
+        "variable.parameter.positional.all.shell",
+        "variable.language.special.shell"
       ],
+      "settings": {
+        "foreground": "#24292f"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.definition.variable.shell",
+        "punctuation.definition.variable.shell variable.other.normal.shell",
+        "punctuation.definition.variable.shell variable.parameter.positional.shell",
+        "punctuation.definition.variable.shell variable.parameter.positional.all.shell",
+        "punctuation.definition.variable.shell variable.language.special.shell"
+      ],
+      "settings": {
+        "foreground": "#b35900"
+      }
+    },
+    {
+      "scope": "entity.name.command.shell",
+      "settings": {
+        "foreground": "#8250df"
+      }
+    },
+    {
+      "scope": [
+        "support.type.property-name.css",
+        "support.type.vendored.property-name.css",
+        "support.type.property-name.media.css",
+        "meta.property-name.scss",
+        "support.type.property-name.less"
+      ],
+      "settings": {
+        "foreground": "#24292f"
+      }
+    },
+    {
+      "scope": [
+        "source.css entity.name.tag",
+        "source.css entity.other.attribute-name"
+      ],
+      "settings": {
+        "foreground": "#8250df"
+      }
+    },
+    {
+      "scope": "keyword.other.unit",
       "settings": {
         "foreground": "#0550ae"
       }
