@@ -649,16 +649,11 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        scope: "markup.quote",
+        // Quotes are muted, like GitHub's rendered quotes, and the pink > markers (below) mark them.
+        // Bold and italic text in a quote keeps the quote color; only its weight or slant changes.
+        scope: ["markup.quote", "markup.quote markup.bold", "markup.quote markup.italic"],
         settings: {
-          foreground: lightDark(scale.green[6], scale.green[1])
-        },
-      },
-      {
-        // Bold and italic text in a quote keeps the quote color; only its weight or slant changes
-        scope: ["markup.quote markup.bold", "markup.quote markup.italic"],
-        settings: {
-          foreground: lightDark(scale.green[6], scale.green[1])
+          foreground: lightDark(scale.orange[6], scale.orange[2])
         },
       },
       {
@@ -682,7 +677,7 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        // Quote markers stay keyword pink: quote text is gold, which is close to the foreground in Nushu Light
+        // Quote markers are keyword pink, since the muted quote text alone reads like ordinary text
         scope: "punctuation.definition.quote.begin.markdown",
         settings: {
           foreground: lightDark(scale.red[5], scale.red[3])

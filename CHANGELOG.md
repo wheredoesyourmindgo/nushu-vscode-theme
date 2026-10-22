@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.0
+
+- Diff lines (`.diff` files, ```` ```diff ```` blocks, and `git commit -v`) use the same green, red, and yellow as git status in the Explorer, instead of gold and pink
+- Markdown quotes are muted gray, like quotes on GitHub, instead of gold. The pink `>` still marks them
+
 ## 2.8.0
 
 - Markdown now matches Nushu for MarkEdit:

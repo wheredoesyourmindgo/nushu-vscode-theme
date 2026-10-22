@@ -564,18 +564,13 @@
       }
     },
     {
-      "scope": "markup.quote",
-      "settings": {
-        "foreground": "#116329"
-      }
-    },
-    {
       "scope": [
+        "markup.quote",
         "markup.quote markup.bold",
         "markup.quote markup.italic"
       ],
       "settings": {
-        "foreground": "#116329"
+        "foreground": "#953800"
       }
     },
     {

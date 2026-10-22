@@ -609,18 +609,13 @@
       }
     },
     {
-      "scope": "markup.quote",
-      "settings": {
-        "foreground": "#633c01"
-      }
-    },
-    {
       "scope": [
+        "markup.quote",
         "markup.quote markup.bold",
         "markup.quote markup.italic"
       ],
       "settings": {
-        "foreground": "#633c01"
+        "foreground": "#635f54"
       }
     },
     {
@@ -716,7 +711,7 @@
       ],
       "settings": {
         "background": "#ffd3eb",
-        "foreground": "#611347"
+        "foreground": "#cf222e"
       }
     },
     {
@@ -735,7 +730,7 @@
       ],
       "settings": {
         "background": "#fae17d",
-        "foreground": "#633c01"
+        "foreground": "#1a7f37"
       }
     },
     {
@@ -745,7 +740,7 @@
       ],
       "settings": {
         "background": "#efede9",
-        "foreground": "#635f54"
+        "foreground": "#9a6700"
       }
     },
     {
