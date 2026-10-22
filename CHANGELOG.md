@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.8.0
+
+- Markdown now matches Nushu for MarkEdit:
+  - Syntax markers (`#`, `**`, `_`, `~~`, backticks, code fences, and link brackets) use the same muted color as list bullets, so the text reads first. Heading text stays blue
+  - `>` quote markers are pink, and bold and italic text inside a quote keeps the quote color
+  - Link text is purple, and URLs use the link color instead of the string color
+  - Horizontal rules use the faint line-number gray instead of blue
+- Fix SQL functions and CSS selectors in Markdown code blocks, which kept their old colors
+
 ## 2.7.0
 
 - SQL is less pink: column types like `VARCHAR` and `TIMESTAMPTZ` are now blue, like `string` and `number` in TypeScript, and built-in functions like `COUNT`, `COALESCE`, and `NOW` are now purple, like functions in other languages, instead of blue
