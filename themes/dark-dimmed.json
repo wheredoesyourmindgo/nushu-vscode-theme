@@ -418,7 +418,13 @@
     {
       "scope": [
         "source.css entity.name.tag",
-        "source.css entity.other.attribute-name"
+        "source.css entity.other.attribute-name",
+        "meta.embedded.block.css entity.name.tag",
+        "meta.embedded.block.css entity.other.attribute-name",
+        "meta.embedded.block.scss entity.name.tag",
+        "meta.embedded.block.scss entity.other.attribute-name",
+        "meta.embedded.block.less entity.name.tag",
+        "meta.embedded.block.less entity.other.attribute-name"
       ],
       "settings": {
         "foreground": "#dcbdfb"
@@ -431,7 +437,10 @@
       }
     },
     {
-      "scope": "source.sql support.function",
+      "scope": [
+        "source.sql support.function",
+        "meta.embedded.block.sql support.function"
+      ],
       "settings": {
         "foreground": "#dcbdfb"
       }
@@ -562,6 +571,64 @@
       "scope": "markup.quote",
       "settings": {
         "foreground": "#8ddb8c"
+      }
+    },
+    {
+      "scope": [
+        "markup.quote markup.bold",
+        "markup.quote markup.italic"
+      ],
+      "settings": {
+        "foreground": "#8ddb8c"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.definition.heading.markdown",
+        "punctuation.definition.bold.markdown",
+        "punctuation.definition.italic.markdown",
+        "punctuation.definition.strikethrough.markdown",
+        "punctuation.definition.raw.markdown",
+        "punctuation.definition.markdown",
+        "fenced_code.block.language",
+        "punctuation.definition.link.title.begin.markdown",
+        "punctuation.definition.link.title.end.markdown",
+        "punctuation.definition.link.description.begin.markdown",
+        "punctuation.definition.link.description.end.markdown",
+        "punctuation.definition.metadata.markdown"
+      ],
+      "settings": {
+        "foreground": "#f69d50"
+      }
+    },
+    {
+      "scope": "punctuation.definition.quote.begin.markdown",
+      "settings": {
+        "foreground": "#f47067"
+      }
+    },
+    {
+      "scope": [
+        "string.other.link.title.markdown",
+        "string.other.link.description.markdown"
+      ],
+      "settings": {
+        "foreground": "#dcbdfb"
+      }
+    },
+    {
+      "scope": [
+        "markup.underline.link.markdown",
+        "markup.underline.link.image.markdown"
+      ],
+      "settings": {
+        "foreground": "#539bf5"
+      }
+    },
+    {
+      "scope": "meta.separator.markdown",
+      "settings": {
+        "foreground": "#636e7b"
       }
     },
     {

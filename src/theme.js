@@ -501,10 +501,16 @@ function getTheme({ theme, name }) {
       },
       {
         // CSS selectors: element selectors were gold (too close to the foreground in Nushu Light) and the rest blue, like values.
-        // "source.css" also matches source.css.scss and source.css.less.
+        // "source.css" also matches source.css.scss and source.css.less. Markdown code blocks use meta.embedded.block.* instead.
         scope: [
           "source.css entity.name.tag",
           "source.css entity.other.attribute-name",
+          "meta.embedded.block.css entity.name.tag",
+          "meta.embedded.block.css entity.other.attribute-name",
+          "meta.embedded.block.scss entity.name.tag",
+          "meta.embedded.block.scss entity.other.attribute-name",
+          "meta.embedded.block.less entity.name.tag",
+          "meta.embedded.block.less entity.other.attribute-name",
         ],
         settings: {
           foreground: lightDark(scale.purple[5], scale.purple[2])
@@ -519,7 +525,8 @@ function getTheme({ theme, name }) {
       },
       {
         // SQL built-in functions (COUNT, COALESCE, NOW) are tagged support.*, which made them blue; color them like functions
-        scope: "source.sql support.function",
+        // Markdown code blocks use meta.embedded.block.sql instead of source.sql
+        scope: ["source.sql support.function", "meta.embedded.block.sql support.function"],
         settings: {
           foreground: lightDark(scale.purple[5], scale.purple[2])
         },
@@ -645,6 +652,60 @@ function getTheme({ theme, name }) {
         scope: "markup.quote",
         settings: {
           foreground: lightDark(scale.green[6], scale.green[1])
+        },
+      },
+      {
+        // Bold and italic text in a quote keeps the quote color; only its weight or slant changes
+        scope: ["markup.quote markup.bold", "markup.quote markup.italic"],
+        settings: {
+          foreground: lightDark(scale.green[6], scale.green[1])
+        },
+      },
+      {
+        // Markdown syntax markers use the list-bullet color so the text reads first, as in Nushu for MarkEdit
+        scope: [
+          "punctuation.definition.heading.markdown",
+          "punctuation.definition.bold.markdown",
+          "punctuation.definition.italic.markdown",
+          "punctuation.definition.strikethrough.markdown",
+          "punctuation.definition.raw.markdown",
+          "punctuation.definition.markdown",
+          "fenced_code.block.language",
+          "punctuation.definition.link.title.begin.markdown",
+          "punctuation.definition.link.title.end.markdown",
+          "punctuation.definition.link.description.begin.markdown",
+          "punctuation.definition.link.description.end.markdown",
+          "punctuation.definition.metadata.markdown",
+        ],
+        settings: {
+          foreground: lightDark(scale.orange[6], scale.orange[2])
+        },
+      },
+      {
+        // Quote markers stay keyword pink: quote text is gold, which is close to the foreground in Nushu Light
+        scope: "punctuation.definition.quote.begin.markdown",
+        settings: {
+          foreground: lightDark(scale.red[5], scale.red[3])
+        },
+      },
+      {
+        // Link text is purple so it stands apart from the URL, which uses the link color
+        scope: ["string.other.link.title.markdown", "string.other.link.description.markdown"],
+        settings: {
+          foreground: lightDark(scale.purple[5], scale.purple[2])
+        },
+      },
+      {
+        scope: ["markup.underline.link.markdown", "markup.underline.link.image.markdown"],
+        settings: {
+          foreground: color.accent.fg
+        },
+      },
+      {
+        // Horizontal rules use the faint line-number gray instead of blue
+        scope: "meta.separator.markdown",
+        settings: {
+          foreground: lightDark(scale.gray[4], scale.gray[4])
         },
       },
       {
