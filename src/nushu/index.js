@@ -39,6 +39,7 @@ const {
   setLightStringPunctuation,
   setDarkStringPunctuation,
 } = require("./set-string-punctuation");
+const { setLightDiff, setDarkDiff } = require("./set-diff");
 const {
   setDarkMiscWorkbench,
   setLightMiscWorkbench,
@@ -71,6 +72,7 @@ async function main() {
       await setLightSelectionBackground(); // should run after setLightColorScales()
       await setLightFilenameForeground(); // should run after setLightColorScales()
       await setLightStringPunctuation();
+      await setLightDiff(); // should run after setLightColorScales()
       await setLightMiscWorkbench();
     } else {
       console.log("Skipping Light Theme conversion");
@@ -95,6 +97,7 @@ async function main() {
       await setDarkSelectionBackground(); // should run after setDarkColorScales()
       await setDarkFilenameForeground(); // should run after setDarkColorScales()
       await setDarkStringPunctuation();
+      await setDarkDiff(); // should run after setDarkColorScales()
       await setDarkMiscWorkbench();
     } else {
       console.log("Skipping Dark Theme conversion");
