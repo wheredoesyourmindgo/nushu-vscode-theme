@@ -377,11 +377,57 @@
     {
       "scope": [
         "variable.other.normal.shell",
-        "punctuation.definition.variable.shell",
-        "variable.parameter.positional.shell"
+        "variable.parameter.positional.shell",
+        "variable.parameter.positional.all.shell",
+        "variable.language.special.shell"
       ],
       "settings": {
-        "foreground": "#a5d6ff"
+        "foreground": "#c9d1d9"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.definition.variable.shell",
+        "punctuation.definition.variable.shell variable.other.normal.shell",
+        "punctuation.definition.variable.shell variable.parameter.positional.shell",
+        "punctuation.definition.variable.shell variable.parameter.positional.all.shell",
+        "punctuation.definition.variable.shell variable.language.special.shell"
+      ],
+      "settings": {
+        "foreground": "#ec8e2c"
+      }
+    },
+    {
+      "scope": "entity.name.command.shell",
+      "settings": {
+        "foreground": "#d2a8ff"
+      }
+    },
+    {
+      "scope": [
+        "support.type.property-name.css",
+        "support.type.vendored.property-name.css",
+        "support.type.property-name.media.css",
+        "meta.property-name.scss",
+        "support.type.property-name.less"
+      ],
+      "settings": {
+        "foreground": "#c9d1d9"
+      }
+    },
+    {
+      "scope": [
+        "source.css entity.name.tag",
+        "source.css entity.other.attribute-name"
+      ],
+      "settings": {
+        "foreground": "#d2a8ff"
+      }
+    },
+    {
+      "scope": "keyword.other.unit",
+      "settings": {
+        "foreground": "#79c0ff"
       }
     },
     {

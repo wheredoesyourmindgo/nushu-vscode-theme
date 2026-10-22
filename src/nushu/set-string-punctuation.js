@@ -6,7 +6,7 @@ const { flagHex } = require("./util");
 const chroma = require("chroma-js");
 
 /*
-Set comments to green 4 & 6, 90% alpha
+Fade the quotes around strings and JSON property names to 80% of the color they wrap
 */
 
 async function setLightStringPunctuation() {

@@ -422,10 +422,10 @@ async function setLightColorScales() {
     throw new Error("set-color-scales.js: 'from' and 'to' lists have different lengths");
   }
 
-  await replaceExpecting("Light color scales", convertedLightOptions, 78);
+  await replaceExpecting("Light color scales", convertedLightOptions, 80);
 }
 async function setDarkColorScales() {
-  await replaceExpecting("Dark color scales", convertedDarkOptions, 83);
+  await replaceExpecting("Dark color scales", convertedDarkOptions, 85);
 }
 
 module.exports = {

@@ -37,10 +37,10 @@ const convertedDarkOptions = {
 };
 
 async function setLightForeground() {
-  await replaceExpecting("Light foreground", convertedLightOptions, 31);
+  await replaceExpecting("Light foreground", convertedLightOptions, 33);
 }
 async function setDarkForeground() {
-  await replaceExpecting("Dark foreground", convertedDarkOptions, 31);
+  await replaceExpecting("Dark foreground", convertedDarkOptions, 33);
 }
 
 module.exports = {

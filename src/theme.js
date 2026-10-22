@@ -453,15 +453,68 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        // Color the whole expansion ($, ${, }, name) so variables stand out inside double-quoted strings.
-        // Same ramp as JSX tags, which Nushu converts to gold; shell has no tags, so the two never meet.
+        // Shell variable names read like variables elsewhere, including inside double-quoted strings, where
+        // "string variable" would otherwise make them blue and hard to pick out from the string around them.
         scope: [
           "variable.other.normal.shell",
-          "punctuation.definition.variable.shell",
           "variable.parameter.positional.shell",
+          "variable.parameter.positional.all.shell",
+          "variable.language.special.shell",
         ],
         settings: {
-          foreground: lightDark(scale.green[6], scale.green[1]),
+          foreground: color.fg.default,
+        },
+      },
+      {
+        // $, ${, and } match the ${ } of template strings (punctuation.section.embedded) to mark where a variable starts and ends.
+        // In $name, $1, $?, and $@ the grammar scopes the $ as punctuation and the variable together, so match that pair too.
+        scope: [
+          "punctuation.definition.variable.shell",
+          "punctuation.definition.variable.shell variable.other.normal.shell",
+          "punctuation.definition.variable.shell variable.parameter.positional.shell",
+          "punctuation.definition.variable.shell variable.parameter.positional.all.shell",
+          "punctuation.definition.variable.shell variable.language.special.shell",
+        ],
+        settings: {
+          foreground: lightDark(scale.red[5], scale.red[3])
+        },
+      },
+      {
+        // Commands are otherwise muted entity.name gray, and builtins (echo, local, printf) support blue; color them all like functions.
+        scope: "entity.name.command.shell",
+        settings: {
+          foreground: lightDark(scale.purple[5], scale.purple[2])
+        },
+      },
+      {
+        // CSS property names would otherwise be blue like their values; ink keeps "name: value" readable
+        scope: [
+          "support.type.property-name.css",
+          "support.type.vendored.property-name.css",
+          "support.type.property-name.media.css",
+          "meta.property-name.scss",
+          "support.type.property-name.less",
+        ],
+        settings: {
+          foreground: color.fg.default,
+        },
+      },
+      {
+        // CSS selectors: element selectors were gold (too close to the foreground in Nushu Light) and the rest blue, like values.
+        // "source.css" also matches source.css.scss and source.css.less.
+        scope: [
+          "source.css entity.name.tag",
+          "source.css entity.other.attribute-name",
+        ],
+        settings: {
+          foreground: lightDark(scale.purple[5], scale.purple[2])
+        },
+      },
+      {
+        // Units (px, rem, %) match the number they belong to instead of keyword pink
+        scope: "keyword.other.unit",
+        settings: {
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
