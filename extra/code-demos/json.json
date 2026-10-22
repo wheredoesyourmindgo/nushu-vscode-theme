@@ -1,0 +1,12 @@
+{
+  "name": "nushu-demo",
+  "version": "1.0.0",
+  "private": true,
+  "variants": ["light", "dark"],
+  "colors": {
+    "gold": "#9a6700",
+    "ink": "#24292f",
+    "nested": { "depth": 2, "ratio": 0.75, "enabled": false, "fallback": null }
+  },
+  "escaped": "quote \" backslash \\ newline \n unicode \u00e9"
+}

@@ -1,0 +1,22 @@
+@use "sass:math";
+
+$accent: #9a6700 !default;
+$sizes: (small: 0.75rem, medium: 1rem, large: 1.5rem);
+
+@mixin focus-ring($color: $accent, $width: 2px) {
+  outline: $width solid rgba($color, 0.5);
+  outline-offset: math.div($width, 2);
+}
+
+@function rem($px) { @return math.div($px, 16px) * 1rem; }
+
+.button {
+  padding: rem(8px) rem(16px);
+  &:focus-visible { @include focus-ring; }
+  &--primary { background: darken($accent, 5%); }
+  @each $name, $size in $sizes {
+    &--#{$name} { font-size: $size; }
+  }
+  // line comment
+  @if $accent == #9a6700 { border: none; } @else { border: 1px solid; }
+}

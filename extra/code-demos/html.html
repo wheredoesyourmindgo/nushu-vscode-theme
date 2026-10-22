@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nushu demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { --accent: #9a6700; }
+    body { font: 16px/1.5 system-ui, sans-serif; }
+  </style>
+</head>
+<body class="theme-light" data-variant="light">
+  <!-- Navigation -->
+  <nav aria-label="Main">
+    <a href="#intro" class="active">Intro</a>
+    <a href="https://example.com" target="_blank" rel="noopener">External</a>
+  </nav>
+  <main id="intro">
+    <h1>Hello &amp; welcome</h1>
+    <p>Some <strong>bold</strong>, <em>italic</em>, and <code>code</code>.</p>
+    <form action="/subscribe" method="post">
+      <label for="email">Email</label>
+      <input id="email" type="email" required placeholder="you@example.com">
+      <button type="submit" disabled>Subscribe</button>
+    </form>
+    <img src="icon.png" alt="" width="64" height="64" loading="lazy">
+  </main>
+  <script type="module">
+    document.querySelector("button").disabled = false;
+  </script>
+</body>
+</html>

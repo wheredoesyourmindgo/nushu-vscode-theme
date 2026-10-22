@@ -1,0 +1,14 @@
+diff --git a/src/theme.js b/src/theme.js
+index b717557..da1e70b 100644
+--- a/src/theme.js
++++ b/src/theme.js
+@@ -452,6 +452,9 @@ function getTheme({ theme, name }) {
+           foreground: color.fg.default,
+         },
+       },
++      {
++        scope: "variable.other.normal.shell",
++      },
+-      // removed line
+       {
+         scope: "invalid.broken",

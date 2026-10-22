@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+  --bg: #f6f1e7;
+  --fg: rgb(36 41 47 / 90%);
+  --accent: hsl(40deg 100% 30%);
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #25211d; --fg: #d6cfc4; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Inter", system-ui, sans-serif !important;
+}
+
+.card > h2 + p,
+a[href^="https"]:not(.plain):hover {
+  color: var(--accent);
+  text-decoration: underline dotted 1px;
+  transition: color 120ms ease-in-out, transform 0.2s;
+  transform: translateY(calc(-1 * var(--radius) / 4));
+}
+
+#main::selection { background-color: #9a670033; }
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@container sidebar (min-width: 400px) {
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: 1rem; }
+}

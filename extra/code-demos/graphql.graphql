@@ -1,0 +1,18 @@
+# Schema and query
+type Theme implements Node {
+  id: ID!
+  name: String!
+  variant: Variant = LIGHT
+  colors(first: Int = 10): [Color!]! @deprecated(reason: "Use palette")
+}
+
+enum Variant { LIGHT DARK }
+
+query GetTheme($id: ID!, $withColors: Boolean = false) {
+  theme(id: $id) {
+    ...ThemeFields
+    colors(first: 5) @include(if: $withColors) { hex }
+  }
+}
+
+fragment ThemeFields on Theme { id name variant }
