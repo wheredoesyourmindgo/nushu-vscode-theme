@@ -511,6 +511,20 @@ function getTheme({ theme, name }) {
         },
       },
       {
+        // SQL column types (VARCHAR, SERIAL) match primitive types elsewhere instead of keyword pink
+        scope: "storage.type.sql",
+        settings: {
+          foreground: lightDark(scale.blue[6], scale.blue[2])
+        },
+      },
+      {
+        // SQL built-in functions (COUNT, COALESCE, NOW) are tagged support.*, which made them blue; color them like functions
+        scope: "source.sql support.function",
+        settings: {
+          foreground: lightDark(scale.purple[5], scale.purple[2])
+        },
+      },
+      {
         // Units (px, rem, %) match the number they belong to instead of keyword pink
         scope: "keyword.other.unit",
         settings: {

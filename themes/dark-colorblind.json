@@ -425,6 +425,18 @@
       }
     },
     {
+      "scope": "storage.type.sql",
+      "settings": {
+        "foreground": "#79c0ff"
+      }
+    },
+    {
+      "scope": "source.sql support.function",
+      "settings": {
+        "foreground": "#d2a8ff"
+      }
+    },
+    {
       "scope": "keyword.other.unit",
       "settings": {
         "foreground": "#79c0ff"
