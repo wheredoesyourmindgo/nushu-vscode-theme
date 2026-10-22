@@ -7,24 +7,24 @@ editor caret color: "terminal.ansiBlue"
 editor selection text color: "foreground"
 editor selection text bg color: use color picker to pick screenshot example in VSCode
 heading 1-3: __bold__  "markup.heading" *(blue)*
-heading 4-6: "markup.heading" *(blue)*
-emphasis: *italic* "keyword" *(pink)*
-bold: __bold__ "keyword" *(pink)*
-underline: <u>underline</u> "variable" *(grey)*
-strikethrough: ~~strikethrough~~ "variable" *(grey)*
+heading 4-6: __bold__ "markup.heading" *(blue)*
+emphasis: *italic* "markup.italic" *(foreground)*
+bold: __bold__ "markup.bold" *(foreground)*
+underline: <u>underline</u> "foreground"
+strikethrough: ~~strikethrough~~ "foreground"
 link title: "entity.name.function" *(purple)*
-link: <u>underline</u> "entity.name.function" *(purple)*
-image: "keyword" *(pink)*
+link: <u>underline</u> "markup.underline.link.markdown" *(link blue, textLink.foreground)*
+image: "string.other.link.description.markdown" *(purple)*
 footnote def: "terminal.ansiGreen" *(green)*
 footnote ref: "terminal.ansiGreen" *(green)*
-horizontal rule: "variable" *(grey)*
-quote: "entity.name.tag" *(brown)*
-order list: "entity.name.tag" *(brown)*
-unorder list: "entity.name.tag" *(brown)*
+horizontal rule: "meta.separator.markdown" *(faint grey, editorLineNumber.foreground)*
+quote: "markup.quote" *(muted grey)*
+order list: "punctuation.definition.list.begin.markdown" *(muted grey)*
+unorder list: "punctuation.definition.list.begin.markdown" *(muted grey)*
 inline html: "entity.name.tag" *(brown)*
 block html: "entity.name.tag" *(brown)*
-table: "variable" *(grey)*
-inline code: "string" *(dark blue)*
+table: "foreground" (colors the whole table, cell text included)
+inline code: "markup.inline.raw" *(blue)*
 block code: "foreground"
 block code number: "markup.heading" *(blue)*
 block code string: "string" *(dark blue)*

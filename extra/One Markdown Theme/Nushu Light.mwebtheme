@@ -18,14 +18,14 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : true,
-    "color" : "6639ba"
+    "color" : "0969da"
   },
   "ol" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "633c01"
+    "color" : "635f54"
   },
   "editor" : {
     "color" : "2b2822",
@@ -61,14 +61,14 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "0a3069"
+    "color" : "0550ae"
   },
   "image" : {
     "isBold" : false,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "99286e"
+    "color" : "6639ba"
   },
   "h2" : {
     "isBold" : true,
@@ -82,7 +82,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "57606a"
+    "color" : "2b2822"
   },
   "h3" : {
     "isBold" : true,
@@ -103,10 +103,10 @@
     "isItalic" : false,
     "isStrikethrough" : true,
     "isUnderline" : false,
-    "color" : "57606a"
+    "color" : "2b2822"
   },
   "h4" : {
-    "isBold" : false,
+    "isBold" : true,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
@@ -135,7 +135,7 @@
     "color" : "99286e"
   },
   "h5" : {
-    "isBold" : false,
+    "isBold" : true,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
@@ -146,7 +146,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : true,
-    "color" : "57606a"
+    "color" : "2b2822"
   },
   "inlineHTML" : {
     "isBold" : false,
@@ -160,7 +160,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "99286e"
+    "color" : "2b2822"
   },
   "blockHTML" : {
     "isBold" : false,
@@ -177,7 +177,7 @@
     "color" : "0550ae"
   },
   "h6" : {
-    "isBold" : false,
+    "isBold" : true,
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
@@ -188,7 +188,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "633c01"
+    "color" : "635f54"
   },
   "codeblock-keyword" : {
     "isBold" : false,
@@ -202,7 +202,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "633c01"
+    "color" : "635f54"
   },
   "codeblock-comment" : {
     "isBold" : false,
@@ -216,7 +216,7 @@
     "isItalic" : true,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "99286e"
+    "color" : "2b2822"
   },
   "codeblock-character" : {
     "isBold" : false,
@@ -237,7 +237,7 @@
     "isItalic" : false,
     "isStrikethrough" : false,
     "isUnderline" : false,
-    "color" : "57606a"
+    "color" : "989489"
   }
 }
 
