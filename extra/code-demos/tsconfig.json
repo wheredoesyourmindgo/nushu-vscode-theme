@@ -1,0 +1,16 @@
+// The demos only exist to show highlighting; their imports (react, node:fs) aren't installed.
+// This keeps VS Code's built-in TypeScript checker from flagging them.
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "preserve",
+    "jsx": "preserve",
+    "noEmit": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "checkJs": false,
+    "experimentalDecorators": true,
+    "skipLibCheck": true
+  },
+  "include": ["**/*"]
+}

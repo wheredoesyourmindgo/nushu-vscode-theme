@@ -1,0 +1,9 @@
+// settings.json-style JSON with comments
+{
+  "workbench.colorTheme": "Nushu Light",
+  /* block comment */
+  "editor.fontSize": 14,
+  "editor.tokenColorCustomizations": {
+    "[Nushu Light]": { "comments": "#8a8580" },
+  },
+}

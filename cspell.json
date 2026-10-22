@@ -12,7 +12,8 @@
     "project-words"
   ],
   "ignorePaths": [
-    "extra/One Markdown Theme/**"
+    "extra/One Markdown Theme/**",
+    "extra/code-demos/**"
   ],
   "ignoreWords": []
 }

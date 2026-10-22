@@ -1,0 +1,34 @@
+# GitHub Actions-style YAML
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  NODE_VERSION: 22
+  DEBUG: false
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+      - &cache
+        name: Cache
+        with: { path: ~/.npm, key: "npm-${{ hashFiles('**/package-lock.json') }}" }
+      - *cache
+anchors:
+  ratio: 0.75
+  empty: ~
+  date: 2026-10-22
+  folded: >
+    Long text folded
+    onto one line.
