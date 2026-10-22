@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.7.0
+
+- SQL is less pink: column types like `VARCHAR` and `TIMESTAMPTZ` are now blue, like `string` and `number` in TypeScript, and built-in functions like `COUNT`, `COALESCE`, and `NOW` are now purple, like functions in other languages, instead of blue
+
 ## 2.6.0
 
 - Shell variables are no longer gold. Names use the regular text color, like variables in other languages, and `$`, `${`, and `}` are pink, like the `${ }` in JavaScript template strings, so a variable like `"${HOME}/Backups"` stands out from the string around it
