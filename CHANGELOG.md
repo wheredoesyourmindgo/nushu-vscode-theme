@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Package only the Nushu themes; drop GitHub's build-intermediate themes and dev config files from the extension
+
 ## 2.5.0
 
 - Shell variables are now gold, the same color as JSX tags. The whole expansion is colored, `$`, `${`, and `}` included, so a variable like `"${HOME}/Backups"` stands out from the string around it instead of showing as blue braces around plain text
