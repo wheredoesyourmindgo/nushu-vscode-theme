@@ -7,6 +7,7 @@ package-lock.json
 yarn.lock
 src/
 node_modules/
+build/
 .gitignore
 .git/
 .github/
@@ -14,3 +15,11 @@ test/
 .vscode-test/**
 .vscode/
 scripts/
+**/.DS_Store
+*.vsix
+cspell.json
+project-words.txt
+
+# GitHub base themes are build intermediates; only the Nushu themes are contributed
+themes/dark*.json
+themes/light*.json
