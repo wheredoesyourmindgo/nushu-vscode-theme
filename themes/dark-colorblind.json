@@ -664,6 +664,9 @@
     },
     {
       "scope": [
+        "constant.character.escape.markdown",
+        "text.html.markdown constant.character.entity",
+        "text.html.markdown punctuation.definition.entity",
         "punctuation.definition.heading.markdown",
         "punctuation.definition.bold.markdown",
         "punctuation.definition.italic.markdown",
@@ -682,8 +685,18 @@
       }
     },
     {
+      "scope": [
+        "markup.fenced_code constant.character.entity",
+        "markup.fenced_code punctuation.definition.entity"
+      ],
+      "settings": {
+        "foreground": "#ec8e2c"
+      }
+    },
+    {
       "scope": "punctuation.definition.quote.begin.markdown",
       "settings": {
+        "fontStyle": "bold",
         "foreground": "#ec8e2c"
       }
     },
@@ -706,7 +719,11 @@
       }
     },
     {
-      "scope": "meta.separator.markdown",
+      "scope": [
+        "meta.separator.markdown",
+        "punctuation.definition.table.markdown",
+        "punctuation.separator.table.markdown"
+      ],
       "settings": {
         "foreground": "#6e7681"
       }
