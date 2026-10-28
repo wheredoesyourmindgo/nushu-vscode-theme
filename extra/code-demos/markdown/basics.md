@@ -24,8 +24,10 @@ Setext Heading 2
 
 A paragraph with **bold**, __also bold__, *italic*, _also italic_,
 ***bold italic***, ~~strikethrough~~, and `inline code`. Line one ends
-with two spaces for a hard break.  
+with two spaces for a hard break.
 Line two follows it.
+
+> A good quote is better than a bad action
 
 A [link](https://example.com "Link title"), a [reference link][ref], an
 autolink <https://example.com>, a bare URL https://example.com, and an

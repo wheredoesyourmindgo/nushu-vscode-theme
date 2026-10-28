@@ -741,8 +741,12 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        // Markdown syntax markers use the list-bullet color so the text reads first, as in Nushu for MarkEdit
+        // Markdown syntax markers use the list-bullet color so the text reads first, as in Nushu for MarkEdit.
+        // Escapes (\*) and HTML entities (&copy;) are syntax too, instead of the pink used for escapes in code
         scope: [
+          "constant.character.escape.markdown",
+          "text.html.markdown constant.character.entity",
+          "text.html.markdown punctuation.definition.entity",
           "punctuation.definition.heading.markdown",
           "punctuation.definition.bold.markdown",
           "punctuation.definition.italic.markdown",
@@ -761,9 +765,17 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        // Quote markers are keyword pink, since the muted quote text alone reads like ordinary text
+        // HTML entities in Markdown code blocks stay pink, like the rest of the code
+        scope: ["markup.fenced_code constant.character.entity", "markup.fenced_code punctuation.definition.entity"],
+        settings: {
+          foreground: lightDark(scale.red[5], scale.red[3])
+        },
+      },
+      {
+        // Quote markers are bold keyword pink, since the muted quote text alone reads like ordinary text
         scope: "punctuation.definition.quote.begin.markdown",
         settings: {
+          fontStyle: "bold",
           foreground: lightDark(scale.red[5], scale.red[3])
         },
       },
@@ -781,8 +793,13 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        // Horizontal rules use the faint line-number gray instead of blue
-        scope: "meta.separator.markdown",
+        // Horizontal rules use the faint line-number gray instead of blue, and so do table pipes and
+        // divider rows, as in Nushu for MarkEdit
+        scope: [
+          "meta.separator.markdown",
+          "punctuation.definition.table.markdown",
+          "punctuation.separator.table.markdown",
+        ],
         settings: {
           foreground: lightDark(scale.gray[4], scale.gray[4])
         },

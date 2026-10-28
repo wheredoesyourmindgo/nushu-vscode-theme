@@ -10,6 +10,10 @@
 - PHP types like `string`, `int`, and `array` are blue like built-in types elsewhere, instead of keyword pink
 - INI keys (and TOML keys, when TOML is opened as INI) and `.env` keys are gold like JSON and YAML keys, instead of pink and gray
 - GraphQL matches TypeScript: your types use the type name color, built-in types like `ID` and `String` and enum values like `LIGHT` are blue, and fields and arguments use the regular text color
+- Markdown, to match Nushu for MarkEdit:
+  - Escapes like `\*` and HTML entities like `&copy;` use the same muted color as `**` and `_`, instead of pink. Entities in code blocks stay pink
+  - Table pipes and divider rows use the faint line-number gray, like horizontal rules
+  - `>` quote markers are bold
 
 ## 2.9.0
 
