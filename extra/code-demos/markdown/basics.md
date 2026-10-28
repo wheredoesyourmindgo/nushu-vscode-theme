@@ -24,7 +24,7 @@ Setext Heading 2
 
 A paragraph with **bold**, __also bold__, *italic*, _also italic_,
 ***bold italic***, ~~strikethrough~~, and `inline code`. Line one ends
-with two spaces for a hard break.
+with a backslash for a hard break, which survives trimming trailing spaces.\
 Line two follows it.
 
 > A good quote is better than a bad action
