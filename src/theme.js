@@ -413,10 +413,57 @@ function getTheme({ theme, name }) {
         scope: [
           "storage.modifier.package",
           "storage.modifier.import",
-          "storage.type.java",
         ],
         settings: {
           foreground: color.fg.default,
+        },
+      },
+      {
+        // Built-in types, like `string` and `number` in TypeScript
+        scope: [
+          "storage.type.built-in",
+          "storage.type.primitive",
+          "source.cs keyword.type",
+          "entity.name.type.primitive.rust",
+          "entity.name.type.numeric.rust",
+          "storage.type.numeric.go",
+          "storage.type.string.go",
+          "storage.type.boolean.go",
+          "storage.type.byte.go",
+          "storage.type.rune.go",
+          "storage.type.error.go",
+          "storage.type.uintptr.go",
+        ],
+        settings: {
+          foreground: lightDark(scale.blue[6], scale.blue[2])
+        },
+      },
+      {
+        // Java type references, like type names in other languages
+        scope: [
+          "storage.type.java",
+          "storage.type.generic.java",
+          "storage.type.object.array.java",
+        ],
+        settings: {
+          foreground: lightDark(scale.orange[6], scale.orange[2])
+        },
+      },
+      {
+        // Annotations, attributes, and decorators, like functions
+        scope: [
+          "storage.type.annotation.java",
+          "punctuation.definition.annotation.java",
+          "entity.other.attribute-name.cs",
+          "support.other.attribute.cpp",
+          "entity.other.attribute",
+          "meta.attribute.rust",
+          "meta.decorator variable.other.readwrite",
+          "meta.decorator entity.name.function",
+          "punctuation.decorator",
+        ],
+        settings: {
+          foreground: lightDark(scale.purple[5], scale.purple[2])
         },
       },
       {
