@@ -377,11 +377,55 @@
     {
       "scope": [
         "storage.modifier.package",
-        "storage.modifier.import",
-        "storage.type.java"
+        "storage.modifier.import"
       ],
       "settings": {
         "foreground": "#d7cfc7"
+      }
+    },
+    {
+      "scope": [
+        "storage.type.built-in",
+        "storage.type.primitive",
+        "source.cs keyword.type",
+        "entity.name.type.primitive.rust",
+        "entity.name.type.numeric.rust",
+        "storage.type.numeric.go",
+        "storage.type.string.go",
+        "storage.type.boolean.go",
+        "storage.type.byte.go",
+        "storage.type.rune.go",
+        "storage.type.error.go",
+        "storage.type.uintptr.go"
+      ],
+      "settings": {
+        "foreground": "#79c0ff"
+      }
+    },
+    {
+      "scope": [
+        "storage.type.java",
+        "storage.type.generic.java",
+        "storage.type.object.array.java"
+      ],
+      "settings": {
+        "foreground": "#c1b7ae"
+      }
+    },
+    {
+      "scope": [
+        "storage.type.annotation.java",
+        "punctuation.definition.annotation.java",
+        "entity.other.attribute-name.cs",
+        "support.other.attribute.cpp",
+        "entity.other.attribute",
+        "meta.attribute.rust",
+        "meta.decorator variable.other.readwrite",
+        "meta.decorator entity.name.function",
+        "punctuation.decorator"
+      ],
+      "settings": {
+        "foreground": "#bc8cff"
       }
     },
     {

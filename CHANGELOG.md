@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.10.0
+
+- C, C++, C#, Java, Rust, and Go are less pink:
+  - Built-in types like `int`, `char`, `bool`, `void`, `u32`, and C#'s `string` are now blue, like `string` and `number` in TypeScript, instead of keyword pink
+  - Java type names like `String`, `Map`, and `List` use the same color as type names in other languages, instead of the regular text color
+  - Annotations and attributes (`@Override`, `[[nodiscard]]`, `#[derive]`, and C# `[Attributes]`) are now purple like functions, instead of pink or blue. TypeScript decorators like `@sealed` are purple too, matching Python's
+
 ## 2.9.0
 
 - Diff lines (`.diff` files, ```` ```diff ```` blocks, and `git commit -v`) use the same green, red, and yellow as git status in the Explorer, instead of gold and pink
