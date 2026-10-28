@@ -5,7 +5,11 @@
 - C, C++, C#, Java, Rust, and Go are less pink:
   - Built-in types like `int`, `char`, `bool`, `void`, `u32`, and C#'s `string` are now blue, like `string` and `number` in TypeScript, instead of keyword pink
   - Java type names like `String`, `Map`, and `List` use the same color as type names in other languages, instead of the regular text color
-  - Annotations and attributes (`@Override`, `[[nodiscard]]`, `#[derive]`, and C# `[Attributes]`) are now purple like functions, instead of pink or blue. TypeScript decorators like `@sealed` are purple too, matching Python's
+  - Annotations and attributes (`@Override`, `[[nodiscard]]`, `#[derive]`, C# `[Attributes]`, and Swift's `@State`) are now purple like functions, instead of pink or blue. TypeScript decorators like `@sealed` are purple too, matching Python's
+- Built-in functions are purple like your own functions, instead of blue: `print` and `len` in Python, `pairs` in Lua, `Get-ChildItem` in PowerShell, `count` and `sprintf` in PHP, and `puts` in Ruby. So are Python and PHP magic methods like `__init__` and `__construct`. CSS functions like `rgb()` and `var()` stay blue
+- PHP types like `string`, `int`, and `array` are blue like built-in types elsewhere, instead of keyword pink
+- INI keys (and TOML keys, when TOML is opened as INI) and `.env` keys are gold like JSON and YAML keys, instead of pink and gray
+- GraphQL matches TypeScript: your types use the type name color, built-in types like `ID` and `String` and enum values like `LIGHT` are blue, and fields and arguments use the regular text color
 
 ## 2.9.0
 

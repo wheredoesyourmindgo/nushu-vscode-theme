@@ -433,6 +433,7 @@ function getTheme({ theme, name }) {
           "storage.type.rune.go",
           "storage.type.error.go",
           "storage.type.uintptr.go",
+          "keyword.other.type.php",
         ],
         settings: {
           foreground: lightDark(scale.blue[6], scale.blue[2])
@@ -461,9 +462,31 @@ function getTheme({ theme, name }) {
           "meta.decorator variable.other.readwrite",
           "meta.decorator entity.name.function",
           "punctuation.decorator",
+          "storage.modifier.attribute.swift",
         ],
         settings: {
           foreground: lightDark(scale.purple[5], scale.purple[2])
+        },
+      },
+      {
+        // GraphQL like TypeScript: your types are type names, built-in types (ID, String) stay blue
+        scope: ["support.type.graphql", "support.type.enum.graphql"],
+        settings: {
+          foreground: lightDark(scale.orange[6], scale.orange[2])
+        },
+      },
+      {
+        // GraphQL enum values (LIGHT, DARK) are tagged constant.character, which is pink for escapes
+        scope: "constant.character.enum.graphql",
+        settings: {
+          foreground: lightDark(scale.blue[6], scale.blue[2])
+        },
+      },
+      {
+        // GraphQL fields and arguments, like properties and parameters
+        scope: ["variable.graphql", "variable.parameter.graphql"],
+        settings: {
+          foreground: color.fg.default,
         },
       },
       {
@@ -571,11 +594,24 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        // SQL built-in functions (COUNT, COALESCE, NOW) are tagged support.*, which made them blue; color them like functions
-        // Markdown code blocks use meta.embedded.block.sql instead of source.sql
-        scope: ["source.sql support.function", "meta.embedded.block.sql support.function"],
+        // Built-in functions (print, pairs, Get-ChildItem, COUNT) are tagged support.*, which made them blue; color them
+        // like functions. Python and PHP tag magic methods (__init__, __construct) the same way
+        scope: ["support.function", "meta.function.python support.variable.magic.python"],
         settings: {
           foreground: lightDark(scale.purple[5], scale.purple[2])
+        },
+      },
+      {
+        // CSS functions (rgb, var, url) stay blue, since selectors are already purple
+        // Markdown code blocks use meta.embedded.block.* instead of source.*
+        scope: [
+          "source.css support.function",
+          "meta.embedded.block.css support.function",
+          "meta.embedded.block.scss support.function",
+          "meta.embedded.block.less support.function",
+        ],
+        settings: {
+          foreground: lightDark(scale.blue[6], scale.blue[2])
         },
       },
       {
@@ -671,7 +707,8 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        scope: "support.type.property-name.json",
+        // INI (and TOML opened as INI) and .env keys match JSON and YAML keys
+        scope: ["support.type.property-name.json", "keyword.other.definition.ini", "variable.key.dotenv"],
         settings: {
           foreground: lightDark(scale.green[6], scale.green[1])
         },
