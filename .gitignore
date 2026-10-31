@@ -1,6 +1,9 @@
 # VSCode
 *.vsix
-.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
 
 # Node.js dependencies and cache
 node_modules/
@@ -23,7 +26,6 @@ Thumbs.db
 
 # Editor-specific files
 .idea/
-.vscode/
 *.swp
 *~
 
