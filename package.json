@@ -5,7 +5,7 @@
   "description": "Warm, low-contrast light and dark themes built on GitHub's Primer colors.",
   "version": "2.10.0",
   "scripts": {
-    "build": "node src/index.js && node src/nushu/index.js",
+    "build": "node src/index.js && node src/nushu/index.js && node src/preview/index.js",
     "release:major": "npx @vscode/vsce publish major && git push --follow-tags",
     "release:minor": "npx @vscode/vsce publish minor && git push --follow-tags",
     "release:patch": "npx @vscode/vsce publish patch && git push --follow-tags"
@@ -62,6 +62,9 @@
         "uiTheme": "vs",
         "path": "./themes/nushu-classic.json"
       }
+    ],
+    "markdown.previewStyles": [
+      "./preview/nushu-preview.css"
     ]
   },
   "license": "MIT",

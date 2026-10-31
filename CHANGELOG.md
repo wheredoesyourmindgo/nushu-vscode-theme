@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.11.0
+
+- Markdown preview matches Nushu for MarkEdit's preview: GitHub-style layout for headings, tables, quotes, code blocks, `<kbd>`, `<mark>`, task lists, and footnotes, with Nushu colors. Headings are blue, links purple, inline code blue, and code blocks use Nushu's code colors instead of VS Code's. The quote bar is gold. Your preview font settings still apply. Nushu Classic keeps VS Code's default preview
+
 ## 2.10.0
 
 - C, C++, C#, Java, Rust, and Go are less pink:
